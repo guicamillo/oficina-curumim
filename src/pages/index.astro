@@ -31,19 +31,26 @@ const t = useTranslations('pt-BR');
 			</div>
 		</section>
         
-        {/* Quem somos Section - Colorful Card */}
-        <section class="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
+        {/* Quem somos Section - Image Placeholder Style */}
+        <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-5xl mx-auto">
-                    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border-4 border-[#fbcd00]">
-                        <h2 class="text-4xl md:text-5xl font-black text-[#ea1f4b] mb-6 text-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    {/* Image Placeholder */}
+                    <div class="relative">
+                        <div class="aspect-square bg-gradient-to-br from-[#fbcd00] via-[#ed8300] to-[#ea1f4b] rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div class="space-y-6">
+                        <h2 class="text-4xl md:text-5xl font-black text-[#ea1f4b]">
                             Quem somos
                         </h2>
-                        <p class="text-xl text-slate-700 leading-relaxed mb-8 text-center">
+                        <p class="text-xl text-slate-700 leading-relaxed">
                             Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da grande Vancouver. Os aspectos culturais, artísticos e sociais da cultura brasileira são utilizados como contexto para o desenvolvimento das propostas nas turmas.
                         </p>
-                        <div class="text-center">
-                            <a href="/about" class="inline-block px-10 py-4 bg-gradient-to-r from-[#ea1f4b] to-[#8a00aa] text-white font-black text-lg rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <div>
+                            <a href="/about" class="inline-block px-8 py-3 bg-[#ea1f4b] text-white font-black text-lg rounded-full hover:bg-[#8a00aa] transition-colors duration-300">
                                 Saiba mais →
                             </a>
                         </div>
@@ -52,8 +59,8 @@ const t = useTranslations('pt-BR');
             </div>
         </section>
 
-        {/* Nossas turmas Preview - Vibrant */}
-        <section class="py-20 bg-gradient-to-br from-[#2ccdff]/20 to-[#32bf6e]/20">
+        {/* Nossas turmas Preview - Clean Style */}
+        <section class="py-20 bg-slate-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-4xl md:text-5xl font-black text-[#2ccdff] mb-6">
@@ -62,101 +69,138 @@ const t = useTranslations('pt-BR');
                     <p class="text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto mb-8">
                         Temos turmas de crianças a partir de 6 meses até 12 anos de idade. Conheça as atividades e propostas de cada uma.
                     </p>
-                    <a href="/classes" class="inline-block px-10 py-4 bg-gradient-to-r from-[#32bf6e] to-[#2ccdff] text-white font-black text-lg rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                    <a href="/classes" class="inline-block px-8 py-3 bg-[#2ccdff] text-white font-black text-lg rounded-full hover:bg-[#32bf6e] transition-colors duration-300">
                         Saiba mais →
                     </a>
                 </div>
             </div>
         </section>
 
-		{/* Schedule & Location - Fun Cards */}
-		<section class="py-20 bg-white">
+		{/* Schedule & Location - Image Placeholder Style */}
+		<section class="py-20 bg-slate-50">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-					<div class="bg-gradient-to-br from-[#fbcd00] to-[#ed8300] rounded-3xl p-8 shadow-xl transform hover:scale-105 transition-transform duration-300">
-						<div class="text-center">
-                            <h2 class="text-3xl font-black text-white mb-4 drop-shadow">Horário</h2>
-                            <p class="text-xl text-white font-bold">
-                                Domingos das 10:00am às 12:00pm
-                            </p>
-                            <p class="text-white/90 mt-2 text-sm">
-                                (Não há aula em finais de semana prolongados dos feriados canadenses)
-                            </p>
-                        </div>
-					</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+					<div class="flex flex-col md:flex-row gap-8 items-center">
+						{/* Image Placeholder */}
+						<div class="relative flex-shrink-0">
+							<div class="w-48 h-48 bg-gradient-to-br from-[#fbcd00] via-[#ed8300] to-[#ea1f4b] rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+						</div>
 
-					<div class="bg-gradient-to-br from-[#ea1f4b] to-[#8a00aa] rounded-3xl p-8 shadow-xl transform hover:scale-105 transition-transform duration-300">
-						<div class="text-center">
-                            <h2 class="text-3xl font-black text-white mb-4 drop-shadow">Localização</h2>
-                            <p class="text-lg font-bold text-white">Mount Pleasant Neighbourhood House</p>
-                            <a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" class="inline-block mt-3 text-lg text-white hover:text-[#fbcd00] underline font-semibold transition-colors">
-                                800 E Broadway, Vancouver, BC V5T 1Y1
-                            </a>
-                        </div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		{/* Library Section - Super Playful */}
-		<section class="py-20 bg-gradient-to-br from-purple-100 via-pink-50 to-orange-50">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="max-w-5xl mx-auto">
-					<div class="text-center mb-8">
-                        <h2 class="text-4xl md:text-5xl font-black text-[#8a00aa] mb-4">
-                            Nossa biblioteca
-                        </h2>
-                    </div>
-                    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-2xl border-4 border-dashed border-[#32bf6e]">
-						<p class="text-lg text-slate-700 mb-6 leading-relaxed">
-							As famílias são voluntárias para a organização, catalogação, empréstimos e conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa. As famílias também podem escolher um título.
-						</p>
-						<p class="text-lg text-slate-700 mb-8 leading-relaxed">
-							A leitura de livros, em português, é importante para a manutenção e estímulo do idioma.
-						</p>
-						<div class="bg-gradient-to-r from-[#fbcd00] via-[#ed8300] to-[#ea1f4b] rounded-3xl p-10 shadow-xl transform hover:rotate-1 transition-transform duration-300">
-							<p class="text-4xl md:text-5xl font-black text-white text-center drop-shadow-lg">
-								+ de 1000 títulos infantis!
+						{/* Content */}
+						<div class="space-y-4">
+							<h2 class="text-3xl font-black text-[#ea1f4b]">Horário</h2>
+							<p class="text-xl text-slate-700 font-bold">
+								Domingos das 10:00am às 12:00pm
 							</p>
+							<p class="text-slate-600 text-sm">
+								(Não há aula em finais de semana prolongados dos feriados canadenses)
+							</p>
+						</div>
+					</div>
+
+					<div class="flex flex-col md:flex-row gap-8 items-center">
+						{/* Image Placeholder */}
+						<div class="relative flex-shrink-0">
+							<div class="w-48 h-48 bg-gradient-to-br from-[#2ccdff] via-[#32bf6e] to-[#8a00aa] rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
+							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+						</div>
+
+						{/* Content */}
+						<div class="space-y-4">
+							<h2 class="text-3xl font-black text-[#32bf6e]">Localização</h2>
+							<p class="text-lg font-bold text-slate-700">Mount Pleasant Neighbourhood House</p>
+							<a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" class="inline-block text-lg text-[#2ccdff] hover:text-[#32bf6e] underline font-semibold transition-colors">
+								800 E Broadway, Vancouver, BC V5T 1Y1
+							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-        {/* Eventos culturais Preview */}
-        <section class="py-20 bg-white">
+		{/* Library Section - Image Placeholder Style */}
+		<section class="py-20 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+					{/* Content */}
+					<div class="space-y-6">
+						<h2 class="text-4xl md:text-5xl font-black text-[#8a00aa]">
+							Nossa biblioteca
+						</h2>
+						<p class="text-lg text-slate-700 leading-relaxed">
+							As famílias são voluntárias para a organização, catalogação, empréstimos e conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa. As famílias também podem escolher um título.
+						</p>
+						<p class="text-lg text-slate-700 leading-relaxed">
+							A leitura de livros, em português, é importante para a manutenção e estímulo do idioma.
+						</p>
+						<div class="bg-gradient-to-r from-[#fbcd00] to-[#ed8300] rounded-2xl p-6 shadow-lg inline-block">
+							<p class="text-2xl md:text-3xl font-black text-white text-center">
+								+ de 1000 títulos infantis!
+							</p>
+						</div>
+					</div>
+
+					{/* Image Placeholder */}
+					<div class="relative">
+						<div class="aspect-square bg-gradient-to-br from-[#8a00aa] via-[#ea1f4b] to-[#32bf6e] rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
+						<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+        {/* Eventos culturais Preview - Image Placeholder Style */}
+        <section class="py-20 bg-slate-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-5xl mx-auto text-center">
-                    <h2 class="text-4xl md:text-5xl font-black text-[#ea1f4b] mb-6">
-                        Eventos culturais
-                    </h2>
-                    <p class="text-xl text-slate-700 leading-relaxed mb-8">
-                        Temos eventos culturais durante o ano todo na Oficina Curumim. Confira nosso calendário anual e não fique fora de nenhum deles.
-                    </p>
-                    <a href="/events" class="inline-block px-10 py-4 bg-gradient-to-r from-[#8a00aa] to-[#ea1f4b] text-white font-black text-lg rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
-                        Calendário anual →
-                    </a>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    {/* Image Placeholder */}
+                    <div class="relative">
+                        <div class="aspect-square bg-gradient-to-br from-[#ea1f4b] via-[#8a00aa] to-[#fbcd00] rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+                    </div>
+
+                    {/* Content */}
+                    <div class="space-y-6">
+                        <h2 class="text-4xl md:text-5xl font-black text-[#ea1f4b]">
+                            Eventos culturais
+                        </h2>
+                        <p class="text-xl text-slate-700 leading-relaxed">
+                            Temos eventos culturais durante o ano todo na Oficina Curumim. Confira nosso calendário anual e não fique fora de nenhum deles.
+                        </p>
+                        <div>
+                            <a href="/events" class="inline-block px-8 py-3 bg-[#ea1f4b] text-white font-black text-lg rounded-full hover:bg-[#8a00aa] transition-colors duration-300">
+                                Calendário anual →
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        {/* Quer trabalhar conosco - Friendly CTA */}
-        <section class="py-20 bg-gradient-to-br from-green-50 to-cyan-50">
+        {/* Quer trabalhar conosco - Image Placeholder Style */}
+        <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="max-w-4xl mx-auto">
-                    <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border-4 border-[#2ccdff]">
-                        <h2 class="text-4xl md:text-5xl font-black text-[#32bf6e] mb-6 text-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    {/* Content */}
+                    <div class="space-y-6">
+                        <h2 class="text-4xl md:text-5xl font-black text-[#32bf6e]">
                             Quer trabalhar conosco?
                         </h2>
-                        <p class="text-xl text-slate-700 leading-relaxed mb-8 text-center">
+                        <p class="text-xl text-slate-700 leading-relaxed">
                             Estamos sempre buscando voluntários e parceiros. Clique e saiba como fazer parte da nossa equipe.
                         </p>
-                        <div class="text-center">
-                            <a href="/jobs" class="inline-block px-10 py-4 bg-gradient-to-r from-[#32bf6e] to-[#2ccdff] text-white font-black text-lg rounded-full hover:scale-110 transition-transform duration-300 shadow-lg">
+                        <div>
+                            <a href="/jobs" class="inline-block px-8 py-3 bg-[#32bf6e] text-white font-black text-lg rounded-full hover:bg-[#2ccdff] transition-colors duration-300">
                                 Trabalhe com a gente →
                             </a>
                         </div>
+                    </div>
+
+                    {/* Image Placeholder */}
+                    <div class="relative">
+                        <div class="aspect-square bg-gradient-to-br from-[#32bf6e] via-[#2ccdff] to-[#fbcd00] rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
                     </div>
                 </div>
             </div>
