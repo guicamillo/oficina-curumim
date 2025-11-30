@@ -1,0 +1,64 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import { useTranslations } from '../../utils/i18n';
+
+const t = useTranslations('en-CA');
+---
+
+<Layout title="Oficina Curumim - Portuguese and Brazilian Culture">
+	<Header />
+	<main>
+		<section class="relative bg-slate-50 overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-50"></div>
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pt-20 pb-24 lg:pt-32">
+				<div class="text-center max-w-3xl mx-auto">
+					<h1 class="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
+						<span class="block">{t('welcome')}</span>
+						<span class="block text-blue-600 mt-2 text-3xl sm:text-4xl md:text-5xl">in Vancouver</span>
+					</h1>
+					<p class="mt-6 max-w-2xl mx-auto text-xl text-slate-600 leading-relaxed">
+						{t('mission')}
+					</p>
+					<div class="mt-10 flex justify-center gap-4">
+						<a href="/en-CA/contact" class="px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+							Contact Us
+						</a>
+						<a href="/en-CA/about" class="px-8 py-3 border border-slate-200 text-base font-medium rounded-full text-slate-700 bg-white hover:bg-slate-50 md:py-4 md:text-lg md:px-10 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
+							Learn More
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+        
+        {/* Features/Highlights Section */}
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
+                            📚
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Portuguese Language</h3>
+                        <p class="text-slate-600">Dynamic classes focused on oral and written skills for children and youth.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
+                            🎭
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Brazilian Culture</h3>
+                        <p class="text-slate-600">Music, art, folklore, and traditions that connect with roots.</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
+                            🤝
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Community</h3>
+                        <p class="text-slate-600">A meeting and exchange space for Brazilian families.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+	</main>
+</Layout>
