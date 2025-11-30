@@ -6,13 +6,17 @@ const t = useTranslations(lang);
 
 const homeUrl = lang === 'pt-BR' ? '/' : '/en-CA';
 const aboutUrl = lang === 'pt-BR' ? '/about' : '/en-CA/about';
-const blogUrl = lang === 'pt-BR' ? '/blog' : '/en-CA/blog';
+const classesUrl = lang === 'pt-BR' ? '/classes' : '/en-CA/classes';
+const eventsUrl = lang === 'pt-BR' ? '/events' : '/en-CA/events';
+const jobsUrl = lang === 'pt-BR' ? '/jobs' : '/en-CA/jobs';
+const partnershipsUrl = lang === 'pt-BR' ? '/partnerships' : '/en-CA/partnerships';
 const contactUrl = lang === 'pt-BR' ? '/contact' : '/en-CA/contact';
 
 const navItems = [
   { href: homeUrl, label: t('nav.home') },
   { href: aboutUrl, label: t('nav.about') },
-  { href: blogUrl, label: t('nav.blog') },
+  { href: classesUrl, label: t('nav.classes') },
+  { href: eventsUrl, label: t('nav.events') },
   { href: contactUrl, label: t('nav.contact') },
 ];
 ---

@@ -2,13 +2,100 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 ---
-<Layout title="Sobre - Oficina Curumim">
+
+<Layout title="Sobre Nós - Oficina Curumim">
     <Header />
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 class="text-3xl font-bold mb-4">Sobre Nós</h1>
-        <div class="prose prose-slate lg:prose-lg">
-            <p>A Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da grande Vancouver.</p>
-            <p>Os aspectos culturais, artísticos e sociais da cultura brasileira são utilizados como contexto para o desenvolvimento das propostas nas turmas.</p>
-        </div>
+    <main class="bg-slate-50">
+     {/* Hero Section */}
+        <section class="bg-gradient-to-br from-blue-600 to-green-600 py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Sobre Nós</h1>
+            </div>
+        </section>
+
+        {/* Mission Section */}
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8">Missão</h2>
+                <div class="space-y-4 text-lg text-slate-700">
+                    <p>• Estimular o desenvolvimento das habilidades orais, da leitura e da escrita em português, bem como valorizar o contato com a cultura brasileira.</p>
+                    <p>• O aprendizado ocorre de acordo com o desenvolvimento da criança, proporcionando uma memória afetiva e positiva em relação ao português, respeitando o ritmo de cada uma e os desafios adequados à faixa etária e maturidade.</p>
+                    <p>• O trabalho desenvolvido enriquece e amplia o vocabulário, traz a noção de pertencimento às origens e estreita a relação entre língua, identidade e cultura.</p>
+                    <p>• Prezamos para que a criança esteja feliz na Oficina Curumim.</p>
+                </div>
+            </div>
+        </section>
+
+        {/* Pedagogical Approach */}
+        <section class="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8">Proposta pedagógica</h2>
+                <p class="text-lg text-slate-700 leading-relaxed">
+                    Em um ambiente lúdico e participativo, as crianças desenvolvem atividades relacionadas às manifestações folclóricas, personalidades, fatos, arte, literatura e histórias brasileiras. As propostas das atividades são pautadas a partir de um tema de estudo.
+                </p>
+            </div>
+        </section>
+
+        {/* Academic Year */}
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8">Ano letivo</h2>
+                <p class="text-xl text-slate-700">
+                    As aulas acontecem durante 3 termos ao longo do ano: De Janeiro a Março, de Abril a Junho e de Setembro a Dezembro.
+                </p>
+            </div>
+        </section>
+
+        {/* Code of Conduct */}
+        <section class="py-20 bg-gradient-to-br from-blue-50 to-green-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-slate-900 mb-8">Código de Conduta</h2>
+                <p class="text-lg text-slate-700 leading-relaxed mb-6">
+                    Para manter um ambiente organizado, respeitoso e seguro para nossas crianças, pais, professores e voluntários da Oficina Curumim, é essencial que todos estejam cientes de suas responsabilidades e sigam o código de conduta esperado conforme <a href="https://docs.google.com/document/d/1pJRK8tmHNGRAkDkY8gr9YphOaSDKs6p52fDPXJZNrOk/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 underline">estabelecido neste guia</a>.
+                </p>
+            </div>
+        </section>
+
+        {/* History Timeline */}
+        <section class="py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Nossa História</h2>
+                <div class="space-y-12">
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-blue-600">2012</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 pt-4">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Outubro de 2012</h3>
+                            <p class="text-lg text-slate-700">
+                                Um grupo de famílias se une para desenvolver atividades educativas, em português, com seus filhos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-green-600">2013</span>
+                            </div>
+                        </div>
+                        <div class="flex-1 pt-4">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Março de 2013</h3>
+                            <p class="text-lg text-slate-700">
+                                A Oficina Curumim é registrada como uma organização sem fins lucrativos, "Oficina Curumim Parents Society".
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-blue-600 to-green-600 rounded-2xl p-8 text-center">
+                        <p class="text-2xl font-bold text-white">
+                            Hoje, 10 anos após sua fundação, contamos com mais de 100 crianças, filhos de Brasileiros residentes no Canadá, que falam Português como língua de herança ou como primeira língua.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </Layout>

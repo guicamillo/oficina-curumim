@@ -1,10 +1,57 @@
 {
   "welcome": "Bem-vindo à Oficina Curumim",
-  "mission": "Estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da grande Vancouver.",
+  "mission": "Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da grande Vancouver.",
   "nav": {
     "home": "Início",
-    "about": "Sobre",
-    "blog": "Blog",
+    "about": "Sobre Nós",
+    "classes": "Nossas Turmas",
+    "events": "Eventos Culturais",
+    "jobs": "Trabalhe com a Gente",
+    "partnerships": "Parcerias",
     "contact": "Contato"
+  },
+  "home": {
+    "hero": {
+      "title": "Bem-vindo à Oficina Curumim",
+      "subtitle": "em Vancouver",
+      "tagline1": "No coração de Vancouver.",
+      "tagline2": "E com o BRASIL no coração.",
+      "cta1": "Entre em contato",
+      "cta2": "Saiba mais"
+    },
+    "schedule": {
+      "title": "Horário",
+      "text": "Domingos das 10:00am às 12:00pm. (Não há aula em finais de semana prolongados dos feriados canadenses)"
+    },
+    "location": {
+      "title": "Localização das aulas",
+      "name": "Mount Pleasant Neighbourhood House",
+      "address": "800 E Broadway, Vancouver, BC V5T 1Y1"
+    },
+    "library": {
+      "title": "Nossa biblioteca",
+      "description": "As famílias são voluntárias para a organização, catalogação, empréstimos e conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa. As famílias também podem escolher um título.",
+      "note": "A leitura de livros, em português, é importante para a manutenção e estímulo do idioma.",
+      "stat": "Já contamos com + de 1000 títulos infantis."
+    },
+    "features": {
+      "language": {
+        "title": "Língua Portuguesa",
+        "description": "Aulas dinâmicas focadas na oralidade e escrita para crianças e jovens."
+      },
+      "culture": {
+        "title": "Cultura Brasileira",
+        "description": "Música, arte, folclore e tradições que conectam com as raízes."
+      },
+      "community": {
+        "title": "Comunidade",
+        "description": "Um espaço de encontro e troca para famílias brasileiras."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "© 2022 Oficina Curumim.",
+    "photos": "Photos by Maria Tebet",
+    "design": "Rebrand & webdesign by Bruno Cirello"
   }
 }
