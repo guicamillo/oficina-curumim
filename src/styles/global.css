@@ -1,2 +1,56 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+
+/* Import Nunito font - playful and friendly */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
+
+@theme {
+  /* Brand Colors from Logo */
+  --color-curumim-yellow: #fbcd00;
+  --color-curumim-green: #32bf6e;
+  --color-curumim-cyan: #2ccdff;
+  --color-curumim-red: #ea1f4b;
+  --color-curumim-orange: #ed8300;
+  --color-curumim-purple: #8a00aa;
+  
+  /* Extend with variations */
+  --color-yellow-50: #fffbeb;
+  --color-yellow-100: #fef3c7;
+  --color-yellow-400: #fbcd00;
+  --color-yellow-500: #f59e0b;
+  --color-yellow-600: #d97706;
+  
+  --color-green-50: #ecfdf5;
+  --color-green-100: #d1fae5;
+  --color-green-400: #32bf6e;
+  --color-green-500: #10b981;
+  --color-green-600: #059669;
+  
+  --color-orange-50: #fff7ed;
+  --color-orange-100: #ffedd5;
+  --color-orange-400: #ed8300;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  
+  /* Typography */
+  --font-family-sans: 'Nunito', system-ui, -apple-system, sans-serif;
+  
+  /* Rounded corners - playful */
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-4xl: 2.5rem;
+}
+
+/* Base styles */
+* {
+  font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+}
+
+/* Playful hover effects */
+.btn-playful {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-playful:hover {
+  transform: translateY(-2px) scale(1.02);
+}
