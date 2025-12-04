@@ -77,29 +77,10 @@
     width: 100%;
 }
 
-/* Header scroll styles */
-.scrolled {
-    height: 3rem !important; /* h-12 equivalent */
-}
-
-.scrolled .flex.items-center {
-    height: 3rem !important;
-}
-
-.logo-scrolled {
-    height: 1.5rem !important; /* h-6 equivalent */
-}
-
-@media (min-width: 640px) {
-    .scrolled {
-        height: 4rem !important; /* h-16 equivalent */
-    }
-
-    .scrolled .flex.items-center {
-        height: 4rem !important;
-    }
-
-    .logo-scrolled {
-        height: 2rem !important; /* h-8 equivalent */
-    }
+/* Glassy header styles */
+.glassy-header {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(209, 213, 219, 0.3);
 }
