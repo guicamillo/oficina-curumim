@@ -25,7 +25,7 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
                 {post.data.image ? (
                     <img src={post.data.image} alt={post.data.title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 ) : (
-                    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-green-50 text-slate-300">
+                    <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-white to-gray-400 text-slate-400">
                         <span class="text-4xl">📝</span>
                     </div>
                 )}
