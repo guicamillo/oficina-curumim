@@ -5,7 +5,7 @@ import Header from '../components/Header.astro';
 
 <Layout title="Nossas Turmas - Oficina Curumim">
     <Header />
-    <main class="bg-white pt-24">
+    <main class="bg-white">
         {/* Hero Section with Image Background */}
         <section class="relative bg-gradient-to-br from-[#2ccdff] to-[#32bf6e] py-32 overflow-hidden">
             <div class="absolute inset-0 bg-slate-900/40"></div>
@@ -24,14 +24,17 @@ import Header from '../components/Header.astro';
                     <div class="order-2 lg:order-1">
                         <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
                             {/* Placeholder - replace with actual image */}
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                TURMA 0
+                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
+                                TATUZINHOS
                             </div>
                         </div>
                     </div>
                     <div class="order-1 lg:order-2">
                         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#fbcd00]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#fbcd00] mb-4">TURMA 0</h2>
+                            <h2 class="mb-4 text-[#fbcd00]">
+                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 0</span>
+                                <span class="block text-4xl md:text-5xl font-black">TATUZINHOS</span>
+                            </h2>
                             <div class="flex flex-wrap gap-3 mb-6">
                                 <span class="px-4 py-2 bg-[#fbcd00]/10 text-[#ed8300] font-bold rounded-full text-sm">
                                     Módulo 1: 6-18 meses (aprox.)
@@ -58,7 +61,10 @@ import Header from '../components/Header.astro';
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#32bf6e]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#32bf6e] mb-4">TURMA 1</h2>
+                            <h2 class="mb-4 text-[#32bf6e]">
+                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 1</span>
+                                <span class="block text-4xl md:text-5xl font-black">ONCINHAS</span>
+                            </h2>
                             <span class="inline-block px-4 py-2 bg-[#32bf6e]/10 text-[#32bf6e] font-bold rounded-full text-sm mb-6">
                                 de 2,5 a 4 anos (aprox.)
                             </span>
@@ -72,8 +78,8 @@ import Header from '../components/Header.astro';
                     </div>
                     <div>
                         <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                TURMA 1
+                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
+                                ONCINHAS
                             </div>
                         </div>
                     </div>
@@ -87,14 +93,17 @@ import Header from '../components/Header.astro';
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="order-2 lg:order-1">
                         <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                TURMA 2
+                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
+                                MACAQUINHOS
                             </div>
                         </div>
                     </div>
                     <div class="order-1 lg:order-2">
                         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#ed8300]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#ed8300] mb-4">TURMA 2</h2>
+                            <h2 class="mb-4 text-[#ed8300]">
+                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 2</span>
+                                <span class="block text-4xl md:text-5xl font-black">MACAQUINHOS</span>
+                            </h2>
                             <span class="inline-block px-4 py-2 bg-[#ed8300]/10 text-[#ed8300] font-bold rounded-full text-sm mb-6">
                                 de 4 a 6 anos (aprox.)
                             </span>
@@ -116,7 +125,10 @@ import Header from '../components/Header.astro';
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#8a00aa]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#8a00aa] mb-4">TURMA 3</h2>
+                            <h2 class="mb-4 text-[#8a00aa]">
+                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 3</span>
+                                <span class="block text-4xl md:text-5xl font-black">INDIOZINHOS</span>
+                            </h2>
                             <span class="inline-block px-4 py-2 bg-[#8a00aa]/10 text-[#8a00aa] font-bold rounded-full text-sm mb-6">
                                 de 6 a 8 anos (aprox.)
                             </span>
@@ -130,8 +142,8 @@ import Header from '../components/Header.astro';
                     </div>
                     <div>
                         <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                TURMA 3
+                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
+                                INDIOZINHOS
                             </div>
                         </div>
                     </div>
@@ -145,14 +157,17 @@ import Header from '../components/Header.astro';
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     <div class="order-2 lg:order-1">
                         <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                TURMA 4
+                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
+                                TUCANOS
                             </div>
                         </div>
                     </div>
                     <div class="order-1 lg:order-2">
                         <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#ea1f4b]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#ea1f4b] mb-4">TURMA 4</h2>
+                            <h2 class="mb-4 text-[#ea1f4b]">
+                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 4</span>
+                                <span class="block text-4xl md:text-5xl font-black">TUCANOS</span>
+                            </h2>
                             <span class="inline-block px-4 py-2 bg-[#ea1f4b]/10 text-[#ea1f4b] font-bold rounded-full text-sm mb-6">
                                 de 8 a 12 anos (aprox.)
                             </span>
