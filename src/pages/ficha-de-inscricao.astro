@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+---
+
+<Layout title="Ficha de Inscrição | Oficina Curumim">
+    <Header />
+    <main class="bg-white min-h-screen">
+       <!-- Hero / Title -->
+       <section class="bg-gradient-to-br from-[#2ccdff] to-[#32bf6e] pt-32 pb-20 text-center text-white relative overflow-hidden">
+           <div class="absolute inset-0 bg-slate-900/10"></div>
+           <div class="relative z-10 px-4">
+               <h1 class="text-4xl md:text-6xl font-black mb-6 drop-shadow-md">Ficha de Inscrição</h1>
+               <p class="text-xl md:text-2xl opacity-95 font-medium max-w-2xl mx-auto drop-shadow-sm">
+                   Garanta a vaga do seu curumim! Preencha o formulário abaixo para realizar a pré-inscrição.
+               </p>
+           </div>
+           
+           <!-- Decorative circles similar to other pages -->
+           <div class="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+           <div class="absolute bottom-10 left-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-2xl"></div>
+       </section>
+
+       <!-- Embed Section -->
+       <section class="py-12 px-4 max-w-5xl mx-auto -mt-10 relative z-20">
+          <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 p-2 md:p-8">
+             <div class="bg-slate-50 rounded-2xl p-2 md:p-4">
+                 <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLSfvr5yyrK39GoDMZOFYwA7ngdOHmSiFKeuLL0sWL_lS_D2VAQ/viewform?embedded=true" 
+                    width="100%" 
+                    height="2400" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    class="w-full bg-white rounded-xl"
+                    title="Ficha de Inscrição Oficina Curumim"
+                >Carregando…</iframe>
+             </div>
+          </div>
+       </section>
+    </main>
+</Layout>
