@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "npm run cleanup && astro build",
+    "cleanup": "knip --fix --allow-remove-files",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -15,13 +16,12 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.16.3",
-    "i18next": "^25.8.18",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "react-i18next": "^16.5.8",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19"
+    "@tailwindcss/typography": "^0.5.19",
+    "knip": "^5.86.0"
   }
 }
