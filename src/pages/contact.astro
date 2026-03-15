@@ -137,23 +137,17 @@ const base = import.meta.env.BASE_URL;
             </div>
         </section>
 
-        {/* Map Placeholder */}
+        {/* Interactive Map */}
         <section class="pb-32 px-4">
             <div class="max-w-7xl mx-auto">
-                <div class="glass-card rounded-[4rem] aspect-[21/9] md:aspect-[3/1] border border-white/60 overflow-hidden shadow-2xl relative group">
-                    <div class="absolute inset-0 bg-slate-100 flex items-center justify-center">
-                        <div class="text-center space-y-4">
-                            <MapPin class="w-16 h-16 text-curumim-green mx-auto animate-bounce" />
-                            <p class="text-slate-400 font-black text-xl uppercase tracking-widest">Veja no Google Maps</p>
-                        </div>
-                    </div>
-                    {/* Overlay for interaction */}
-                    <a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" 
-                       class="absolute inset-0 bg-curumim-green/5 hover:bg-curumim-green/0 transition-colors cursor-pointer flex items-center justify-center">
-                        <div class="px-8 py-4 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl font-black text-slate-800 opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-500">
-                            Abrir Mapa Interativo
-                        </div>
-                    </a>
+                <div class="glass-card rounded-[4rem] aspect-[21/9] md:aspect-[3/1] border border-white/60 overflow-hidden shadow-2xl relative">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.684128522718!2d-123.0917393234954!3d49.2623147713898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548671607f235555%3A0x633630f4094038a3!2sMount%20Pleasant%20Neighbourhood%20House!5e0!3m2!1spt-BR!2sca!4v1710526000000!5m2!1spt-BR!2sca" 
+                        class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </section>
