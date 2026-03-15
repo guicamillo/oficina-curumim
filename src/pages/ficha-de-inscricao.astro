@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ClipboardCheck from '@lucide/astro/icons/clipboard-check';
+import ClipboardCheck from '@lucide/astro/icons/circle-check';
 import Sparkles from '@lucide/astro/icons/sparkles';
 import ArrowRight from '@lucide/astro/icons/arrow-right';
 import MousePointer2 from '@lucide/astro/icons/mouse-pointer-2';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Ficha de Inscrição | Oficina Curumim">
@@ -58,12 +60,12 @@ import MousePointer2 from '@lucide/astro/icons/mouse-pointer-2';
                 <div class="w-20 h-20 bg-curumim-yellow/20 rounded-3xl flex items-center justify-center mx-auto">
                     <Sparkles class="w-10 h-10 text-curumim-yellow" />
                 </div>
-                <h2 class="text-3xl font-black text-slate-800">Ficou com alguma dúvida?</h2>
+                <h2 class="text-3xl font-black text-slate-800">Ficou con alguma dúvida?</h2>
                 <p class="text-lg text-slate-600 font-medium leading-relaxed">
                     Nossa equipe está à disposição para ajudar você em cada passo do processo de inscrição.
                 </p>
                 <div class="pt-4">
-                    <a href="/contact" class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-green transition-all shadow-xl active:scale-95 group">
+                    <a href={`${base}contact`} class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-green transition-all shadow-xl active:scale-95 group">
                         Entre em contato
                         <ArrowRight class="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                     </a>

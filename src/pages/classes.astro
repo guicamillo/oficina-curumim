@@ -83,6 +83,8 @@ const colorMap = {
         border: 'border-curumim-red/20'
     }
 };
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Nossas Turmas - Oficina Curumim">
@@ -115,7 +117,7 @@ const colorMap = {
                                     <div class={`absolute -top-12 -left-12 w-24 h-24 ${colors.blob} rounded-[2rem] -z-10 rotate-12 opacity-10`}></div>
                                     <div class={`absolute -inset-4 bg-gradient-to-tr ${colors.gradient} to-transparent rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-700`}></div>
                                     <div class="relative aspect-video lg:aspect-square glass-card rounded-[3rem] border border-white/60 overflow-hidden shadow-2xl flex items-center justify-center p-12">
-                                        <img src="/logo.svg" alt="" class="w-1/2 opacity-10 group-hover:scale-110 transition duration-1000" />
+                                        <img src={`${base}logo.svg`} alt="" class="w-1/2 opacity-10 group-hover:scale-110 transition duration-1000" />
                                         <div class={`absolute inset-0 bg-gradient-to-br ${colors.gradient} to-transparent`}></div>
                                     </div>
                                 </div>
@@ -164,12 +166,12 @@ const colorMap = {
                             Cadastre seu Curumim hoje mesmo!
                         </h2>
                         <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">
-                            Junte-se à nossa comunidade e proporcione uma conexão profunda com as raízes brasileiras.
+                            Junte-se à nossa comunidade e proporcione uma conexão profunda con as raízes brasileiras.
                         </p>
                     </div>
 
                     <div class="pt-8 relative z-10">
-                        <a href="/contact" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-yellow/20">
+                        <a href={`${base}contact`} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-yellow/20">
                             Falar com a gente
                             <ArrowRight class="w-8 h-8" />
                         </a>

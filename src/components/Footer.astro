@@ -7,13 +7,14 @@ import Mail from '@lucide/astro/icons/mail';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const homeUrl = '/';
-const aboutUrl = '/about';
-const classesUrl = '/classes';
-const eventsUrl = '/events';
-const jobsUrl = '/jobs';
-const partnershipsUrl = '/partnerships';
-const contactUrl = '/contact';
+const base = import.meta.env.BASE_URL;
+const homeUrl = base;
+const aboutUrl = `${base}about`;
+const classesUrl = `${base}classes`;
+const eventsUrl = `${base}events`;
+const jobsUrl = `${base}jobs`;
+const partnershipsUrl = `${base}partnerships`;
+const contactUrl = `${base}contact`;
 ---
 
 <footer class="glass-footer mt-auto relative overflow-hidden">
@@ -27,7 +28,7 @@ const contactUrl = '/contact';
             <div class="flex flex-col items-center lg:items-start space-y-10">
                 <!-- Logo -->
                 <a href={homeUrl} class="hover:scale-105 transition-transform duration-300">
-                    <img src="/logo.svg" alt="Oficina Curumim" class="h-28 w-auto" />
+                    <img src={`${base}logo.svg`} alt="Oficina Curumim" class="h-28 w-auto" />
                 </a>
                 
                 <div class="space-y-6 text-center lg:text-left">
