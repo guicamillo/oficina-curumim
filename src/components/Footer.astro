@@ -7,13 +7,13 @@ import Mail from '@lucide/astro/icons/mail';
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const homeUrl = lang === 'pt-BR' ? '/' : '/en-CA';
-const aboutUrl = lang === 'pt-BR' ? '/about' : '/en-CA/about';
-const classesUrl = lang === 'pt-BR' ? '/classes' : '/en-CA/classes';
-const eventsUrl = lang === 'pt-BR' ? '/events' : '/en-CA/events';
-const jobsUrl = lang === 'pt-BR' ? '/jobs' : '/en-CA/jobs';
-const partnershipsUrl = lang === 'pt-BR' ? '/partnerships' : '/en-CA/partnerships';
-const contactUrl = lang === 'pt-BR' ? '/contact' : '/en-CA/contact';
+const homeUrl = '/';
+const aboutUrl = '/about';
+const classesUrl = '/classes';
+const eventsUrl = '/events';
+const jobsUrl = '/jobs';
+const partnershipsUrl = '/partnerships';
+const contactUrl = '/contact';
 ---
 
 <footer class="glass-footer mt-auto relative overflow-hidden">

@@ -1,16 +1,13 @@
 import ptBR from '../locales/pt-BR/translation.json';
-import enCA from '../locales/en-CA/translation.json';
 
 export const languages = {
   'pt-BR': 'Português',
-  'en-CA': 'English',
 };
 
 export const defaultLang = 'pt-BR';
 
 export const ui = {
   'pt-BR': ptBR,
-  'en-CA': enCA,
 } as const;
 
 export function getLangFromUrl(url: URL) {
