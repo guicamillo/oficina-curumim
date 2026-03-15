@@ -1,0 +1,104 @@
+---
+import { getLangFromUrl, useTranslations } from '../utils/i18n';
+import Instagram from '@lucide/astro/icons/instagram';
+import Facebook from '@lucide/astro/icons/facebook';
+import Mail from '@lucide/astro/icons/mail';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const homeUrl = lang === 'pt-BR' ? '/' : '/en-CA';
+const aboutUrl = lang === 'pt-BR' ? '/about' : '/en-CA/about';
+const classesUrl = lang === 'pt-BR' ? '/classes' : '/en-CA/classes';
+const eventsUrl = lang === 'pt-BR' ? '/events' : '/en-CA/events';
+const jobsUrl = lang === 'pt-BR' ? '/jobs' : '/en-CA/jobs';
+const partnershipsUrl = lang === 'pt-BR' ? '/partnerships' : '/en-CA/partnerships';
+const contactUrl = lang === 'pt-BR' ? '/contact' : '/en-CA/contact';
+---
+
+<footer class="glass-footer mt-auto relative overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-0 right-0 w-64 h-64 bg-curumim-yellow/10 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-curumim-green/10 rounded-full blur-3xl -z-10"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+            <!-- Left Column: Brand & Social -->
+            <div class="flex flex-col items-center lg:items-start space-y-10">
+                <!-- Logo -->
+                <a href={homeUrl} class="hover:scale-105 transition-transform duration-300">
+                    <img src="/logo.svg" alt="Oficina Curumim" class="h-28 w-auto" />
+                </a>
+                
+                <div class="space-y-6 text-center lg:text-left">
+                    <h3 class="text-xl font-bold text-slate-800">Conecte-se conosco</h3>
+                    <div class="flex justify-center lg:justify-start gap-5">
+                        <a href="https://www.instagram.com/oficinacurumim/" target="_blank" rel="noopener noreferrer" 
+                           class="w-12 h-12 glass-card hover:bg-curumim-yellow/20 rounded-2xl flex items-center justify-center transition-all hover:scale-110 group shadow-sm" aria-label="Instagram">
+                            <Instagram class="w-6 h-6 text-slate-700 group-hover:text-curumim-yellow" />
+                        </a>
+                        <a href="https://www.facebook.com/oficinacurumim" target="_blank" rel="noopener noreferrer" 
+                           class="w-12 h-12 glass-card hover:bg-curumim-cyan/20 rounded-2xl flex items-center justify-center transition-all hover:scale-110 group shadow-sm" aria-label="Facebook">
+                            <Facebook class="w-6 h-6 text-slate-700 group-hover:text-curumim-cyan" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="text-slate-500 text-sm">
+                    <p>© {new Date().getFullYear()} Oficina Curumim.</p>
+                    <p class="mt-3">
+                        Website desenvolvido por <a href="http://www.guilhermecamillo.com.br" target="_blank" class="text-slate-700 font-semibold hover:text-curumim-orange transition-colors">Guilherme Camillo</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Right Column: Navigation & Newsletter -->
+            <div class="space-y-12">
+                <!-- Navigation Grid -->
+                <nav>
+                    <h3 class="text-lg font-bold mb-6 text-slate-800 text-center lg:text-left">Links Rápidos</h3>
+                    <ul class="grid grid-cols-2 sm:grid-cols-3 gap-x-8 gap-y-4 text-sm">
+                        <li><a href={homeUrl} class="text-slate-600 hover:text-curumim-orange transition-colors font-medium">Início</a></li>
+                        <li><a href={aboutUrl} class="text-slate-600 hover:text-curumim-orange transition-colors font-medium">Sobre nós</a></li>
+                        <li><a href={classesUrl} class="text-slate-600 hover:text-curumim-orange transition-colors font-medium">Nossas turmas</a></li>
+                        <li><a href={eventsUrl} class="text-slate-600 hover:text-curumim-orange transition-colors font-medium">Eventos culturais</a></li>
+                        <li><a href={jobsUrl} class="text-slate-600 hover:text-curumim-orange transition-colors font-medium">Trabalhe conosco</a></li>
+                        <li><a href={partnershipsUrl} class="text-slate-600 hover:text-curumim-orange transition-colors font-medium">Parcerias</a></li>
+                        <li><a href={contactUrl} class="text-slate-600 hover:text-curumim-orange transition-colors font-medium">Contato</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Newsletter Component -->
+                <div class="glass-card rounded-3xl p-8 border border-white/40 shadow-lg relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-curumim-yellow/10 rounded-full blur-2xl group-hover:bg-curumim-yellow/20 transition-colors"></div>
+                    <h3 class="text-lg font-bold mb-4 text-slate-800 flex items-center gap-2">
+                        <Mail class="w-5 h-5 text-curumim-orange" />
+                        Fique por dentro das novidades
+                    </h3>
+                    <form class="flex flex-col sm:flex-row gap-3">
+                        <input 
+                            type="email" 
+                            placeholder="Seu melhor e-mail" 
+                            class="flex-1 px-5 py-3.5 rounded-2xl bg-white/50 border border-white/40 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-curumim-yellow/50 text-sm backdrop-blur-sm shadow-inner"
+                        />
+                        <button 
+                            type="submit" 
+                            class="px-8 py-3.5 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-bold rounded-2xl transition-all hover:scale-[1.02] active:scale-95 shadow-md shadow-curumim-yellow/20 text-sm whitespace-nowrap"
+                        >
+                            Inscrever
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Bar -->
+        <div class="border-t border-slate-200/50 pt-10 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400 font-medium">
+            <p>Oficina Curumim - Português e Cultura Brasileira em Vancouver</p>
+            <div class="flex gap-8 mt-4 md:mt-0">
+                <a href="#" class="hover:text-slate-600 transition-colors">Termos de Uso</a>
+                <a href="#" class="hover:text-slate-600 transition-colors">Privacidade</a>
+            </div>
+        </div>
+    </div>
+</footer>

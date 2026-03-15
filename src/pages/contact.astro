@@ -1,64 +1,81 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Mail from '@lucide/astro/icons/mail';
+import MapPin from '@lucide/astro/icons/map-pin';
+import Send from '@lucide/astro/icons/send';
+import MessageSquare from '@lucide/astro/icons/message-square';
+import Compass from '@lucide/astro/icons/compass';
+import ArrowRight from '@lucide/astro/icons/arrow-right';
 ---
 <Layout title="Contato - Oficina Curumim">
-    <Header />
-    <main class="bg-slate-50">
+    <main>
         {/* Hero Section */}
-        <section class="bg-gradient-to-br from-blue-600 to-green-600 py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Contato</h1>
-                <p class="text-xl text-blue-50">Diga oi! Adoraríamos ouvir de você.</p>
+        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
+            <div class="max-w-7xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-orange font-bold text-sm shadow-sm mb-8 animate-pulse">
+                    <MessageSquare class="w-4 h-4" />
+                    Diga oi!
+                </div>
+                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+                    Vamos <span class="text-curumim-orange ">Conversar</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+                    Adoraríamos ouvir de você. Seja para tirar dúvidas, sugerir parcerias ou matricular seu curumim.
+                </p>
             </div>
+            
+            {/* Background elements */}
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-curumim-orange/5 rounded-full blur-[120px] -z-10"></div>
         </section>
 
-        {/* Contact Info */}
-        <section class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Contact Content */}
+        <section class="py-12 px-4 pb-32">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     {/* Left Column - Contact Info */}
-                    <div class="lg:col-span-1 space-y-6">
-                        {/* Email */}
-                        <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-100">
-                            <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center text-xl">
-                                    ✉️
+                    <div class="lg:col-span-4 space-y-6">
+                        {/* Email Card */}
+                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:-translate-y-1 transition-all duration-300">
+                            <div class="space-y-6">
+                                <div class="w-14 h-14 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <Mail class="w-7 h-7 text-curumim-cyan" />
                                 </div>
-                                <div class="min-w-0">
-                                    <h3 class="text-lg font-bold text-slate-900 mb-1">E-mail</h3>
-                                    <a href="mailto:oficinacurumim@gmail.com" class="text-base text-blue-600 hover:text-blue-700 hover:underline break-all">
+                                <div class="space-y-2">
+                                    <h3 class="text-xl font-black text-slate-800 tracking-tight">E-mail</h3>
+                                    <a href="mailto:oficinacurumim@gmail.com" class="text-lg text-slate-600 font-bold hover:text-curumim-cyan transition-colors break-all">
                                         oficinacurumim@gmail.com
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Location */}
-                        <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-100">
-                            <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center text-xl">
-                                    📍
+                        {/* Location Card */}
+                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:-translate-y-1 transition-all duration-300">
+                            <div class="space-y-6">
+                                <div class="w-14 h-14 bg-curumim-green/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <MapPin class="w-7 h-7 text-curumim-green" />
                                 </div>
-                                <div>
-                                    <h3 class="text-lg font-bold text-slate-900 mb-1">Localização das aulas</h3>
-                                    <p class="text-base text-slate-700 font-medium mb-1">Mount Pleasant Neighbourhood House</p>
-                                    <a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" class="text-sm text-blue-600 hover:text-blue-700 hover:underline">
-                                        800 E Broadway, Vancouver, BC V5T 1Y1
+                                <div class="space-y-2">
+                                    <h3 class="text-xl font-black text-slate-800 tracking-tight">Onde estamos</h3>
+                                    <p class="text-lg text-slate-600 font-bold leading-snug">Mount Pleasant Neighbourhood House</p>
+                                    <a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" 
+                                       class="inline-flex items-center gap-2 text-sm text-curumim-green hover:underline font-bold decoration-2 underline-offset-4">
+                                        800 E Broadway, Vancouver, BC
+                                        <ArrowRight class="w-3 h-3" />
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Mailing Address */}
-                        <div class="bg-white rounded-2xl shadow-lg p-6 border border-slate-100">
-                            <div class="flex items-start gap-4">
-                                <div class="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-xl flex items-center justify-center text-xl">
-                                    📮
+                        {/* Mailing Card */}
+                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:-translate-y-1 transition-all duration-300">
+                            <div class="space-y-6">
+                                <div class="w-14 h-14 bg-curumim-purple/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                    <Compass class="w-7 h-7 text-curumim-purple" />
                                 </div>
-                                <div>
-                                    <h3 class="text-lg font-bold text-slate-900 mb-1">Endereço para correspondência</h3>
-                                    <p class="text-base text-slate-700">
+                                <div class="space-y-2">
+                                    <h3 class="text-xl font-black text-slate-800 tracking-tight">Correspondência</h3>
+                                    <p class="text-lg text-slate-600 font-medium leading-relaxed">
                                         PO Box 78030 Grandview PO<br/>
                                         Vancouver BC V5N 5W1
                                     </p>
@@ -67,29 +84,74 @@ import Header from '../components/Header.astro';
                         </div>
                     </div>
 
-                    {/* Right Column - Contact Form */}
-                    <div class="lg:col-span-2">
-                        <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-slate-100 h-full">
-                            <h2 class="text-2xl font-bold text-slate-900 mb-6">Envie uma mensagem</h2>
-                            <form class="space-y-6">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Nome</label>
-                                    <input type="text" id="name" name="name" class="block w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg p-3 border" />
+                    {/* Right Column - Form */}
+                    <div class="lg:col-span-8">
+                        <div class="glass-card rounded-[3rem] p-8 md:p-16 border border-white/60 shadow-2xl relative overflow-hidden h-full">
+                            <div class="absolute -top-20 -right-20 w-80 h-80 bg-curumim-orange/5 rounded-full blur-[100px] -z-10"></div>
+                            
+                            <div class="space-y-12 h-full flex flex-col">
+                                <div class="space-y-4">
+                                    <h2 class="text-4xl md:text-5xl font-black text-slate-800">Mande uma <span class="text-curumim-orange underline decoration-curumim-yellow/30 decoration-8 underline-offset-8">mensagem</span></h2>
+                                    <p class="text-lg text-slate-500 font-medium">Preencha o formulário abaixo e retornaremos o quanto antes.</p>
                                 </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-slate-700 mb-2">Email</label>
-                                    <input type="email" id="email" name="email" class="block w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg p-3 border" />
-                                </div>
-                                <div>
-                                    <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Mensagem</label>
-                                    <textarea id="message" name="message" rows="5" class="block w-full rounded-lg border-slate-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 text-lg p-3 border"></textarea>
-                                </div>
-                                <button type="submit" class="w-full inline-flex justify-center py-3 px-6 border border-transparent shadow-sm text-lg font-medium rounded-full text-white bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all">
-                                    Enviar
-                                </button>
-                            </form>
+
+                                <form class="space-y-8 flex-grow">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div class="space-y-3">
+                                            <label for="name" class="block text-sm font-black text-slate-400 uppercase tracking-widest ml-4">Nome completo</label>
+                                            <input type="text" id="name" name="name" 
+                                                class="w-full px-8 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner" 
+                                                placeholder="Seu nome"
+                                            />
+                                        </div>
+                                        <div class="space-y-3">
+                                            <label for="email" class="block text-sm font-black text-slate-400 uppercase tracking-widest ml-4">Seu melhor e-mail</label>
+                                            <input type="email" id="email" name="email" 
+                                                class="w-full px-8 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner"
+                                                placeholder="exemplo@email.com"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="space-y-3">
+                                        <label for="message" class="block text-sm font-black text-slate-400 uppercase tracking-widest ml-4">Como podemos ajudar?</label>
+                                        <textarea id="message" name="message" rows="6" 
+                                            class="w-full px-8 py-6 rounded-[2.5rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner resize-none"
+                                            placeholder="Sua mensagem..."
+                                        ></textarea>
+                                    </div>
+                                    
+                                    <div class="pt-4">
+                                        <button type="submit" 
+                                            class="w-full md:w-auto inline-flex items-center justify-center gap-4 px-12 py-6 bg-curumim-orange hover:bg-curumim-red text-white font-black text-xl rounded-[2rem] transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-curumim-orange/20 group">
+                                            Enviar Mensagem
+                                            <Send class="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Map Placeholder */}
+        <section class="pb-32 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="glass-card rounded-[4rem] aspect-[21/9] md:aspect-[3/1] border border-white/60 overflow-hidden shadow-2xl relative group">
+                    <div class="absolute inset-0 bg-slate-100 flex items-center justify-center">
+                        <div class="text-center space-y-4">
+                            <MapPin class="w-16 h-16 text-curumim-green mx-auto animate-bounce" />
+                            <p class="text-slate-400 font-black text-xl uppercase tracking-widest">Veja no Google Maps</p>
+                        </div>
+                    </div>
+                    {/* Overlay for interaction */}
+                    <a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" 
+                       class="absolute inset-0 bg-curumim-green/5 hover:bg-curumim-green/0 transition-colors cursor-pointer flex items-center justify-center">
+                        <div class="px-8 py-4 bg-white/90 backdrop-blur-sm rounded-2xl shadow-xl font-black text-slate-800 opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-500">
+                            Abrir Mapa Interativo
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>

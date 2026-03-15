@@ -1,208 +1,149 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import PartyPopper from '@lucide/astro/icons/party-popper';
+import Calendar from '@lucide/astro/icons/calendar';
+import ArrowRight from '@lucide/astro/icons/arrow-right';
+import Music from '@lucide/astro/icons/music';
+import Users from '@lucide/astro/icons/users';
+import Heart from '@lucide/astro/icons/heart';
+import Globe from '@lucide/astro/icons/globe';
+import Star from '@lucide/astro/icons/star';
+
+const events = [
+    {
+        name: "Carnaval",
+        date: "Fevereiro/Março",
+        description: "Atividades lúdicas sobre a história e manifestações culturais das diferentes regiões do Brasil. Organizamos uma grande festa com ritmos, danças e trajes típicos.",
+        color: "curumim-yellow",
+        icon: PartyPopper
+    },
+    {
+        name: "PLH",
+        date: "16 de Maio",
+        subtitle: "Português como Língua de Herança",
+        description: "Dia de unificar as iniciativas de PLH pelo mundo. Realizamos salas temáticas com propostas educativas que reforçam a noção de pertencimento e brasilidade.",
+        color: "curumim-green",
+        icon: Globe
+    },
+    {
+        name: "Festa Junina",
+        date: "Junho",
+        description: "Um dos momentos mais esperados! Organizada por famílias e equipe, traz o melhor das tradições de São João para o contexto canadense.",
+        color: "curumim-orange",
+        icon: Music
+    },
+    {
+        name: "Festa de Final de Ano",
+        date: "Dezembro",
+        description: "Performance especial das crianças para as famílias, celebrando o fechamento do ano com muita música e valorização do nosso idioma.",
+        color: "curumim-purple",
+        icon: Star
+    },
+    {
+        name: "Aniversários",
+        date: "Durante o ano todo",
+        description: "Celebramos cada vida com parabéns em português e cartões confeccionados pelos amigos, promovendo alegria e interação na turma.",
+        color: "curumim-red",
+        icon: Heart
+    },
+    {
+        name: "Comunidade Brasileira",
+        date: "Eventos abertos",
+        description: "Participação em eventos abertos em Vancouver, compartilhando nossas propostas com o público e mantendo vivas nossas tradições.",
+        color: "curumim-cyan",
+        icon: Users
+    }
+];
 ---
 
 <Layout title="Eventos Culturais - Oficina Curumim">
-    <Header />
-    <main class="bg-white">
-        {/* Hero Section with Image Background */}
-        <section class="relative bg-gradient-to-br from-[#ea1f4b] to-[#8a00aa] py-32 overflow-hidden">
-            <div class="absolute inset-0 bg-slate-900/40"></div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h1 class="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">Eventos Culturais</h1>
-                <p class="text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed drop-shadow">
-                    Os eventos culturais são importantes para a manutenção e preservação da cultura nas nossas crianças. Os eventos tem a participação das crianças e famílias, exceto nos aniversários. A coordenação pedagógica, equipe e famílias são responsáveis pelo planejamento, organização e realização dos eventos culturais.
+    <main>
+        {/* Hero Section */}
+        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
+            <div class="max-w-7xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-red font-bold text-sm shadow-sm mb-8 animate-bounce">
+                    <PartyPopper class="w-4 h-4" />
+                    Celebrações & Tradição
+                </div>
+                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+                    Eventos <span class="text-curumim-red ">Culturais</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                    A preservação da nossa cultura através do envolvimento das famílias. Planejamos cada momento para que nossas raízes floresçam em Vancouver.
                 </p>
             </div>
+            
+            {/* Background elements */}
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-curumim-red/5 rounded-full blur-[120px] -z-10"></div>
         </section>
 
-        {/* Carnaval - Image Left */}
-        <section class="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1">
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            {/* Placeholder - replace with actual image */}
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                CARNAVAL
+        {/* Events Grid */}
+        <section class="py-12 px-4 pb-32">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {events.map((event) => (
+                    <div class="group h-full">
+                        <div class="glass-card h-full rounded-[2.5rem] p-8 md:p-10 border border-white/60 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden flex flex-col">
+                            <div class={`absolute top-0 right-0 w-32 h-32 bg-${event.color}/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-${event.color}/20 transition-colors`}></div>
+                            
+                            <div class="space-y-6 flex-grow">
+                                <div class={`w-16 h-16 bg-${event.color}/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                                    <event.icon class={`w-8 h-8 text-${event.color}`} />
+                                </div>
+                                
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <h2 class="text-2xl font-black text-slate-800">{event.name}</h2>
+                                    </div>
+                                    <div class="inline-flex items-center gap-2 text-sm font-bold text-slate-400 uppercase tracking-widest">
+                                        <Calendar class="w-4 h-4" />
+                                        {event.date}
+                                    </div>
+                                    {event.subtitle && (
+                                        <p class={`text-xs font-bold text-${event.color} italic`}>{event.subtitle}</p>
+                                    )}
+                                </div>
+
+                                <p class="text-slate-600 font-medium leading-relaxed">
+                                    {event.description}
+                                </p>
+                            </div>
+
+                            <div class="pt-8">
+                                <a href="/contact" class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-all`}>
+                                    Saiba mais
+                                    <ArrowRight class="w-4 h-4" />
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#fbcd00]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#fbcd00] mb-4">Carnaval</h2>
-                            <span class="inline-block px-4 py-2 bg-[#fbcd00]/10 text-[#ed8300] font-bold rounded-full text-sm mb-6">
-                                Fevereiro/Março
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                Nesta época a equipe pedagógica planeja atividades lúdicas e significativas relacionadas com o tema do "Carnaval", sua história e as manifestações culturais nas diferentes regiões, incentivando e a participação das crianças neste momento artístico e cultural. Como fechamento do tema, organizamos uma "Festa de Carnaval" para as famílias e crianças, trazendo os diferentes ritmos brasileiros, danças, trajes para que todos possam vivenciar essa grande expressão cultural brasileira.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#fbcd00] to-[#ed8300] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Saiba mais
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                ))}
             </div>
         </section>
 
-        {/* PLH - Image Right */}
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#32bf6e]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#32bf6e] mb-4">PLH</h2>
-                            <span class="inline-block px-4 py-2 bg-[#32bf6e]/10 text-[#32bf6e] font-bold rounded-full text-sm mb-6">
-                                Português como Língua de Herança - 16 de Maio
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                O dia foi fixado em 16 de maio como uma forma de unificar todas as iniciativas espalhadas pelo mundo que celebram e promovem o PLH. Realizamos uma "aula diferente", com proposta educativas e lúdicas, a criança e sua família desenvolvem atividades linguísticas e culturais em diferentes salas temáticas. Desta forma, trazemos a noção de pertencimento às origens e a brasilidade, que são tão importantes às crianças que vivem em outro país.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#32bf6e] to-[#2ccdff] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Saiba mais
-                            </a>
-                        </div>
+        {/* Final CTA */}
+        <section class="py-32 px-4 relative overflow-hidden">
+             <div class="absolute -z-10 top-0 left-0 w-full h-full bg-curumim-red/5 skew-y-3"></div>
+            <div class="max-w-5xl mx-auto">
+                <div class="glass-card rounded-[4rem] p-12 md:p-24 text-center space-y-10 border border-white/60 shadow-2xl relative overflow-hidden group">
+                    <div class="absolute -top-20 -right-20 w-96 h-96 bg-curumim-yellow/10 rounded-full blur-[100px] -z-10 group-hover:bg-curumim-yellow/20 transition-colors duration-1000"></div>
+                    
+                    <div class="space-y-6 relative z-10">
+                        <p class="text-curumim-red font-black text-xl uppercase tracking-widest animate-pulse">- Participe -</p>
+                        <h2 class="text-4xl md:text-7xl font-black text-slate-800 leading-tight">
+                            Não perca nenhum <span class="text-curumim-red">evento cultural!</span>
+                        </h2>
+                        <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium">
+                            Nossa comunidade é vibrante e acolhedora. Venha vivenciar o Brasil em Vancouver com a gente.
+                        </p>
                     </div>
-                    <div>
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                PLH
-                            </div>
-                        </div>
+
+                    <div class="pt-8 relative z-10">
+                        <a href="/contact" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-red/20">
+                            Quero me envolver
+                            <ArrowRight class="w-8 h-8" />
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        {/* Festa Junina - Image Left */}
-        <section class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1">
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                JUNINA
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#ed8300]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#ed8300] mb-4">Festa Junina</h2>
-                            <span class="inline-block px-4 py-2 bg-[#ed8300]/10 text-[#ed8300] font-bold rounded-full text-sm mb-6">
-                                Junho
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                A "Festa Junina" também é um momento especial para as crianças e famílias da Oficina Curumim. Comemorada em meados de junho, é um evento esperado e organizado pelas famílias e equipe pedagógica. Durante as aulas dos meses de maio e junho realizamos várias propostas significativas com tema em sala de aula.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#ed8300] to-[#ea1f4b] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Saiba mais
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Festa de final de ano - Image Right */}
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#8a00aa]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#8a00aa] mb-4">Festa de Final de Ano</h2>
-                            <span class="inline-block px-4 py-2 bg-[#8a00aa]/10 text-[#8a00aa] font-bold rounded-full text-sm mb-6">
-                                Dezembro
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                É um dia especial para a Oficina Curumim. Os professores juntamente com as crianças preparam uma performance, que é apresentada às famílias em um evento de fechamento do termo, em dezembro. Essa proposta traz estímulo a oralidade em português e a valorização da cultura brasileira.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#8a00aa] to-[#ea1f4b] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Saiba mais
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                FINAL DE ANO
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Aniversários - Image Left */}
-        <section class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1">
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                ANIVERSÁRIOS
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#ea1f4b]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#ea1f4b] mb-4">Aniversários</h2>
-                            <span class="inline-block px-4 py-2 bg-[#ea1f4b]/10 text-[#ea1f4b] font-bold rounded-full text-sm mb-6">
-                                Durante o ano todo
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                Sabemos quanto é especial o dia do aniversário para as crianças. Neste dia celebramos o dia do aniversariante junto com a turma. Cantamos os parabéns em português e entregamos um cartão coletivo (confeccionado e assinado pelos amigos). Este é momento é sempre de muita alegria e interação.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#ea1f4b] to-[#8a00aa] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Saiba mais
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Comunidade brasileira - Image Right */}
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#2ccdff]">
-                            <h2 class="text-4xl md:text-5xl font-black text-[#2ccdff] mb-4">Comunidade Brasileira</h2>
-                            <span class="inline-block px-4 py-2 bg-[#2ccdff]/10 text-[#2ccdff] font-bold rounded-full text-sm mb-6">
-                                Eventos abertos
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                A Oficina Curumim também participa de eventos abertos à Comunidade Brasileira em Vancouver e região, mantendo vivas a Língua Portuguesa e a Cultura Brasileira. Nestes eventos, as propostas realizadas na Oficina Curumim são compartilhadas com o público e, em especial, com as crianças.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#2ccdff] to-[#32bf6e] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Saiba mais
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-6xl font-black">
-                                COMUNIDADE
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* CTA Section */}
-        <section class="py-24 bg-gradient-to-r from-[#ea1f4b] via-[#8a00aa] to-[#fbcd00] relative overflow-hidden">
-            <div class="absolute inset-0 bg-white/10"></div>
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <p class="text-2xl text-white/90 mb-4 font-semibold">- Vem pro Oficina -</p>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-8 drop-shadow-lg">
-                    Não perca nenhum evento cultural!
-                </h2>
-                <a href="/contact" class="inline-block px-12 py-5 bg-white text-[#ea1f4b] font-black text-xl rounded-full hover:scale-110 transition-transform shadow-2xl">
-                    Entre em contato
-                </a>
             </div>
         </section>
     </main>

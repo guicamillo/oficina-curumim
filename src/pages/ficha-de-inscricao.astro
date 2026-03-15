@@ -1,30 +1,43 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import ClipboardCheck from '@lucide/astro/icons/clipboard-check';
+import Sparkles from '@lucide/astro/icons/sparkles';
+import ArrowRight from '@lucide/astro/icons/arrow-right';
+import MousePointer2 from '@lucide/astro/icons/mouse-pointer-2';
 ---
 
 <Layout title="Ficha de Inscrição | Oficina Curumim">
-    <Header />
-    <main class="bg-white min-h-screen">
-       <!-- Hero / Title -->
-       <section class="bg-gradient-to-br from-[#2ccdff] to-[#32bf6e] pt-32 pb-20 text-center text-white relative overflow-hidden">
-           <div class="absolute inset-0 bg-slate-900/10"></div>
-           <div class="relative z-10 px-4">
-               <h1 class="text-4xl md:text-6xl font-black mb-6 drop-shadow-md">Ficha de Inscrição</h1>
-               <p class="text-xl md:text-2xl opacity-95 font-medium max-w-2xl mx-auto drop-shadow-sm">
-                   Garanta a vaga do seu curumim! Preencha o formulário abaixo para realizar a pré-inscrição.
+    <main>
+       {/* Hero Section */}
+       <section class="relative pt-32 pb-20 px-4 overflow-hidden">
+           <div class="max-w-7xl mx-auto text-center relative z-10">
+               <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-green font-bold text-sm shadow-sm mb-8 animate-pulse">
+                   <ClipboardCheck class="w-4 h-4" />
+                   Pré-inscrição
+               </div>
+               <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+                   Ficha de <span class="text-curumim-green ">Inscrição</span>
+               </h1>
+               <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+                   Garanta a vaga do seu curumim! Preencha o formulário abaixo para iniciar o processo.
                </p>
            </div>
            
-           <!-- Decorative circles similar to other pages -->
-           <div class="absolute top-10 right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
-           <div class="absolute bottom-10 left-10 w-40 h-40 bg-yellow-400/20 rounded-full blur-2xl"></div>
+           {/* Background elements */}
+           <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-curumim-green/5 rounded-full blur-[120px] -z-10"></div>
        </section>
 
-       <!-- Embed Section -->
-       <section class="py-12 px-4 max-w-5xl mx-auto -mt-10 relative z-20">
-          <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 p-2 md:p-8">
-             <div class="bg-slate-50 rounded-2xl p-2 md:p-4">
+       {/* Form Section */}
+       <section class="py-12 px-4 pb-32 max-w-5xl mx-auto relative z-20">
+          <div class="glass-card rounded-[3rem] shadow-2xl overflow-hidden border border-white/60 p-4 md:p-12 relative">
+             <div class="absolute -top-10 -right-10 w-40 h-40 bg-curumim-cyan/10 rounded-full blur-3xl"></div>
+             
+             <div class="bg-white/40 rounded-[2rem] p-4 md:p-8 backdrop-blur-sm border border-white/40 shadow-inner">
+                 <div class="flex items-center justify-center py-8 gap-4 text-slate-400 font-black uppercase tracking-widest text-sm animate-pulse">
+                     <MousePointer2 class="w-5 h-5" />
+                     Role para preencher
+                 </div>
+                 
                  <iframe 
                     src="https://docs.google.com/forms/d/e/1FAIpQLSfvr5yyrK39GoDMZOFYwA7ngdOHmSiFKeuLL0sWL_lS_D2VAQ/viewform?embedded=true" 
                     width="100%" 
@@ -32,11 +45,30 @@ import Header from '../components/Header.astro';
                     frameborder="0" 
                     marginheight="0" 
                     marginwidth="0"
-                    class="w-full bg-white rounded-xl"
+                    class="w-full bg-white/80 rounded-2xl shadow-sm min-h-[1200px]"
                     title="Ficha de Inscrição Oficina Curumim"
                 >Carregando…</iframe>
              </div>
           </div>
+       </section>
+
+       {/* Final Note */}
+       <section class="py-24 px-4">
+            <div class="max-w-3xl mx-auto text-center space-y-8">
+                <div class="w-20 h-20 bg-curumim-yellow/20 rounded-3xl flex items-center justify-center mx-auto">
+                    <Sparkles class="w-10 h-10 text-curumim-yellow" />
+                </div>
+                <h2 class="text-3xl font-black text-slate-800">Ficou com alguma dúvida?</h2>
+                <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                    Nossa equipe está à disposição para ajudar você em cada passo do processo de inscrição.
+                </p>
+                <div class="pt-4">
+                    <a href="/contact" class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-green transition-all shadow-xl active:scale-95 group">
+                        Entre em contato
+                        <ArrowRight class="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                    </a>
+                </div>
+            </div>
        </section>
     </main>
 </Layout>

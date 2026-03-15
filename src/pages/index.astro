@@ -1,221 +1,241 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
 import { useTranslations } from '../utils/i18n';
+import ArrowRight from '@lucide/astro/icons/arrow-right';
+import Calendar from '@lucide/astro/icons/calendar';
+import MapPin from '@lucide/astro/icons/map-pin';
+import BookOpen from '@lucide/astro/icons/book-open';
+import Heart from '@lucide/astro/icons/heart';
+import Users from '@lucide/astro/icons/users';
 
 const t = useTranslations('pt-BR');
 ---
 
 <Layout title="Oficina Curumim - Português e Cultura Brasileira">
-	<Header />
 	<main>
-		{/* Hero Section with Colorful Background */}
-		{/* Hero Section with Image Background */}
-		<section class="relative overflow-hidden min-h-[85vh] flex items-center">
-            {/* Background Image with Overlay */}
+		{/* Hero Section */}
+		<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+             {/* Background Image */}
             <div class="absolute inset-0 z-0">
                 <img src="/hero.jpg" alt="Background" class="w-full h-full object-cover" />
-                <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30"></div>
             </div>
 
-            {/* Decorative circles */}
-            <div class="absolute top-20 left-10 w-32 h-32 bg-[#ea1f4b] rounded-full opacity-20 blur-2xl z-10"></div>
-            <div class="absolute bottom-20 right-10 w-40 h-40 bg-[#ed8300] rounded-full opacity-20 blur-2xl z-10"></div>
-            
+            {/* Decorative Overlay */}
+            <div class="absolute inset-0 z-0 opacity-10 bg-cover mix-blend-overlay"></div>
+
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-12 items-center">
-                    {/* Content Column */}
-                    <div class="text-left">
-                        <div class="bg-white/10 backdrop-blur-md rounded-3xl p-6 md:p-10 shadow-xl border border-white/20">
-                            <h1 class="text-3xl md:text-5xl font-black text-white mb-4 leading-tight drop-shadow-lg">
-                                No coração de Vancouver.
-                            </h1>
-                            <h2 class="text-2xl md:text-4xl font-black text-white mb-8">
-                                E com o <span class="drop-shadow-md" style="background: linear-gradient(to right, #009639, #FFD700); -webkit-background-clip: text; color: transparent;">BRASIL</span> no coração.
-                            </h2>
-                        </div>
+                <div class="max-w-3xl">
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-8 drop-shadow-lg">
+                        No coração de <span class="text-curumim-red">Vancouver</span>.
+                    </h1>
+                    <h2 class="text-2xl md:text-4xl font-bold text-slate-200 leading-relaxed mb-10 max-w-2xl">
+                        E com o <span class="bg-gradient-to-r from-curumim-green to-curumim-yellow bg-clip-text text-transparent font-black">BRASIL</span> no coração.
+                    </h2>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="/about" class="px-8 py-4 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black rounded-2xl transition-all hover:scale-[1.05] active:scale-95 shadow-lg shadow-curumim-yellow/20 flex items-center justify-center gap-2 text-lg">
+                            Conheça nossa história
+                            <ArrowRight class="w-5 h-5" />
+                        </a>
+                        <a href="/classes" class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-2xl transition-all hover:scale-[1.05] active:scale-95 border border-white/30 flex items-center justify-center gap-2 text-lg">
+                            Nossas Turmas
+                        </a>
                     </div>
-                    {/* Right column intentionally left empty to show background image */}
-                    <div></div>
                 </div>
 			</div>
 		</section>
         
-        {/* Quem somos Section - Image Placeholder Style */}
-        <section class="py-20 bg-white">
+        {/* Quem somos Section */}
+        <section class="py-24 relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-12 items-center max-w-6xl mx-auto">
-                    {/* Image Placeholder */}
-                    <div class="relative">
-                        <div class="aspect-square bg-gradient-to-br from-white to-gray-400 rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
-                    </div>
+                <div class="glass-card rounded-[3rem] p-8 md:p-16 shadow-xl border border-white/40">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div class="relative order-2 lg:order-1">
+                             <div class="aspect-square glass-card rounded-[2rem] flex items-center justify-center p-4 relative overflow-hidden">
+                                 <div class="absolute inset-0 bg-gradient-to-br from-curumim-red/5 to-curumim-purple/5"></div>
+                                 <Heart class="w-32 h-32 text-curumim-red/20 absolute -top-8 -right-8 rotate-12" />
+                                 <Users class="w-64 h-64 text-slate-200" />
+                                 <div class="absolute inset-0 flex items-center justify-center">
+                                     <span class="text-slate-400 font-black text-xl uppercase tracking-widest opacity-50">Nossa Comunidade</span>
+                                 </div>
+                             </div>
+                             <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-curumim-yellow rounded-3xl -z-10 rotate-12"></div>
+                        </div>
 
-                    {/* Content */}
-                    <div class="space-y-6">
-                        <h2 class="text-4xl md:text-5xl font-black text-[#ea1f4b]">
-                            Quem somos
-                        </h2>
-                        <p class="text-xl text-slate-700 leading-relaxed">
-                            Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da grande Vancouver. Os aspectos culturais, artísticos e sociais da cultura brasileira são utilizados como contexto para o desenvolvimento das propostas nas turmas.
-                        </p>
-                        <div>
-                            <a href="/about" class="inline-block px-8 py-3 bg-[#ea1f4b] text-white font-black text-lg rounded-full hover:bg-[#8a00aa] transition-colors duration-300">
-                                Saiba mais →
-                            </a>
+                        <div class="space-y-8 order-1 lg:order-2">
+                            <h2 class="text-4xl md:text-6xl font-black text-slate-800 leading-tight">
+                                Quem <span class="text-curumim-red">somos</span>
+                            </h2>
+                            <p class="text-xl text-slate-600 leading-relaxed font-medium">
+                                Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da grande Vancouver. 
+                            </p>
+                            <p class="text-lg text-slate-500 leading-relaxed">
+                                Os aspectos culturais, artísticos e sociais da cultura brasileira são utilizados como contexto para o desenvolvimento das propostas nas turmas.
+                            </p>
+                            <div>
+                                <a href="/about" class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-red transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
+                                    Saiba mais
+                                    <ArrowRight class="w-5 h-5" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        {/* Nossas turmas Preview - Clean Style */}
-        <section class="py-20 bg-slate-50">
+        {/* Nossas turmas Preview */}
+        <section class="py-24 relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-black text-[#2ccdff] mb-6">
-                        Nossas turmas
-                    </h2>
-                    <p class="text-xl text-slate-700 leading-relaxed max-w-3xl mx-auto mb-8">
-                        Temos turmas de crianças a partir de 6 meses até 12 anos de idade. Conheça as atividades e propostas de cada uma.
-                    </p>
-                    <a href="/classes" class="inline-block px-8 py-3 bg-[#2ccdff] text-white font-black text-lg rounded-full hover:bg-[#32bf6e] transition-colors duration-300">
-                        Saiba mais →
-                    </a>
+                <div class="glass-card rounded-[3rem] p-12 md:p-20 text-center space-y-10 border border-white/50 shadow-xl relative overflow-hidden">
+                    <div class="space-y-4">
+                        <h2 class="text-4xl md:text-6xl font-black text-slate-800">
+                            Nossas <span class="text-curumim-cyan">turmas</span>
+                        </h2>
+                        <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
+                            Temos turmas de crianças a partir de 6 meses até 12 anos de idade. Conheça as atividades e propostas de cada uma.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                         {[1, 2, 3].map(() => (
+                            <div class="glass-card p-8 rounded-3xl border border-white/60 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-left space-y-4">
+                                <div class="w-12 h-12 bg-curumim-cyan/20 rounded-2xl flex items-center justify-center">
+                                    <Users class="w-6 h-6 text-curumim-cyan" />
+                                </div>
+                                <h3 class="text-xl font-black text-slate-800">Desenvolvimento Coletivo</h3>
+                                <p class="text-slate-500 text-sm">Atividades pensadas para cada faixa etária, respeitando o tempo de cada criança.</p>
+                            </div>
+                         ))}
+                    </div>
+
+                    <div class="pt-4">
+                        <a href="/classes" class="inline-flex items-center gap-3 px-10 py-5 bg-curumim-cyan hover:bg-curumim-green text-white font-black rounded-2xl transition-all shadow-lg shadow-curumim-cyan/20 active:scale-95">
+                            Ver todas as turmas
+                            <ArrowRight class="w-6 h-6" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-		{/* Schedule & Location - Image Placeholder Style */}
-		<section class="py-20 bg-slate-50">
+		{/* Schedule & Location */}
+		<section class="py-24">
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-					<div class="flex flex-col md:flex-row gap-8 items-center">
-						{/* Image Placeholder */}
-						<div class="relative flex-shrink-0">
-							<div class="w-48 h-48 bg-gradient-to-br from-white to-gray-400 rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
-							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
-						</div>
-
-						{/* Content */}
-						<div class="space-y-4">
-							<h2 class="text-3xl font-black text-[#ea1f4b]">Horário</h2>
-							<p class="text-xl text-slate-700 font-bold">
-								Domingos das 10:00am às 12:00pm
-							</p>
-							<p class="text-slate-600 text-sm">
-								(Não há aula em finais de semana prolongados dos feriados canadenses)
-							</p>
-						</div>
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+					<div class="glass-card p-10 rounded-[2.5rem] border border-white/50 shadow-xl space-y-8 flex flex-col justify-between group">
+                        <div class="space-y-6">
+                            <div class="w-16 h-16 bg-curumim-red/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                <Calendar class="w-8 h-8 text-curumim-red" />
+                            </div>
+                            <div class="space-y-2">
+                                <h2 class="text-3xl font-black text-slate-800">Horário</h2>
+                                <p class="text-xl text-slate-600 font-bold">
+                                    Domingos das 10:00am às 12:00pm
+                                </p>
+                            </div>
+                            <p class="text-slate-400 text-sm ">
+                                (Não há aula em finais de semana prolongados dos feriados canadenses)
+                            </p>
+                        </div>
 					</div>
 
-					<div class="flex flex-col md:flex-row gap-8 items-center">
-						{/* Image Placeholder */}
-						<div class="relative flex-shrink-0">
-							<div class="w-48 h-48 bg-gradient-to-br from-white to-gray-400 rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
-							<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+					<div class="glass-card p-10 rounded-[2.5rem] border border-white/50 shadow-xl space-y-8 flex flex-col justify-between group">
+                        <div class="space-y-6">
+                            <div class="w-16 h-16 bg-curumim-green/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500">
+                                <MapPin class="w-8 h-8 text-curumim-green" />
+                            </div>
+                            <div class="space-y-2">
+                                <h2 class="text-3xl font-black text-slate-800">Localização</h2>
+                                <p class="text-xl font-bold text-slate-600 leading-snug">Mount Pleasant Neighbourhood House</p>
+                            </div>
+                            <a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-2 text-lg text-curumim-cyan hover:text-curumim-green underline font-bold transition-all decoration-2 underline-offset-4">
+                                800 E Broadway, Vancouver, BC
+                                <ArrowRight class="w-4 h-4" />
+                            </a>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		{/* Library Section */}
+		<section class="py-24 relative overflow-hidden">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="glass-card rounded-[3rem] p-8 md:p-16 border border-white/50 shadow-2xl">
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+						<div class="space-y-8">
+							<h2 class="text-4xl md:text-6xl font-black text-slate-800 leading-tight">
+								Nossa <span class="text-curumim-purple">biblioteca</span>
+							</h2>
+							<p class="text-lg text-slate-600 leading-relaxed font-medium">
+								As famílias são voluntárias para a organização, catalogação, empréstimos e conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa.
+							</p>
+							<div class="bg-gradient-to-r from-curumim-yellow/20 to-curumim-orange/20 rounded-[2rem] p-8 border border-white shadow-inner">
+                                <div class="flex items-center gap-6">
+                                    <div class="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm">
+                                        <BookOpen class="w-8 h-8 text-curumim-orange" />
+                                    </div>
+                                    <div>
+                                        <p class="text-3xl md:text-4xl font-black text-slate-800">
+                                            + de 1.000
+                                        </p>
+                                        <p class="text-slate-600 font-bold uppercase tracking-widest text-sm">títulos infantis!</p>
+                                    </div>
+                                </div>
+							</div>
 						</div>
 
-						{/* Content */}
-						<div class="space-y-4">
-							<h2 class="text-3xl font-black text-[#32bf6e]">Localização</h2>
-							<p class="text-lg font-bold text-slate-700">Mount Pleasant Neighbourhood House</p>
-							<a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" class="inline-block text-lg text-[#2ccdff] hover:text-[#32bf6e] underline font-semibold transition-colors">
-								800 E Broadway, Vancouver, BC V5T 1Y1
-							</a>
+						<div class="relative">
+                            <div class="aspect-square glass-card rounded-[2.5rem] border border-white/60 flex items-center justify-center relative overflow-hidden shadow-xl group">
+                                <img src="/logo.svg" alt="Library" class="w-1/2 opacity-20 group-hover:scale-110 transition duration-700" />
+                                <div class="absolute inset-0 bg-gradient-to-br from-curumim-purple/10 to-transparent"></div>
+                            </div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		{/* Library Section - Image Placeholder Style */}
-		<section class="py-20 bg-white">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-12 items-center max-w-6xl mx-auto">
-					{/* Content */}
-					<div class="space-y-6">
-						<h2 class="text-4xl md:text-5xl font-black text-[#8a00aa]">
-							Nossa biblioteca
-						</h2>
-						<p class="text-lg text-slate-700 leading-relaxed">
-							As famílias são voluntárias para a organização, catalogação, empréstimos e conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa. As famílias também podem escolher um título.
-						</p>
-						<p class="text-lg text-slate-700 leading-relaxed">
-							A leitura de livros, em português, é importante para a manutenção e estímulo do idioma.
-						</p>
-						<div class="bg-gradient-to-r from-[#fbcd00] to-[#ed8300] rounded-2xl p-6 shadow-lg inline-block">
-							<p class="text-2xl md:text-3xl font-black text-white text-center">
-								+ de 1000 títulos infantis!
-							</p>
-						</div>
-					</div>
-
-					{/* Image Placeholder */}
-					<div class="relative">
-						<div class="aspect-square bg-gradient-to-br from-white to-gray-400 rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
-						<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-        {/* Eventos culturais Preview - Image Placeholder Style */}
-        <section class="py-20 bg-slate-50">
+        {/* Action Sections Grid */}
+        <section class="py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-[30%_70%] gap-12 items-center max-w-6xl mx-auto">
-                    {/* Image Placeholder */}
-                    <div class="relative">
-                        <div class="aspect-square bg-gradient-to-br from-white to-gray-400 rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
-                    </div>
-
-                    {/* Content */}
-                    <div class="space-y-6">
-                        <h2 class="text-4xl md:text-5xl font-black text-[#ea1f4b]">
-                            Eventos culturais
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    {/* Eventos */}
+                    <div class="glass-card rounded-[2.5rem] p-10 md:p-16 border border-white/50 shadow-xl space-y-8 group relative overflow-hidden">
+                        <h2 class="text-4xl md:text-5xl font-black text-slate-800 leading-tight">
+                            Eventos <span class="text-curumim-red">culturais</span>
                         </h2>
-                        <p class="text-xl text-slate-700 leading-relaxed">
-                            Temos eventos culturais durante o ano todo na Oficina Curumim. Confira nosso calendário anual e não fique fora de nenhum deles.
+                        <p class="text-lg text-slate-600 font-medium">
+                            Temos eventos culturais durante o ano todo na Oficina Curumim. Confira nosso calendário anual.
                         </p>
                         <div>
-                            <a href="/events" class="inline-block px-8 py-3 bg-[#ea1f4b] text-white font-black text-lg rounded-full hover:bg-[#8a00aa] transition-colors duration-300">
-                                Calendário anual →
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Quer trabalhar conosco - Image Placeholder Style */}
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-12 items-center max-w-6xl mx-auto">
-                    {/* Content */}
-                    <div class="space-y-6">
-                        <h2 class="text-4xl md:text-5xl font-black text-[#32bf6e]">
-                            Quer trabalhar conosco?
-                        </h2>
-                        <p class="text-xl text-slate-700 leading-relaxed">
-                            Estamos sempre buscando voluntários e parceiros. Clique e saiba como fazer parte da nossa equipe.
-                        </p>
-                        <div>
-                            <a href="/jobs" class="inline-block px-8 py-3 bg-[#32bf6e] text-white font-black text-lg rounded-full hover:bg-[#2ccdff] transition-colors duration-300">
-                                Trabalhe com a gente →
+                            <a href="/events" class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-red text-white font-black rounded-2xl hover:bg-curumim-purple transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
+                                Calendário anual
+                                <ArrowRight class="w-5 h-5" />
                             </a>
                         </div>
                     </div>
 
-                    {/* Image Placeholder */}
-                    <div class="relative">
-                        <div class="aspect-square bg-gradient-to-br from-white to-gray-400 rounded-3xl shadow-2xl transform hover:scale-105 transition-transform duration-500"></div>
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+                    {/* Trabalho */}
+                    <div class="glass-card rounded-[2.5rem] p-10 md:p-16 border border-white/50 shadow-xl space-y-8 group relative overflow-hidden">
+                        <h2 class="text-4xl md:text-5xl font-black text-slate-800 leading-tight">
+                            Quer trabalhar <span class="text-curumim-green">conosco?</span>
+                        </h2>
+                        <p class="text-lg text-slate-600 font-medium">
+                            Estamos sempre buscando voluntários e parceiros apaixonados por educação e cultura.
+                        </p>
+                        <div>
+                            <a href="/jobs" class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-green text-white font-black rounded-2xl hover:bg-curumim-cyan transition-all shadow-lg hover:shadow-curumim-green/20 active:scale-95">
+                                Faça parte da equipe
+                                <ArrowRight class="w-5 h-5" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 	</main>
-
-
 </Layout>

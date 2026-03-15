@@ -1,61 +1,92 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
 import { useTranslations } from '../../utils/i18n';
+import Sparkles from '@lucide/astro/icons/sparkles';
+import ArrowRight from '@lucide/astro/icons/arrow-right';
+import BookOpen from '@lucide/astro/icons/book-open';
+import Music from '@lucide/astro/icons/music';
+import Users from '@lucide/astro/icons/users';
+import Globe from '@lucide/astro/icons/globe';
 
 const t = useTranslations('en-CA');
 ---
 
 <Layout title="Oficina Curumim - Portuguese and Brazilian Culture">
-	<Header />
 	<main>
-		<section class="relative bg-slate-50 overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-50 to-green-50 opacity-50"></div>
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative pt-20 pb-24 lg:pt-32">
-				<div class="text-center max-w-3xl mx-auto">
-					<h1 class="text-4xl tracking-tight font-extrabold text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
-						<span class="block">{t('welcome')}</span>
-						<span class="block text-blue-600 mt-2 text-3xl sm:text-4xl md:text-5xl">in Vancouver</span>
-					</h1>
-					<p class="mt-6 max-w-2xl mx-auto text-xl text-slate-600 leading-relaxed">
-						{t('mission')}
-					</p>
-					<div class="mt-10 flex justify-center gap-4">
-						<a href="/en-CA/contact" class="px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
-							Contact Us
-						</a>
-						<a href="/en-CA/about" class="px-8 py-3 border border-slate-200 text-base font-medium rounded-full text-slate-700 bg-white hover:bg-slate-50 md:py-4 md:text-lg md:px-10 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5">
-							Learn More
-						</a>
-					</div>
-				</div>
-			</div>
+		{/* Hero Section */}
+		<section class="relative pt-32 pb-24 px-4 overflow-hidden min-h-[80vh] flex items-center">
+            <div class="max-w-7xl mx-auto text-center relative z-10">
+                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+                    Welcome to <span class="text-curumim-cyan ">Vancouver's</span> Brazilian Hub
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed mb-12">
+                    Oficina Curumim is a non-profit organization dedicated to fostering Portuguese language skills and Brazilian cultural heritage for families in British Columbia.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="/en-CA/contact" class="px-10 py-5 bg-curumim-cyan hover:bg-curumim-green text-white font-black rounded-2xl transition-all hover:scale-105 active:scale-95 shadow-xl shadow-curumim-cyan/20 flex items-center gap-2">
+                        Get in Touch
+                        <ArrowRight class="w-6 h-6" />
+                    </a>
+                    <a href="/en-CA/about" class="px-10 py-5 glass-card text-slate-700 font-black rounded-2xl hover:bg-white/80 transition-all border border-white/60">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            
+            {/* Background elements */}
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-curumim-cyan/5 rounded-full blur-[120px] -z-10"></div>
 		</section>
         
-        {/* Features/Highlights Section */}
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div class="text-center group">
-                        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
-                            📚
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Portuguese Language</h3>
-                        <p class="text-slate-600">Dynamic classes focused on oral and written skills for children and youth.</p>
+        {/* Features Grid */}
+        <section class="py-24 px-4">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-card p-10 rounded-[3rem] border border-white/60 shadow-xl space-y-6 group hover:-translate-y-2 transition-all">
+                    <div class="w-16 h-16 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+                        <BookOpen class="w-8 h-8 text-curumim-cyan" />
                     </div>
-                    <div class="text-center group">
-                        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
-                            🎭
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Brazilian Culture</h3>
-                        <p class="text-slate-600">Music, art, folklore, and traditions that connect with roots.</p>
+                    <h3 class="text-2xl font-black text-slate-800">Portuguese Language</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed">Dynamic classes focused on oral and written skills for children and youth, respecting individual learning paces.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-[3rem] border border-white/60 shadow-xl space-y-6 group hover:-translate-y-2 transition-all">
+                    <div class="w-16 h-16 bg-curumim-yellow/10 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+                        <Music class="w-8 h-8 text-curumim-yellow" />
                     </div>
-                    <div class="text-center group">
-                        <div class="w-16 h-16 bg-yellow-100 text-yellow-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl group-hover:scale-110 transition-transform">
-                            🤝
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Community</h3>
-                        <p class="text-slate-600">A meeting and exchange space for Brazilian families.</p>
+                    <h3 class="text-2xl font-black text-slate-800">Brazilian Culture</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed">Music, art, folklore, and traditions that connect children with their roots and create lasting emotional bonds.</p>
+                </div>
+
+                <div class="glass-card p-10 rounded-[3rem] border border-white/60 shadow-xl space-y-6 group hover:-translate-y-2 transition-all">
+                    <div class="w-16 h-16 bg-curumim-green/10 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+                        <Users class="w-8 h-8 text-curumim-green" />
+                    </div>
+                    <h3 class="text-2xl font-black text-slate-800">Community Hub</h3>
+                    <p class="text-slate-600 font-medium leading-relaxed">A warm and vibrant meeting space for Brazilian families to connect, share experiences, and build lasting friendships.</p>
+                </div>
+            </div>
+        </section>
+
+        {/* Final CTA */}
+        <section class="py-32 px-4 relative">
+            <div class="max-w-5xl mx-auto">
+                <div class="glass-card rounded-[4rem] p-12 md:p-24 text-center space-y-10 border border-white/60 shadow-2xl relative overflow-hidden group">
+                    <div class="absolute -top-20 -right-20 w-96 h-96 bg-curumim-cyan/10 rounded-full blur-[100px] -z-10 group-hover:bg-curumim-cyan/20 transition-colors duration-1000"></div>
+                    
+                    <div class="space-y-6 relative z-10">
+                        <p class="text-curumim-cyan font-black text-xl uppercase tracking-widest animate-pulse">- Join Us -</p>
+                        <h2 class="text-4xl md:text-7xl font-black text-slate-800 leading-tight">
+                            Start your <span class="text-curumim-cyan">journey</span> with us!
+                        </h2>
+                        <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium">
+                            Experience the warmth of Brazilian hospitality and the richness of our heritage right here in BC.
+                        </p>
+                    </div>
+
+                    <div class="pt-8 relative z-10">
+                        <a href="/en-CA/contact" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-cyan hover:bg-curumim-green text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-cyan/20">
+                            Connect Today
+                            <ArrowRight class="w-8 h-8" />
+                        </a>
                     </div>
                 </div>
             </div>

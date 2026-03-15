@@ -1,14 +1,191 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
+import { Heart, Target, Lightbulb, Calendar, ShieldCheck, History, ArrowRight, Users, Globe } from 'lucide-astro';
 ---
-<Layout title="About - Oficina Curumim">
-    <Header />
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 class="text-3xl font-bold mb-4">About Us</h1>
-        <div class="prose prose-slate lg:prose-lg">
-            <p>Oficina Curumim is a non-profit organization with the mission of stimulating the use of oral and written Portuguese language, as well as valuing contact with Brazilian culture for Brazilian families in Greater Vancouver.</p>
-            <p>Cultural, artistic, and social aspects of Brazilian culture are used as context for the development of proposals in the classes.</p>
-        </div>
+
+<Layout title="About Us - Oficina Curumim">
+    <main>
+        {/* Hero Section */}
+        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
+            <div class="max-w-7xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-red font-bold text-sm shadow-sm mb-8 animate-bounce">
+                    Our Story
+                </div>
+                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-6 tracking-tight">
+                    About <span class="text-curumim-red ">Us</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
+                    Connecting Brazilian families in Vancouver through language, culture, and affection.
+                </p>
+            </div>
+            
+            {/* Background elements */}
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-curumim-red/5 rounded-full blur-[120px] -z-10"></div>
+        </section>
+
+        {/* Mission Section */}
+        <section class="py-24 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="glass-card rounded-[3rem] p-8 md:p-16 border border-white/40 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-64 h-64 bg-curumim-red/5 rounded-full blur-3xl -z-10"></div>
+                    <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-16 items-start">
+                        <div class="space-y-6">
+                            <div class="w-20 h-20 bg-curumim-red/10 rounded-3xl flex items-center justify-center">
+                                <Target class="w-10 h-10 text-curumim-red" />
+                            </div>
+                            <h2 class="text-4xl md:text-6xl font-black text-slate-800">Our <span class="text-curumim-red underline decoration-curumim-yellow/30 decoration-8 underline-offset-8">Mission</span></h2>
+                            <p class="text-xl text-slate-500 font-medium italic leading-relaxed">
+                                "We strive to ensure that every child is happy at Oficina Curumim."
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {[
+                                { 
+                                    text: "Stimulate the development of oral, reading, and writing skills in Portuguese.",
+                                    icon: Heart,
+                                    color: "text-curumim-red",
+                                    bg: "bg-curumim-red/5"
+                                },
+                                { 
+                                    text: "Provide positive emotional memories of Portuguese, respecting each child's pace.",
+                                    icon: Lightbulb,
+                                    color: "text-curumim-yellow",
+                                    bg: "bg-curumim-yellow/5"
+                                },
+                                { 
+                                    text: "Expand vocabulary and foster a sense of belonging to Brazilian origins.",
+                                    icon: Users,
+                                    color: "text-curumim-green",
+                                    bg: "bg-curumim-green/5"
+                                },
+                                { 
+                                    text: "Strengthen the relationship between language, identity, and Brazilian culture in Canada.",
+                                    icon: Globe,
+                                    color: "text-curumim-cyan",
+                                    bg: "bg-curumim-cyan/5"
+                                }
+                            ].map((item) => (
+                                <div class="glass-card p-8 rounded-3xl border border-white/60 shadow-sm hover:shadow-md transition-all group">
+                                    <div class={`w-12 h-12 ${item.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                                        <item.icon class={`w-6 h-6 ${item.color}`} />
+                                    </div>
+                                    <p class="text-slate-700 font-bold leading-relaxed">{item.text}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Pedagogical Approach */}
+        <section class="py-24 px-4">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center space-y-8">
+                    
+                    <h2 class="text-4xl md:text-6xl font-black text-slate-800">Pedagogical <span class="text-curumim-green">Approach</span></h2>
+                    <div class="glass-card p-10 md:p-16 rounded-[3rem] border border-white/60 shadow-xl relative">
+                        <div class="absolute -top-12 -left-12 w-24 h-24 bg-curumim-yellow rounded-[2rem] -z-10 rotate-12 opacity-20"></div>
+                        <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium">
+                            In a playful and participatory environment, children engage in activities related to folklore, personalities, facts, art, literature, and Brazilian stories. All activities are centered around a specific theme of study.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* Academic Year & Conduct */}
+        <section class="py-24 px-4">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-card p-12 rounded-[3rem] border border-white/50 shadow-xl space-y-6 relative overflow-hidden group">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-curumim-orange/5 rounded-full blur-3xl"></div>
+                        <div class="w-16 h-16 bg-curumim-orange/10 rounded-2xl flex items-center justify-center">
+                            <Calendar class="w-8 h-8 text-curumim-orange" />
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-800">Academic Year</h2>
+                        <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                            Classes take place during 3 terms throughout the year: 
+                            <span class="block mt-4 text-slate-800 font-bold">• January to March</span>
+                            <span class="block text-slate-800 font-bold">• April to June</span>
+                            <span class="block text-slate-800 font-bold">• September to December</span>
+                        </p>
+                    </div>
+
+                    <div class="glass-card p-12 rounded-[3rem] border border-white/50 shadow-xl space-y-6 relative overflow-hidden group">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-curumim-cyan/5 rounded-full blur-3xl"></div>
+                        <div class="w-16 h-16 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center">
+                            <ShieldCheck class="w-8 h-8 text-curumim-cyan" />
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-800">Code of Conduct</h2>
+                        <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                            To maintain an organized and safe environment for everyone, it is essential that parents and students follow our conduct guide.
+                        </p>
+                        <div class="pt-4">
+                            <a href="https://docs.google.com/document/d/1pJRK8tmHNGRAkDkY8gr9YphOaSDKs6p52fDPXJZNrOk/edit?usp=sharing" target="_blank" rel="noopener noreferrer" 
+                               class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white font-bold rounded-xl hover:bg-curumim-cyan transition-all">
+                                Access the Guide
+                                <ArrowRight class="w-4 h-4" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* History Timeline */}
+        <section class="py-24 px-4 relative overflow-hidden">
+             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-curumim-yellow/5 to-transparent -z-10"></div>
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-16 space-y-4">
+                    <div class="w-20 h-20 bg-white glass-card rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                        <History class="w-10 h-10 text-curumim-orange" />
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-black text-slate-800">Our <span class="text-curumim-orange">History</span></h2>
+                </div>
+
+                <div class="space-y-12 relative">
+                    <div class="absolute left-[2.5rem] top-0 bottom-0 w-1 bg-gradient-to-b from-curumim-yellow via-curumim-red to-curumim-purple opacity-20 hidden md:block"></div>
+                    
+                    {[
+                        { 
+                            year: "2012", 
+                            title: "October 2012", 
+                            text: "A group of families joined together to develop educational activities in Portuguese for their children.",
+                            color: "bg-curumim-yellow",
+                            iconColor: "text-curumim-yellow"
+                        },
+                        { 
+                            year: "2013", 
+                            title: "March 2013", 
+                            text: "Oficina Curumim is registered as a non-profit organization, 'Oficina Curumim Parents Society'.",
+                            color: "bg-curumim-green",
+                            iconColor: "text-curumim-green"
+                        }
+                    ].map((item) => (
+                        <div class="flex flex-col md:flex-row gap-8 relative z-10">
+                            <div class="flex-shrink-0">
+                                <div class={`w-20 h-20 ${item.color} rounded-3xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform`}>
+                                    <span class="text-xl font-black text-slate-900">{item.year}</span>
+                                </div>
+                            </div>
+                            <div class="glass-card flex-1 p-8 rounded-3xl border border-white/60 shadow-lg">
+                                <h3 class="text-2xl font-black text-slate-800 mb-2">{item.title}</h3>
+                                <p class="text-lg text-slate-600 font-medium leading-relaxed">
+                                    {item.text}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
+
+                    <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-10 md:p-16 text-center relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-curumim-red/20 via-transparent to-curumim-yellow/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        <p class="text-2xl md:text-4xl font-black text-white leading-tight relative z-10">
+                            Today, more than 10 years later, we have <span class="text-curumim-yellow underline decoration-4 underline-offset-8">over 100 children</span> growing up proud of their Brazilian roots.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 </Layout>

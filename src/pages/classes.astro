@@ -1,199 +1,180 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Sparkles from '@lucide/astro/icons/sparkles';
+import ArrowRight from '@lucide/astro/icons/arrow-right';
+
+const turmas = [
+    {
+        id: "0",
+        name: "TATUZINHOS",
+        range: ["Módulo 1: 6-18 meses", "Módulo 2: 19-30 meses"],
+        description: "Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras, sons e diferentes estímulos (visual, tátil, auditivo, motor).",
+        color: "curumim-yellow",
+        blobColor: "bg-curumim-yellow"
+    },
+    {
+        id: "1",
+        name: "ONCINHAS",
+        range: ["2,5 a 4 anos (aprox.)"],
+        description: "Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras brasileiras e estímulo para falar português.",
+        color: "curumim-green",
+        blobColor: "bg-curumim-green"
+    },
+    {
+        id: "2",
+        name: "MACAQUINHOS",
+        range: ["4 a 6 anos (aprox.)"],
+        description: "Propostas envolvendo a introdução de práticas de leitura e escrita, músicas, parlendas, contação e leitura de histórias, esquema corporal, rimas, jogos, dramatizações e leitura de imagens.",
+        color: "curumim-orange",
+        blobColor: "bg-curumim-orange"
+    },
+    {
+        id: "3",
+        name: "INDIOZINHOS",
+        range: ["6 a 8 anos (aprox.)"],
+        description: "Propostas que aproximam a criança da leitura e escrita, através da música, pequenos textos, contação e leitura de histórias, jogos, brincadeiras, dramatizações e produção de pequenos textos escritos.",
+        color: "curumim-purple",
+        blobColor: "bg-curumim-purple"
+    },
+    {
+        id: "4",
+        name: "TUCANOS",
+        range: ["8 a 12 anos (aprox.)"],
+        description: "Propostas envolvendo a compreensão da estrutura e o funcionamento básico da língua, utilizando-as em situações de comunicação oral, de leitura e de escrita. Produção formal através de diversos gêneros textuais.",
+        color: "curumim-red",
+        blobColor: "bg-curumim-red"
+    }
+];
+
+const colorMap = {
+    'curumim-yellow': {
+        text: 'text-curumim-yellow',
+        from: 'from-curumim-yellow',
+        gradient: 'from-curumim-yellow/10',
+        blob: 'bg-curumim-yellow',
+        border: 'border-curumim-yellow/20'
+    },
+    'curumim-green': {
+        text: 'text-curumim-green',
+        from: 'from-curumim-green',
+        gradient: 'from-curumim-green/10',
+        blob: 'bg-curumim-green',
+        border: 'border-curumim-green/20'
+    },
+    'curumim-orange': {
+        text: 'text-curumim-orange',
+        from: 'from-curumim-orange',
+        gradient: 'from-curumim-orange/10',
+        blob: 'bg-curumim-orange',
+        border: 'border-curumim-orange/20'
+    },
+    'curumim-purple': {
+        text: 'text-curumim-purple',
+        from: 'from-curumim-purple',
+        gradient: 'from-curumim-purple/10',
+        blob: 'bg-curumim-purple',
+        border: 'border-curumim-purple/20'
+    },
+    'curumim-red': {
+        text: 'text-curumim-red',
+        from: 'from-curumim-red',
+        gradient: 'from-curumim-red/10',
+        blob: 'bg-curumim-red',
+        border: 'border-curumim-red/20'
+    }
+};
 ---
 
 <Layout title="Nossas Turmas - Oficina Curumim">
-    <Header />
-    <main class="bg-white">
-        {/* Hero Section with Image Background */}
-        <section class="relative bg-gradient-to-br from-[#2ccdff] to-[#32bf6e] py-32 overflow-hidden">
-            <div class="absolute inset-0 bg-slate-900/40"></div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h1 class="text-5xl md:text-6xl font-black text-white mb-6 drop-shadow-lg">Nossas Turmas</h1>
-                <p class="text-xl md:text-2xl text-white/95 max-w-4xl mx-auto leading-relaxed drop-shadow">
-                    Da oralidade, despertar dos sentidos, desenvolvimento motor, compreensão individual e do coletivo, aprendizagem da fala, leitura e escrita. As fases das crianças mudam rapidamente, por isso cada turma é dividida para explorar ao máximo o potencial de cada etapa de seus filhos, sempre respeitando o tempo individual de desenvolvimento de cada criança.
+    <main>
+        {/* Hero Section */}
+        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
+            <div class="max-w-7xl mx-auto text-center relative z-10">
+                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+                    Nossas <span class="text-curumim-cyan ">Turmas</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                    Cada fase é única. Dividimos nossas turmas para explorar ao máximo o potencial de cada etapa, sempre respeitando o tempo individual de desenvolvimento de cada criança.
                 </p>
             </div>
+            
+            {/* Background elements */}
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-curumim-cyan/5 rounded-full blur-[120px] -z-10"></div>
         </section>
 
-        {/* Turma 0 - Image Left */}
-        <section class="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1">
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            {/* Placeholder - replace with actual image */}
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
-                                TATUZINHOS
+        {/* Turmas List */}
+        <section class="py-12 px-4 space-y-32 pb-32">
+            {turmas.map((turma, index) => {
+                const colors = colorMap[turma.color];
+                return (
+                    <div class="max-w-7xl mx-auto">
+                        <div class={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+                            {/* Visual Side */}
+                            <div class={`${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
+                                <div class="relative group">
+                                    <div class={`absolute -top-12 -left-12 w-24 h-24 ${colors.blob} rounded-[2rem] -z-10 rotate-12 opacity-10`}></div>
+                                    <div class={`absolute -inset-4 bg-gradient-to-tr ${colors.gradient} to-transparent rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-700`}></div>
+                                    <div class="relative aspect-video lg:aspect-square glass-card rounded-[3rem] border border-white/60 overflow-hidden shadow-2xl flex items-center justify-center p-12">
+                                        <img src="/logo.svg" alt="" class="w-1/2 opacity-10 group-hover:scale-110 transition duration-1000" />
+                                        <div class={`absolute inset-0 bg-gradient-to-br ${colors.gradient} to-transparent`}></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Text Side */}
+                            <div class={`space-y-8 relative ${index % 2 !== 0 ? 'lg:order-1' : ''}`}>
+                                <div class="space-y-4">
+                                    <div class="flex items-center gap-4">
+                                        <span class={`text-6xl font-black opacity-40 ${colors.text}`}>0{turma.id}</span>
+                                        <div class={`h-1.5 flex-1 bg-gradient-to-r ${colors.from} to-transparent rounded-full opacity-60`}></div>
+                                    </div>
+                                    <h2 class={`text-4xl md:text-6xl font-black text-slate-800`}>
+                                        {turma.name}
+                                    </h2>
+                                    <div class="flex flex-wrap gap-3">
+                                        {turma.range.map(r => (
+                                            <span class={`px-4 py-2 bg-white/40 text-slate-700 font-bold rounded-xl text-sm border ${colors.border}`}>
+                                                {r}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div class="glass-card p-8 md:p-10 rounded-3xl border border-white/60 shadow-xl relative overflow-hidden group">
+                                    <p class="text-xl text-slate-600 leading-relaxed font-medium">
+                                        {turma.description}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#fbcd00]">
-                            <h2 class="mb-4 text-[#fbcd00]">
-                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 0</span>
-                                <span class="block text-4xl md:text-5xl font-black">TATUZINHOS</span>
-                            </h2>
-                            <div class="flex flex-wrap gap-3 mb-6">
-                                <span class="px-4 py-2 bg-[#fbcd00]/10 text-[#ed8300] font-bold rounded-full text-sm">
-                                    Módulo 1: 6-18 meses (aprox.)
-                                </span>
-                                <span class="px-4 py-2 bg-[#fbcd00]/10 text-[#ed8300] font-bold rounded-full text-sm">
-                                    Módulo 2: 19-30 meses (aprox.)
-                                </span>
-                            </div>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras, sons e diferentes estímulos (visual, tátil, auditivo, motor).
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#fbcd00] to-[#ed8300] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Inscreva-se
-                            </a>
-                        </div>
+                );
+            })}
+        </section>
+
+        {/* Final CTA */}
+        <section class="py-32 px-4 relative overflow-hidden">
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[4rem] p-12 md:p-24 text-center space-y-10 relative shadow-2xl group overflow-hidden">
+                    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-curumim-cyan/20 via-transparent to-curumim-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                    
+                    <div class="space-y-6 relative z-10">
+                        <p class="text-curumim-yellow font-black text-xl uppercase tracking-widest">- Vem pra Oficina -</p>
+                        <h2 class="text-4xl md:text-7xl font-black text-white leading-tight">
+                            Cadastre seu Curumim hoje mesmo!
+                        </h2>
+                        <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">
+                            Junte-se à nossa comunidade e proporcione uma conexão profunda com as raízes brasileiras.
+                        </p>
+                    </div>
+
+                    <div class="pt-8 relative z-10">
+                        <a href="/contact" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-yellow/20">
+                            Falar com a gente
+                            <ArrowRight class="w-8 h-8" />
+                        </a>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        {/* Turma 1 - Image Right */}
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#32bf6e]">
-                            <h2 class="mb-4 text-[#32bf6e]">
-                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 1</span>
-                                <span class="block text-4xl md:text-5xl font-black">ONCINHAS</span>
-                            </h2>
-                            <span class="inline-block px-4 py-2 bg-[#32bf6e]/10 text-[#32bf6e] font-bold rounded-full text-sm mb-6">
-                                de 2,5 a 4 anos (aprox.)
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras brasileiras e estímulo para falar português.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#32bf6e] to-[#2ccdff] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Inscreva-se
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
-                                ONCINHAS
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Turma 2 - Image Left */}
-        <section class="py-20 bg-gradient-to-br from-yellow-50 to-orange-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1">
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
-                                MACAQUINHOS
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#ed8300]">
-                            <h2 class="mb-4 text-[#ed8300]">
-                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 2</span>
-                                <span class="block text-4xl md:text-5xl font-black">MACAQUINHOS</span>
-                            </h2>
-                            <span class="inline-block px-4 py-2 bg-[#ed8300]/10 text-[#ed8300] font-bold rounded-full text-sm mb-6">
-                                de 4 a 6 anos (aprox.)
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                Propostas envolvendo a introdução de práticas de leitura e escrita, músicas, parlendas, contação e leitura de histórias, esquema corporal, rimas, jogos, dramatizações, brincadeiras brasileiras, leitura de imagens.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#ed8300] to-[#ea1f4b] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Inscreva-se
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Turma 3 - Image Right */}
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#8a00aa]">
-                            <h2 class="mb-4 text-[#8a00aa]">
-                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 3</span>
-                                <span class="block text-4xl md:text-5xl font-black">INDIOZINHOS</span>
-                            </h2>
-                            <span class="inline-block px-4 py-2 bg-[#8a00aa]/10 text-[#8a00aa] font-bold rounded-full text-sm mb-6">
-                                de 6 a 8 anos (aprox.)
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                Propostas que aproximam a criança da leitura e escrita, através da música, pequenos textos, contação e leitura de histórias, jogos, brincadeiras, dramatizações, leitura de imagens, produção de pequenos textos escritos.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#8a00aa] to-[#ea1f4b] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Inscreva-se
-                            </a>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
-                                INDIOZINHOS
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* Turma 4 - Image Left */}
-        <section class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="order-2 lg:order-1">
-                        <div class="aspect-[4/3] bg-gradient-to-br from-white to-gray-400 rounded-3xl overflow-hidden shadow-2xl">
-                            <div class="w-full h-full flex items-center justify-center text-slate-500/20 text-4xl md:text-6xl font-black">
-                                TUCANOS
-                            </div>
-                        </div>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-xl border-4 border-[#ea1f4b]">
-                            <h2 class="mb-4 text-[#ea1f4b]">
-                                <span class="block text-xl font-bold opacity-90 mb-1">TURMA 4</span>
-                                <span class="block text-4xl md:text-5xl font-black">TUCANOS</span>
-                            </h2>
-                            <span class="inline-block px-4 py-2 bg-[#ea1f4b]/10 text-[#ea1f4b] font-bold rounded-full text-sm mb-6">
-                                de 8 a 12 anos (aprox.)
-                            </span>
-                            <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                                Propostas envolvendo a compreensão da estrutura e o funcionamento básico da língua, utilizando-as em situações de comunicação oral, de leitura e de escrita. Produção formal da língua, através de músicas, contação e leitura de histórias, bingos, caça-palavras, cruzadinhas, leitura de imagens e produção de textos escritos.
-                            </p>
-                            <a href="/contact" class="inline-block px-8 py-3 bg-gradient-to-r from-[#ea1f4b] to-[#8a00aa] text-white font-bold rounded-full hover:scale-105 transition-transform shadow-lg">
-                                Inscreva-se
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        {/* CTA Section */}
-        <section class="py-24 bg-gradient-to-r from-[#2ccdff] via-[#32bf6e] to-[#fbcd00] relative overflow-hidden">
-            <div class="absolute inset-0 bg-white/10"></div>
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <p class="text-2xl text-white/90 mb-4 font-semibold">- Vem pra Oficina -</p>
-                <h2 class="text-4xl md:text-5xl font-black text-white mb-8 drop-shadow-lg">
-                    Cadastre seu Curumim hoje mesmo!
-                </h2>
-                <a href="/contact" class="inline-block px-12 py-5 bg-white text-[#32bf6e] font-black text-xl rounded-full hover:scale-110 transition-transform shadow-2xl">
-                    Entre em contato
-                </a>
             </div>
         </section>
     </main>

@@ -1,54 +1,117 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Briefcase from '@lucide/astro/icons/briefcase';
+import Heart from '@lucide/astro/icons/heart';
+import Mail from '@lucide/astro/icons/mail';
+import CheckCircle from '@lucide/astro/icons/circle-check';
+import AlertCircle from '@lucide/astro/icons/circle-alert';
+import ArrowRight from '@lucide/astro/icons/arrow-right';
 ---
 
-<Layout title="Trabalhe com a Gente - Oficina Curumim">
-    <Header />
-    <main class="bg-slate-50">
+<Layout title="Trabalhe Conosco - Oficina Curumim">
+    <main>
         {/* Hero Section */}
-        <section class="bg-gradient-to-br from-blue-600 to-green-600 py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Trabalhe com a Gente</h1>
+        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
+            <div class="max-w-7xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-green font-bold text-sm shadow-sm mb-8 animate-pulse">
+                    <Briefcase class="w-4 h-4" />
+                    Oportunidades
+                </div>
+                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+                    Trabalhe <span class="text-curumim-green ">Conosco</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                    Nossa missão é feita de amor, dedicação e boa vontade. Quer nos ajudar a construir essa linda história juntos? Adoraríamos te conhecer.
+                </p>
             </div>
+            
+            {/* Background elements */}
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-curumim-green/5 rounded-full blur-[120px] -z-10"></div>
         </section>
 
-        {/* Content */}
-        <section class="py-20">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-slate-100">
-                    <p class="text-lg text-slate-700 leading-relaxed mb-8">
-                        Nosso corpo docente é composto por profissionais remunerados e voluntários. Ter formação pedagógica acadêmica com experiência no Brasil é sempre bom, mas não obrigatório. A Oficina Curumim, entidade sem fins lucrativos, é feita de muito amor, dedicação e boa vontade de nossos pais, parceiros e voluntários. Acha que pode nos ajudar a construir essa linda história juntos? Adoraremos te conhecer.
-                    </p>
-                    
-                    <div class="bg-blue-50 rounded-xl p-6 mb-8">
-                        <h2 class="text-2xl font-bold text-slate-900 mb-4">Como se candidatar</h2>
-                        <p class="text-lg text-slate-700 leading-relaxed mb-4">
-                            Mande um e-mail com seu currículo, nos contando um pouco de você, se deseja ser voluntário ou almeja uma posição remunerada que entraremos em contato via <a href="mailto:oficinacurumim@gmail.com" class="text-blue-600 hover:text-blue-700 underline font-medium">oficinacurumim@gmail.com</a> passando seus dados básicos:
-                        </p>
-                        <ol class="list-decimal list-inside space-y-2 text-lg text-slate-700 ml-4">
-                            <li>nome</li>
-                            <li>telefone</li>
-                            <li>endereço</li>
-                            <li>status no Canadá (tipo de permit, P.R. ou nacionalidade canadense e a validade do seu permit ou P.R.)</li>
-                            <li>responder explicitamente a pergunta: Você tem antecedentes criminais? Sim ou Não e, caso positivo, descreva o ocorrido.</li>
-                        </ol>
+        {/* Content Section */}
+        <section class="py-12 px-4 pb-32">
+            <div class="max-w-5xl mx-auto space-y-12">
+                {/* Intro Card */}
+                <div class="glass-card rounded-[3rem] p-8 md:p-16 border border-white/60 shadow-2xl relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-40 h-40 bg-curumim-green/5 rounded-full blur-3xl group-hover:bg-curumim-green/10 transition-colors"></div>
+                    <div class="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-12 items-center">
+                        <div class="space-y-6">
+                            <p class="text-xl text-slate-600 leading-relaxed font-medium">
+                                Nosso corpo docente é composto por profissionais remunerados e voluntários. Ter formação pedagógica acadêmica com experiência no Brasil é sempre bom, mas não obrigatório. 
+                            </p>
+                            <p class="text-lg text-slate-500 leading-relaxed">
+                                A Oficina Curumim é feita por pais, parceiros e voluntários dedicados. Acha que seu perfil combina com a gente?
+                            </p>
+                        </div>
+                        <div class="relative group">
+                             <div class="aspect-square glass-card rounded-3xl flex items-center justify-center p-8 bg-curumim-green/5 group-hover:rotate-6 transition-transform duration-500">
+                                 <Heart class="w-24 h-24 text-curumim-green opacity-20" />
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Application Steps */}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-card p-10 rounded-[2.5rem] border border-white/60 shadow-xl space-y-8 relative overflow-hidden h-full">
+                        <div class="w-16 h-16 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center">
+                            <CheckCircle class="w-8 h-8 text-curumim-cyan" />
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-800">Como se candidatar</h2>
+                        <div class="space-y-4">
+                            <p class="text-slate-600 font-medium">Envie um e-mail com seu currículo para <a href="mailto:oficinacurumim@gmail.com" class="text-curumim-cyan font-bold hover:underline">oficinacurumim@gmail.com</a> incluindo os seguintes dados:</p>
+                            <ul class="space-y-3">
+                                {[
+                                    "Nome completo e telefone",
+                                    "Endereço em Vancouver",
+                                    "Status no Canadá (Permit, P.R. ou Nacionalidade)",
+                                    "Disponibilidade para domingos",
+                                    "Declaração de antecedentes criminais"
+                                ].map(item => (
+                                    <li class="flex items-center gap-3 text-slate-500 font-bold text-sm">
+                                        <div class="w-1.5 h-1.5 bg-curumim-cyan rounded-full"></div>
+                                        {item}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="border-l-4 border-yellow-500 pl-6 mb-8">
-                        <h3 class="text-xl font-bold text-slate-900 mb-4">Considerações importantes:</h3>
-                        <ul class="space-y-3 text-lg text-slate-700">
-                            <li>• É importante a disponibilidade do voluntário ou professor para todos os domingos onde ocorre a Oficina ou um de seus eventos - temos vagas para voluntariado além da sala de aula! A Oficina precisa de ajuda para voluntários de biblioteca, eventos etc.</li>
-                            <li>• A Oficina Curumim NÃO faz qualquer tipo de visto de imigração</li>
-                            <li>• Profissionais que trabalham aqui, sejam remunerados ou voluntários, NÃO se enquadram em nenhum NOC.</li>
-                            <li>• Se o seu foco é trabalhar para adquirir experiência canadense para fins de imigração, aqui NÃO é o lugar recomendado para o seu caso.</li>
+                    <div class="glass-card p-10 rounded-[2.5rem] border border-white/60 shadow-xl space-y-8 relative overflow-hidden h-full">
+                        <div class="w-16 h-16 bg-curumim-yellow/10 rounded-2xl flex items-center justify-center">
+                            <AlertCircle class="w-8 h-8 text-curumim-yellow" />
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-800">Notas Importantes</h2>
+                        <ul class="space-y-4">
+                             {[
+                                "Disponibilidade para domingos e eventos",
+                                "Vagas para biblioteca, eventos e mais",
+                                "Não realizamos vistos de imigração",
+                                "Experiência não válida para fins de NOC/PR",
+                                "Foco em educação e herança cultural"
+                             ].map(item => (
+                                <li class="flex items-start gap-3 text-slate-500 font-medium text-sm">
+                                    <AlertCircle class="w-4 h-4 text-curumim-yellow flex-shrink-0 mt-0.5" />
+                                    {item}
+                                </li>
+                             ))}
                         </ul>
                     </div>
+                </div>
 
-                    <div class="text-center">
-                        <a href="mailto:oficinacurumim@gmail.com" class="inline-block px-10 py-4 bg-gradient-to-r from-blue-600 to-green-600 text-white font-bold rounded-full hover:from-blue-700 hover:to-green-700 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-lg">
-                            Enviar candidatura
-                        </a>
+                {/* Final CTA */}
+                <div class="text-center pt-8">
+                    <div class="glass-card inline-block p-10 md:p-16 rounded-[4rem] border border-white/60 shadow-2xl relative overflow-hidden group max-w-3xl w-full">
+                        <div class="absolute inset-0 bg-gradient-to-br from-curumim-green/5 to-transparent"></div>
+                        <div class="space-y-8 relative z-10">
+                            <h2 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight">Preparado para fazer <span class="text-curumim-green">parte da equipe?</span></h2>
+                            <p class="text-slate-500 font-medium max-w-xl mx-auto">Mande seu currículo agora e vamos construir o futuro da nossa comunidade juntos.</p>
+                            <a href="mailto:oficinacurumim@gmail.com" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-green hover:bg-curumim-cyan text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-curumim-green/20">
+                                Enviar Candidatura
+                                <Mail class="w-7 h-7" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,47 +1,91 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import Handshake from '@lucide/astro/icons/handshake';
+import Mail from '@lucide/astro/icons/mail';
+import Lightbulb from '@lucide/astro/icons/lightbulb';
+import Users from '@lucide/astro/icons/users';
 ---
 
 <Layout title="Parcerias - Oficina Curumim">
-    <Header />
-    <main class="bg-slate-50">
+    <main>
         {/* Hero Section */}
-        <section class="bg-gradient-to-br from-blue-600 to-green-600 py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Parcerias</h1>
+        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
+            <div class="max-w-7xl mx-auto text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-purple font-bold text-sm shadow-sm mb-8 animate-pulse">
+                    <Handshake class="w-4 h-4" />
+                    Colaboração
+                </div>
+                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+                    Nossas <span class="text-curumim-purple ">Parcerias</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                    Acreditamos que grandes conquistas são frutos de esforços coletivos. Juntos, podemos fortalecer a cultura brasileira em Vancouver.
+                </p>
             </div>
+            
+            {/* Background elements */}
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[600px] bg-curumim-purple/5 rounded-full blur-[120px] -z-10"></div>
         </section>
 
-        {/* Content */}
-        <section class="py-20">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-slate-100">
-                    <p class="text-xl text-slate-700 leading-relaxed mb-8">
-                        A Oficina Curumim é uma organização sem fins lucrativos, comprometida em promover o desenvolvimento infantil da nossa língua portuguesa por meio de atividades educativas e lúdicas.
-                    </p>
-                    
-                    <p class="text-xl text-slate-700 leading-relaxed mb-12">
-                        Estamos abertos a discutir parcerias com empresas e pessoas físicas que compartilham de nossa missão e desejam contribuir para o desenvolvimento cultural das nossas crianças.
-                    </p>
-
-                    <div class="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-8 mb-12">
-                        <h2 class="text-2xl font-bold text-slate-900 mb-6">Mas como funciona?</h2>
-                        <p class="text-lg text-slate-700 leading-relaxed mb-6">
-                            Acreditamos que uma parceria de sucesso é aquela em que ambas as partes se beneficiam mutuamente. Valorizamos a colaboração e o trabalho em equipe, buscando criar sinergias e maximizar o impacto positivo de nossas ações.
+        {/* Content Section */}
+        <section class="py-12 px-4 pb-32">
+            <div class="max-w-5xl mx-auto space-y-12">
+                {/* Intro Card */}
+                <div class="glass-card rounded-[3rem] p-8 md:p-16 border border-white/60 shadow-2xl relative overflow-hidden group">
+                    <div class="absolute -top-10 -right-10 w-64 h-64 bg-curumim-purple/5 rounded-full blur-3xl group-hover:bg-curumim-purple/10 transition-colors"></div>
+                    <div class="space-y-8 relative z-10">
+                        <p class="text-2xl text-slate-700 leading-relaxed font-black">
+                            A Oficina Curumim é uma organização sem fins lucrativos, comprometida em promover o desenvolvimento infantil por meio de atividades educativas e lúdicas.
                         </p>
-                        <p class="text-lg text-slate-700 leading-relaxed">
-                            Estamos abertos a discutir diferentes formas de parceria que queiram se associar à Oficina Curumim, seja por meio de apoio financeiro, livros, material de aulas, compartilhamento de recursos computacionais ou outras formas de colaboração.
+                        <p class="text-xl text-slate-500 font-medium leading-relaxed">
+                            Estamos abertos a discutir parcerias com empresas e pessoas físicas que compartilham de nossa missão e desejam contribuir para o desenvolvimento cultural das nossas crianças.
+                        </p>
+                    </div>
+                </div>
+
+                {/* Features Grid */}
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-card p-10 rounded-[2.5rem] border border-white/60 shadow-xl space-y-6 group">
+                        <div class="w-16 h-16 bg-curumim-yellow/10 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+                            <Lightbulb class="w-8 h-8 text-curumim-yellow" />
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-800">Como funciona?</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed">
+                            Acreditamos que uma parceria de sucesso é aquela em que ambas as partes se beneficiam mutuamente. Valorizamos a colaboração e o trabalho em equipe, buscando criar sinergias e maximizar o impacto positivo.
                         </p>
                     </div>
 
-                    <div class="bg-blue-600 rounded-2xl p-8 text-center">
-                        <p class="text-xl text-white mb-6">
-                            Se você ou sua empresa estão interessados em se juntar a nós nesse trabalho, entre em contato conosco através do <a href="mailto:oficinacurumim@gmail.com" class="underline hover:text-blue-100 font-bold">oficinacurumim@gmail.com</a> com sua proposta!
+                    <div class="glass-card p-10 rounded-[2.5rem] border border-white/60 shadow-xl space-y-6 group">
+                        <div class="w-16 h-16 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+                            <Users class="w-8 h-8 text-curumim-cyan" />
+                        </div>
+                        <h2 class="text-3xl font-black text-slate-800">Formas de Apoio</h2>
+                        <p class="text-slate-600 font-medium leading-relaxed">
+                            Estamos abertos a diferentes formas de colaboração: apoio financeiro, doação de livros, material didático, recursos computacionais ou compartilhamento de expertises.
                         </p>
-                        <a href="mailto:oficinacurumim@gmail.com" class="inline-block px-10 py-4 bg-white text-blue-600 font-bold rounded-full hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 text-lg">
-                            Enviar proposta
-                        </a>
+                    </div>
+                </div>
+
+                {/* Final CTA */}
+                <div class="pt-8">
+                    <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[4rem] p-12 md:p-20 text-center space-y-10 relative shadow-2xl group overflow-hidden">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-curumim-purple/20 via-transparent to-curumim-cyan/20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+                        
+                        <div class="space-y-6 relative z-10">
+                            <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">
+                                Interessado em se <span class="text-curumim-purple underline decoration-white/20 decoration-4 underline-offset-8">juntar a nós?</span>
+                            </h2>
+                            <p class="text-slate-400 text-lg md:text-xl max-w-xl mx-auto font-medium">
+                                Envie sua proposta e vamos conversar sobre como podemos impactar positivamente nossa comunidade.
+                            </p>
+                        </div>
+
+                        <div class="pt-8 relative z-10">
+                            <a href="mailto:oficinacurumim@gmail.com" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-purple hover:bg-curumim-cyan text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-purple/20">
+                                Enviar Proposta
+                                <Mail class="w-8 h-8" />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
