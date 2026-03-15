@@ -1,10 +1,10 @@
 import ptBR from '../locales/pt-BR/translation.json';
 
-export const languages = {
+const languages = {
   'pt-BR': 'Português',
 };
 
-export const defaultLang = 'pt-BR';
+const defaultLang = 'pt-BR';
 
 export const ui = {
   'pt-BR': ptBR,

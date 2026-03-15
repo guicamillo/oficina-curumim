@@ -4,8 +4,7 @@ import ClipboardCheck from '@lucide/astro/icons/circle-check';
 import Sparkles from '@lucide/astro/icons/sparkles';
 import ArrowRight from '@lucide/astro/icons/arrow-right';
 import MousePointer2 from '@lucide/astro/icons/mouse-pointer-2';
-
-const base = import.meta.env.BASE_URL;
+import { withBase } from '../utils/paths';
 ---
 
 <Layout title="Ficha de Inscrição | Oficina Curumim">
@@ -65,7 +64,7 @@ const base = import.meta.env.BASE_URL;
                     Nossa equipe está à disposição para ajudar você em cada passo do processo de inscrição.
                 </p>
                 <div class="pt-4">
-                    <a href={`${base}contact`} class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-green transition-all shadow-xl active:scale-95 group">
+                    <a href={withBase('contact')} class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-green transition-all shadow-xl active:scale-95 group">
                         Entre em contato
                         <ArrowRight class="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                     </a>

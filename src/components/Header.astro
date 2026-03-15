@@ -3,16 +3,16 @@ import {ClientRouter} from "astro:transitions"
 import { getLangFromUrl, useTranslations } from '../utils/i18n';
 import Menu from '@lucide/astro/icons/menu';
 import X from '@lucide/astro/icons/x';
+import { base, withBase } from '../utils/paths';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const base = import.meta.env.BASE_URL;
 const homeUrl = base;
-const aboutUrl = `${base}about`;
-const classesUrl = `${base}classes`;
-const eventsUrl = `${base}events`;
-const contactUrl = `${base}contact`;
+const aboutUrl = withBase('about');
+const classesUrl = withBase('classes');
+const eventsUrl = withBase('events');
+const contactUrl = withBase('contact');
 
 const navItems = [
   { href: homeUrl, label: t('nav.home') },
@@ -24,7 +24,6 @@ const navItems = [
 
 const currentPath = Astro.url.pathname;
 function isActive(href: string) {
-  // Ensure trailing slashes match or handle both
   const normalizedPath = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
   const normalizedHref = href.endsWith('/') ? href : `${href}/`;
   
@@ -42,7 +41,7 @@ function isActive(href: string) {
       {/* Logo */}
       <div class="flex-shrink-0">
         <a href={homeUrl} class="block transition-transform hover:scale-105 active:scale-95 duration-300">
-           <img id="logo" src={`${base}logo.svg`} alt="Oficina Curumim" class="h-12 md:h-16 w-auto" />
+           <img id="logo" src={withBase('logo.svg')} alt="Oficina Curumim" class="h-12 md:h-16 w-auto" />
         </a>
       </div>
       

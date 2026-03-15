@@ -8,6 +8,7 @@ import Users from '@lucide/astro/icons/users';
 import Heart from '@lucide/astro/icons/heart';
 import Globe from '@lucide/astro/icons/globe';
 import Star from '@lucide/astro/icons/star';
+import { withBase } from '../utils/paths';
 
 const events = [
     {
@@ -54,8 +55,6 @@ const events = [
         icon: Users
     }
 ];
-
-const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Eventos Culturais - Oficina Curumim">
@@ -63,10 +62,6 @@ const base = import.meta.env.BASE_URL;
         {/* Hero Section */}
         <section class="relative pt-32 pb-20 px-4 overflow-hidden">
             <div class="max-w-7xl mx-auto text-center relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-red font-bold text-sm shadow-sm mb-8 animate-bounce">
-                    <PartyPopper class="w-4 h-4" />
-                    Celebrações & Tradição
-                </div>
                 <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
                     Eventos <span class="text-curumim-red ">Culturais</span>
                 </h1>
@@ -111,7 +106,7 @@ const base = import.meta.env.BASE_URL;
                             </div>
 
                             <div class="pt-8">
-                                <a href={`${base}contact`} class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-all`}>
+                                <a href={withBase('contact')} class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-all`}>
                                     Saiba mais
                                     <ArrowRight class="w-4 h-4" />
                                 </a>
@@ -140,7 +135,7 @@ const base = import.meta.env.BASE_URL;
                     </div>
 
                     <div class="pt-8 relative z-10">
-                        <a href={`${base}contact`} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-red/20">
+                        <a href={withBase('contact')} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-red/20">
                             Quero me envolver
                             <ArrowRight class="w-8 h-8" />
                         </a>

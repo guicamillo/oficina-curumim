@@ -8,9 +8,9 @@ import BookOpen from '@lucide/astro/icons/book-open';
 import Heart from '@lucide/astro/icons/heart';
 import Users from '@lucide/astro/icons/users';
 import backgroundSvg from '../assets/background.svg';
+import { withBase } from '../utils/paths';
 
 const t = useTranslations('pt-BR');
-const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Oficina Curumim - Português e Cultura Brasileira">
@@ -19,7 +19,7 @@ const base = import.meta.env.BASE_URL;
 		<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
              {/* Background Image */}
             <div class="absolute inset-0 z-0">
-                <img src={`${base}hero.jpg`} alt="Background" class="w-full h-full object-cover" />
+                <img src={withBase('hero.jpg')} alt="Background" class="w-full h-full object-cover" />
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30"></div>
             </div>
 
@@ -36,11 +36,11 @@ const base = import.meta.env.BASE_URL;
                     </h2>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href={`${base}about`} class="px-8 py-4 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black rounded-2xl transition-all hover:scale-[1.05] active:scale-95 shadow-lg shadow-curumim-yellow/20 flex items-center justify-center gap-2 text-lg">
+                        <a href={withBase('about')} class="px-8 py-4 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black rounded-2xl transition-all hover:scale-[1.05] active:scale-95 shadow-lg shadow-curumim-yellow/20 flex items-center justify-center gap-2 text-lg">
                             Conheça nossa história
                             <ArrowRight class="w-5 h-5" />
                         </a>
-                        <a href={`${base}classes`} class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-2xl transition-all hover:scale-[1.05] active:scale-95 border border-white/30 flex items-center justify-center gap-2 text-lg">
+                        <a href={withBase('classes')} class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-2xl transition-all hover:scale-[1.05] active:scale-95 border border-white/30 flex items-center justify-center gap-2 text-lg">
                             Nossas Turmas
                         </a>
                     </div>
@@ -76,7 +76,7 @@ const base = import.meta.env.BASE_URL;
                                 Os aspectos culturais, artísticos e sociais da cultura brasileira são utilizados como contexto para o desenvolvimento das propostas nas turmas.
                             </p>
                             <div>
-                                <a href={`${base}about`} class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-red transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
+                                <a href={withBase('about')} class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-red transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
                                     Saiba mais
                                     <ArrowRight class="w-5 h-5" />
                                 </a>
@@ -113,7 +113,7 @@ const base = import.meta.env.BASE_URL;
                     </div>
 
                     <div class="pt-4">
-                        <a href={`${base}classes`} class="inline-flex items-center gap-3 px-10 py-5 bg-curumim-cyan hover:bg-curumim-green text-white font-black rounded-2xl transition-all shadow-lg shadow-curumim-cyan/20 active:scale-95">
+                        <a href={withBase('classes')} class="inline-flex items-center gap-3 px-10 py-5 bg-curumim-cyan hover:bg-curumim-green text-white font-black rounded-2xl transition-all shadow-lg shadow-curumim-cyan/20 active:scale-95">
                             Ver todas as turmas
                             <ArrowRight class="w-6 h-6" />
                         </a>
@@ -173,7 +173,7 @@ const base = import.meta.env.BASE_URL;
 								Nossa <span class="text-curumim-purple">biblioteca</span>
 							</h2>
 							<p class="text-lg text-slate-600 leading-relaxed font-medium">
-								As famílias são voluntárias para a organização, catalogação, empréstimos e conferência do acervo. A criança é incentivada a escolher un livro por semana e fazer a leitura con a família em casa.
+								As famílias são voluntárias para a organização, catalogação, empréstimos e conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa.
 							</p>
 							<div class="bg-gradient-to-r from-curumim-yellow/20 to-curumim-orange/20 rounded-[2rem] p-8 border border-white shadow-inner">
                                 <div class="flex items-center gap-6">
@@ -192,7 +192,7 @@ const base = import.meta.env.BASE_URL;
 
 						<div class="relative">
                             <div class="aspect-square glass-card rounded-[2.5rem] border border-white/60 flex items-center justify-center relative overflow-hidden shadow-xl group">
-                                <img src={`${base}logo.svg`} alt="Library" class="w-1/2 opacity-20 group-hover:scale-110 transition duration-700" />
+                                <img src={withBase('logo.svg')} alt="Library" class="w-1/2 opacity-20 group-hover:scale-110 transition duration-700" />
                                 <div class="absolute inset-0 bg-gradient-to-br from-curumim-purple/10 to-transparent"></div>
                             </div>
 						</div>
@@ -214,7 +214,7 @@ const base = import.meta.env.BASE_URL;
                             Temos eventos culturais durante o ano todo na Oficina Curumim. Confira nosso calendário anual.
                         </p>
                         <div>
-                            <a href={`${base}events`} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-red text-white font-black rounded-2xl hover:bg-curumim-purple transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
+                            <a href={withBase('events')} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-red text-white font-black rounded-2xl hover:bg-curumim-purple transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
                                 Calendário anual
                                 <ArrowRight class="w-5 h-5" />
                             </a>
@@ -230,7 +230,7 @@ const base = import.meta.env.BASE_URL;
                             Estamos sempre buscando voluntários e parceiros apaixonados por educação e cultura.
                         </p>
                         <div>
-                            <a href={`${base}jobs`} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-green text-white font-black rounded-2xl hover:bg-curumim-cyan transition-all shadow-lg hover:shadow-curumim-green/20 active:scale-95">
+                            <a href={withBase('jobs')} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-green text-white font-black rounded-2xl hover:bg-curumim-cyan transition-all shadow-lg hover:shadow-curumim-green/20 active:scale-95">
                                 Faça parte da equipe
                                 <ArrowRight class="w-5 h-5" />
                             </a>

@@ -3,18 +3,18 @@ import { getLangFromUrl, useTranslations } from '../utils/i18n';
 import Instagram from '@lucide/astro/icons/instagram';
 import Facebook from '@lucide/astro/icons/facebook';
 import Mail from '@lucide/astro/icons/mail';
+import { base, withBase } from '../utils/paths';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const base = import.meta.env.BASE_URL;
 const homeUrl = base;
-const aboutUrl = `${base}about`;
-const classesUrl = `${base}classes`;
-const eventsUrl = `${base}events`;
-const jobsUrl = `${base}jobs`;
-const partnershipsUrl = `${base}partnerships`;
-const contactUrl = `${base}contact`;
+const aboutUrl = withBase('about');
+const classesUrl = withBase('classes');
+const eventsUrl = withBase('events');
+const jobsUrl = withBase('jobs');
+const partnershipsUrl = withBase('partnerships');
+const contactUrl = withBase('contact');
 ---
 
 <footer class="glass-footer mt-auto relative overflow-hidden">
@@ -28,7 +28,7 @@ const contactUrl = `${base}contact`;
             <div class="flex flex-col items-center lg:items-start space-y-10">
                 <!-- Logo -->
                 <a href={homeUrl} class="hover:scale-105 transition-transform duration-300">
-                    <img src={`${base}logo.svg`} alt="Oficina Curumim" class="h-28 w-auto" />
+                    <img src={withBase('logo.svg')} alt="Oficina Curumim" class="h-28 w-auto" />
                 </a>
                 
                 <div class="space-y-6 text-center lg:text-left">

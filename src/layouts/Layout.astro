@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { getLangFromUrl } from '../utils/i18n';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
+import { withBase } from '../utils/paths';
 
 interface Props {
 	title: string;
@@ -19,7 +20,7 @@ const lang = getLangFromUrl(Astro.url);
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}selo.png`} />
+		<link rel="icon" type="image/png" href={withBase('selo.png')} />
 		<meta name="generator" content={Astro.generator} />
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
