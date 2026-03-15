@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "npm run cleanup && astro build",
+    "build": "bun run cleanup && astro build",
     "cleanup": "knip --fix --allow-remove-files",
     "preview": "astro preview",
     "astro": "astro"
