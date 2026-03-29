@@ -61,6 +61,10 @@
   --color-orange-400: #ed8300;
   --color-orange-500: #f97316;
   --color-orange-600: #ea580c;
+
+  /* Use variables to bypass potential minifier stripping of backdrop-filter */
+  --glass-blur: blur(16px);
+  --glass-blur-card: blur(12px);
 }
 
 /* Base Styles */
@@ -103,23 +107,23 @@ body::before {
 /* Glassmorphism utility classes */
 .glass-card {
   background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: var(--glass-blur-card);
+  backdrop-filter: var(--glass-blur-card);
   border: 1px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
 }
 
 .glass-header {
   background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .glass-footer {
   background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: var(--glass-blur-card);
+  backdrop-filter: var(--glass-blur-card);
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
