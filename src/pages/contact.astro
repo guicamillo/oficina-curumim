@@ -10,6 +10,14 @@ import ArrowRight from '@lucide/astro/icons/arrow-right';
 const base = import.meta.env.BASE_URL;
 ---
 <Layout title="Contato - Oficina Curumim">
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+    </head>
     <main>
         {/* Hero Section */}
         <section class="relative pt-32 pb-20 px-4 overflow-hidden">
@@ -52,21 +60,20 @@ const base = import.meta.env.BASE_URL;
                         </div>
 
                         {/* Location Card */}
-                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:-translate-y-1 transition-all duration-300">
-                            <div class="space-y-6">
+                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:-translate-y-1 transition-all duration-300 overflow-hidden relative">
+                            <div class="space-y-6 relative z-10">
                                 <div class="w-14 h-14 bg-curumim-green/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
                                     <MapPin class="w-7 h-7 text-curumim-green" />
                                 </div>
                                 <div class="space-y-2">
                                     <h3 class="text-xl font-black text-slate-800 tracking-tight">Onde estamos</h3>
                                     <p class="text-lg text-slate-600 font-bold leading-snug">Mount Pleasant Neighbourhood House</p>
-                                    <a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" 
-                                       class="inline-flex items-center gap-2 text-sm text-curumim-green hover:underline font-bold decoration-2 underline-offset-4">
+                                    <span class="inline-flex items-center gap-2 text-sm text-curumim-green font-bold">
                                         800 E Broadway, Vancouver, BC
-                                        <ArrowRight class="w-3 h-3" />
-                                    </a>
+                                    </span>
                                 </div>
                             </div>
+                            <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-curumim-green/5 rounded-full blur-3xl group-hover:bg-curumim-green/10 transition-colors"></div>
                         </div>
 
                         {/* Mailing Card */}
@@ -140,16 +147,109 @@ const base = import.meta.env.BASE_URL;
         {/* Interactive Map */}
         <section class="pb-32 px-4">
             <div class="max-w-7xl mx-auto">
-                <div class="glass-card rounded-[4rem] aspect-[21/9] md:aspect-[3/1] border border-white/60 overflow-hidden shadow-2xl relative">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2603.684128522718!2d-123.0917393234954!3d49.2623147713898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548671607f235555%3A0x633630f4094038a3!2sMount%20Pleasant%20Neighbourhood%20House!5e0!3m2!1spt-BR!2sca!4v1710526000000!5m2!1spt-BR!2sca" 
-                        class="w-full h-full border-0 grayscale hover:grayscale-0 transition-all duration-700"
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <div class="glass-card rounded-[4rem] h-[500px] md:h-[600px] border border-white/60 overflow-hidden shadow-2xl relative">
+                    <div id="map" class="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"></div>
+                    
+                    {/* Custom Legend/Overlay */}
+                    <div class="absolute bottom-8 left-8 z-[1000] pointer-events-none">
+                        <div class="glass-card px-6 py-4 rounded-3xl border border-white/60 shadow-xl backdrop-blur-md">
+                            <p class="font-black text-slate-800">Oficina Curumim</p>
+                            <p class="text-sm text-slate-600 font-bold">Mount Pleasant Neighbourhood House</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 </Layout>
+
+<style is:global>
+    .leaflet-container {
+        background-color: #f8fafc !important;
+    }
+    .custom-div-icon {
+        background: none;
+        border: none;
+    }
+    .marker-pin {
+        width: 48px;
+        height: 48px;
+        border-radius: 50% 50% 50% 0;
+        background: var(--color-curumim-orange);
+        position: absolute;
+        transform: rotate(-45deg);
+        left: 50%;
+        top: 50%;
+        margin: -24px 0 0 -24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(237, 131, 0, 0.4);
+        border: 4px solid white;
+    }
+    .marker-pin::after {
+        content: '';
+        width: 16px;
+        height: 16px;
+        margin: 8px 0 0 8px;
+        background: white;
+        position: absolute;
+        border-radius: 50%;
+        top: 6px;
+        left: 6px;
+    }
+    .marker-pin-pulse {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -24px 0 0 -24px;
+        width: 48px;
+        height: 48px;
+        background: var(--color-curumim-orange);
+        border-radius: 50%;
+        opacity: 0.4;
+        animation: pulse-marker 2s infinite ease-out;
+    }
+    @keyframes pulse-marker {
+        0% { transform: scale(1); opacity: 0.4; }
+        100% { transform: scale(2.5); opacity: 0; }
+    }
+</style>
+
+<script is:inline>
+    function initMap() {
+        const coords = [49.2623, -123.0917]; // Mount Pleasant Neighbourhood House
+        const map = L.map('map', {
+            zoomControl: false,
+            scrollWheelZoom: false
+        }).setView(coords, 16);
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; OpenStreetMap'
+        }).addTo(map);
+
+        L.control.zoom({
+            position: 'bottomright'
+        }).addTo(map);
+
+        const customIcon = L.divIcon({
+            className: 'custom-div-icon',
+            html: `<div class="marker-pin-pulse"></div><div class="marker-pin"></div>`,
+            iconSize: [48, 48],
+            iconAnchor: [24, 48]
+        });
+
+        const marker = L.marker(coords, { icon: customIcon }).addTo(map);
+        
+        // Disable scroll zoom but keep draggable
+        map.on('focus', () => { map.scrollWheelZoom.enable(); });
+        map.on('blur', () => { map.scrollWheelZoom.disable(); });
+    }
+
+    // Initialize map after script loads
+    if (typeof L !== 'undefined') {
+        initMap();
+    } else {
+        window.addEventListener('load', initMap);
+    }
+</script>
