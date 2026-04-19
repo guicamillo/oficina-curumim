@@ -11,6 +11,8 @@ import backgroundSvg from '../assets/background.svg';
 import bibliotecaImg1 from '../assets/img/biblioteca_1.jpeg';
 import bibliotecaImg2 from '../assets/img/biblioteca_2.jpeg';
 import bibliotecaImg3 from '../assets/img/biblioteca_3.jpeg';
+import heroImg2 from '../assets/img/hero_2.jpeg';
+import heroImg3 from '../assets/img/hero_3.jpeg';
 import { Image } from 'astro:assets';
 import { withBase } from '../utils/paths';
 
@@ -18,6 +20,9 @@ const t = useTranslations('pt-BR');
 
 const bibliotecaImages = [bibliotecaImg1, bibliotecaImg2, bibliotecaImg3];
 const randomBibliotecaImg = bibliotecaImages[Math.floor(Math.random() * bibliotecaImages.length)];
+
+const heroImages = [heroImg2, heroImg3];
+const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
 ---
 
 <Layout title="Oficina Curumim - Português e Cultura Brasileira">
@@ -26,7 +31,7 @@ const randomBibliotecaImg = bibliotecaImages[Math.floor(Math.random() * bibliote
 		<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
              {/* Background Image */}
             <div class="absolute inset-0 z-0">
-                <img src={withBase('hero.jpg')} alt="Background" class="w-full h-full object-cover" />
+                <Image src={randomHeroImg} alt="Background" class="w-full h-full object-cover" loading="eager" />
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30"></div>
             </div>
 
