@@ -95,24 +95,28 @@ function isActive(href: string) {
 </header>
 
 <script>
-    const button = document.getElementById('mobile-menu-button');
-    const menu = document.getElementById('mobile-menu');
-    const menuIcon = document.getElementById('menu-icon');
-    const closeIcon = document.getElementById('close-icon');
+    function initMobileMenu() {
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
 
-    button?.addEventListener('click', () => {
-        menu?.classList.toggle('hidden');
-        menuIcon?.classList.toggle('hidden');
-        closeIcon?.classList.toggle('hidden');
-    });
-
-    // Close menu when clicking a link
-    const links = menu?.querySelectorAll('a');
-    links?.forEach(link => {
-        link.addEventListener('click', () => {
-            menu?.classList.add('hidden');
-            menuIcon?.classList.remove('hidden');
-            closeIcon?.classList.add('hidden');
+        button?.addEventListener('click', () => {
+            menu?.classList.toggle('hidden');
+            menuIcon?.classList.toggle('hidden');
+            closeIcon?.classList.toggle('hidden');
         });
-    });
+
+        // Close menu when clicking a link
+        const links = menu?.querySelectorAll('a');
+        links?.forEach(link => {
+            link.addEventListener('click', () => {
+                menu?.classList.add('hidden');
+                menuIcon?.classList.remove('hidden');
+                closeIcon?.classList.add('hidden');
+            });
+        });
+    }
+
+    document.addEventListener('astro:page-load', initMobileMenu);
 </script>
