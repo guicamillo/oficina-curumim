@@ -8,9 +8,16 @@ import BookOpen from '@lucide/astro/icons/book-open';
 import Heart from '@lucide/astro/icons/heart';
 import Users from '@lucide/astro/icons/users';
 import backgroundSvg from '../assets/background.svg';
+import bibliotecaImg1 from '../assets/img/biblioteca_1.jpeg';
+import bibliotecaImg2 from '../assets/img/biblioteca_2.jpeg';
+import bibliotecaImg3 from '../assets/img/biblioteca_3.jpeg';
+import { Image } from 'astro:assets';
 import { withBase } from '../utils/paths';
 
 const t = useTranslations('pt-BR');
+
+const bibliotecaImages = [bibliotecaImg1, bibliotecaImg2, bibliotecaImg3];
+const randomBibliotecaImg = bibliotecaImages[Math.floor(Math.random() * bibliotecaImages.length)];
 ---
 
 <Layout title="Oficina Curumim - Português e Cultura Brasileira">
@@ -192,19 +199,17 @@ const t = useTranslations('pt-BR');
 
 <div class="relative">
                              <div class="aspect-square glass-card rounded-[2.5rem] border border-white/60 flex items-center justify-center relative overflow-hidden shadow-xl group">
-                                 <img src={withBase('img/biblioteca_1.jpeg')} alt="Library" class="biblioteca-img group-hover:scale-110 transition duration-700" />
+                                 <Image 
+                                    src={randomBibliotecaImg} 
+                                    alt="Library"
+                                    loading="eager" 
+                                    widths={[400, 800, 1200, bibliotecaImages[0].width]} 
+                                    sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
+                                    class="biblioteca-img group-hover:scale-110 transition duration-700"
+                                 />
                                  <div class="absolute inset-0 bg-gradient-to-br from-curumim-purple/5 to-transparent"></div>
                              </div>
-                             
 						</div>
-
-						<script>
-							const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
-							const images = [`${baseUrl}img/biblioteca_1.jpeg`, `${baseUrl}img/biblioteca_2.jpeg`, `${baseUrl}img/biblioteca_3.jpeg`];
-							const index = Math.floor(Math.random() * images.length);
-							const img = document.querySelector('.biblioteca-img')!;
-							img.src = images[index];
-						</script>
 					</div>
 				</div>
 			</div>
