@@ -190,12 +190,21 @@ const t = useTranslations('pt-BR');
 							</div>
 						</div>
 
-						<div class="relative">
-                            <div class="aspect-square glass-card rounded-[2.5rem] border border-white/60 flex items-center justify-center relative overflow-hidden shadow-xl group">
-                                <img src={withBase('logo.svg')} alt="Library" class="w-1/2 opacity-20 group-hover:scale-110 transition duration-700" />
-                                <div class="absolute inset-0 bg-gradient-to-br from-curumim-purple/10 to-transparent"></div>
-                            </div>
+<div class="relative">
+                             <div class="aspect-square glass-card rounded-[2.5rem] border border-white/60 flex items-center justify-center relative overflow-hidden shadow-xl group">
+                                 <img src={withBase('img/biblioteca_1.jpeg')} alt="Library" class="biblioteca-img group-hover:scale-110 transition duration-700" />
+                                 <div class="absolute inset-0 bg-gradient-to-br from-curumim-purple/5 to-transparent"></div>
+                             </div>
+                             
 						</div>
+
+						<script>
+							const baseUrl = import.meta.env.BASE_URL;
+							const images = [`${baseUrl}img/biblioteca_1.jpeg`, `${baseUrl}img/biblioteca_2.jpeg`, `${baseUrl}img/biblioteca_3.jpeg`];
+							const index = Math.floor(Math.random() * images.length);
+							const img = document.querySelector('.biblioteca-img')!;
+							img.src = images[index];
+						</script>
 					</div>
 				</div>
 			</div>
