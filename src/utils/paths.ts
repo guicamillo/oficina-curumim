@@ -5,6 +5,6 @@ export function withBase(path: string) {
     return `${base}/${normalizedPath}`;
 }
 
-export function cycleRandomImage<T>(images: T[]): T {
+function cycleRandomImage<T>(images: T[]): T {
     return images[Math.floor(Math.random() * images.length)];
 }

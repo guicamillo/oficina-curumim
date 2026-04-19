@@ -11,6 +11,7 @@ import backgroundSvg from '../assets/background.svg';
 import bibliotecaImg1 from '../assets/img/biblioteca_1.jpeg';
 import bibliotecaImg2 from '../assets/img/biblioteca_2.jpeg';
 import bibliotecaImg3 from '../assets/img/biblioteca_3.jpeg';
+import heroImg1 from '../assets/img/hero_1.jpeg';
 import heroImg2 from '../assets/img/hero_2.jpeg';
 import heroImg3 from '../assets/img/hero_3.jpeg';
 import { Image } from 'astro:assets';
@@ -21,7 +22,7 @@ const t = useTranslations('pt-BR');
 const bibliotecaImages = [bibliotecaImg1, bibliotecaImg2, bibliotecaImg3];
 const randomBibliotecaImg = bibliotecaImages[Math.floor(Math.random() * bibliotecaImages.length)];
 
-const heroImages = [heroImg2, heroImg3];
+const heroImages = [heroImg1, heroImg2, heroImg3];
 const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
 ---
 
