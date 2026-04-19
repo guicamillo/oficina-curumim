@@ -199,7 +199,7 @@ const t = useTranslations('pt-BR');
 						</div>
 
 						<script>
-							const baseUrl = import.meta.env.BASE_URL;
+							const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
 							const images = [`${baseUrl}img/biblioteca_1.jpeg`, `${baseUrl}img/biblioteca_2.jpeg`, `${baseUrl}img/biblioteca_3.jpeg`];
 							const index = Math.floor(Math.random() * images.length);
 							const img = document.querySelector('.biblioteca-img')!;
