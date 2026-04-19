@@ -114,13 +114,18 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                         {[1, 2, 3].map(() => (
+                         {[
+                             { title: "Turma Bebê", age: "6 meses - 3 anos", desc: "Primeiros passos na língua portuguesa através de músicas, histórias e brincadeiras sensoriais." },
+                             { title: "Turma Infantil", age: "4 - 6 anos", desc: "Desenvolvimento da oralidade e introdução à escrita com brincadeiras e contação de histórias." },
+                             { title: "Turma Kids", age: "7 - 12 anos", desc: "Aprofundamento da língua portuguesa com leitura, escrita e imersão na cultura brasileira." }
+                         ].map(turma => (
                             <div class="glass-card p-8 rounded-3xl border border-white/60 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-left space-y-4">
                                 <div class="w-12 h-12 bg-curumim-cyan/20 rounded-2xl flex items-center justify-center">
                                     <Users class="w-6 h-6 text-curumim-cyan" />
                                 </div>
-                                <h3 class="text-xl font-black text-slate-800">Desenvolvimento Coletivo</h3>
-                                <p class="text-slate-500 text-sm">Atividades pensadas para cada faixa etária, respeitando o tempo de cada criança.</p>
+                                <h3 class="text-xl font-black text-slate-800">{turma.title}</h3>
+                                <p class="text-curumim-green font-bold text-sm">{turma.age}</p>
+                                <p class="text-slate-500 text-sm">{turma.desc}</p>
                             </div>
                          ))}
                     </div>
