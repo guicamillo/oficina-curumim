@@ -79,20 +79,73 @@ const contactUrl = withBase('contact');
                         <Mail class="w-5 h-5 text-curumim-orange" />
                         Fique por dentro das novidades
                     </h3>
-                    <form class="flex flex-col sm:flex-row gap-3">
-                        <input 
-                            type="email" 
-                            placeholder="Seu melhor e-mail" 
-                            class="flex-1 px-5 py-3.5 rounded-2xl bg-white/50 border border-white/40 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-curumim-yellow/50 text-sm backdrop-blur-sm shadow-inner"
-                        />
-                        <button 
-                            type="submit" 
-                            class="px-8 py-3.5 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-bold rounded-2xl transition-all hover:scale-[1.02] active:scale-95 shadow-md shadow-curumim-yellow/20 text-sm whitespace-nowrap"
-                        >
-                            Inscrever
-                        </button>
+                    <form id="newsletter-form">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                        <input type="hidden" name="subject" value="Nova inscrição na newsletter - Oficina Curumim" />
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <input 
+                                type="email" 
+                                name="email"
+                                placeholder="Seu melhor e-mail" 
+                                required
+                                class="newsletter-input flex-1 px-5 py-3.5 rounded-2xl bg-white/50 border border-white/40 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-curumim-yellow/50 text-sm backdrop-blur-sm shadow-inner disabled:opacity-50"
+                            />
+                            <button 
+                                type="submit" 
+                                class="newsletter-btn px-8 py-3.5 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-bold rounded-2xl transition-all hover:scale-[1.02] active:scale-95 shadow-md shadow-curumim-yellow/20 text-sm whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100 flex items-center justify-center gap-2"
+                            >
+                                <span class="newsletter-btn-text">Inscrever</span>
+                                <svg class="newsletter-spinner hidden w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                            </button>
+                        </div>
                     </form>
+                    <div id="newsletter-success" class="hidden form-message-enter mt-3">
+                        <div class="glass-card rounded-[2rem] p-6 border-2 border-curumim-green bg-curumim-green/10 text-center">
+                            <svg class="w-12 h-12 text-curumim-green mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <p class="text-xl font-black text-slate-800 mb-1">Inscrição feita!</p>
+                            <p class="text-slate-600 font-medium text-sm">Fique de olho no seu e-mail.</p>
+                        </div>
+                    </div>
                 </div>
+
+                <script>
+                    document.getElementById('newsletter-form')?.addEventListener('submit', async (e) => {
+                        e.preventDefault();
+                        const form = e.target;
+                        const btn = form.querySelector('.newsletter-btn');
+                        const btnText = form.querySelector('.newsletter-btn-text');
+                        const spinner = form.querySelector('.newsletter-spinner');
+                        const input = form.querySelector('.newsletter-input');
+                        const successMsg = document.getElementById('newsletter-success');
+                        
+                        btn.disabled = true;
+                        input.disabled = true;
+                        btnText.classList.add('hidden');
+                        spinner.classList.remove('hidden');
+                        
+                        try {
+                            const formData = new FormData(form);
+                            await fetch('https://api.web3forms.com/submit', {
+                                method: 'POST',
+                                body: formData
+                            });
+                            
+                            form.classList.add('hidden');
+                            successMsg.classList.remove('hidden');
+                            successMsg.classList.add('animate-form-success');
+                        } catch {
+                            btn.disabled = false;
+                            input.disabled = false;
+                            btnText.classList.remove('hidden');
+                            spinner.classList.add('hidden');
+                        }
+                    });
+                </script>
             </div>
         </div>
         

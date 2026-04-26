@@ -96,35 +96,54 @@ const base = import.meta.env.BASE_URL;
                                     <p class="text-lg text-slate-500 font-medium">Preencha o formulário abaixo e retornaremos o quanto antes.</p>
                                 </div>
 
-                                <form class="space-y-8 flex-grow">
+                                <form id="contact-form" class="space-y-8 flex-grow">
+                                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+                                    <input type="hidden" name="subject" value="Nova mensagem do site - Oficina Curumim" />
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div class="space-y-3">
                                             <label for="name" class="block text-sm font-black text-slate-400 uppercase tracking-widest ml-4">Nome completo</label>
                                             <input type="text" id="name" name="name" 
-                                                class="w-full px-8 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner" 
+                                                class="contact-input w-full px-8 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner disabled:opacity-50" 
                                                 placeholder="Seu nome"
+                                                required
                                             />
                                         </div>
                                         <div class="space-y-3">
                                             <label for="email" class="block text-sm font-black text-slate-400 uppercase tracking-widest ml-4">Seu melhor e-mail</label>
                                             <input type="email" id="email" name="email" 
-                                                class="w-full px-8 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner"
+                                                class="contact-input w-full px-8 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner disabled:opacity-50"
                                                 placeholder="exemplo@email.com"
+                                                required
                                             />
                                         </div>
                                     </div>
                                     <div class="space-y-3">
                                         <label for="message" class="block text-sm font-black text-slate-400 uppercase tracking-widest ml-4">Como podemos ajudar?</label>
                                         <textarea id="message" name="message" rows="6" 
-                                            class="w-full px-8 py-6 rounded-[2.5rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner resize-none"
+                                            class="contact-input w-full px-8 py-6 rounded-[2.5rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner resize-none disabled:opacity-50"
                                             placeholder="Sua mensagem..."
+                                            required
                                         ></textarea>
                                     </div>
                                     
-                                    <div class="pt-4">
+                                    <div id="contact-success" class="hidden form-message-enter">
+                                        <div class="glass-card rounded-[2rem] p-12 border-2 border-curumim-green bg-curumim-green/10 text-center">
+                                            <svg class="w-16 h-16 text-curumim-green mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <p class="text-2xl font-black text-slate-800 mb-2">Mensagem enviada!</p>
+                                            <p class="text-slate-600 font-medium">Retornaremos o quanto antes.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="contact-form-content" class="pt-4">
                                         <button type="submit" 
-                                            class="w-full md:w-auto inline-flex items-center justify-center gap-4 px-12 py-6 bg-curumim-orange hover:bg-curumim-red text-white font-black text-xl rounded-[2rem] transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-curumim-orange/20 group">
-                                            Enviar Mensagem
+                                            class="contact-btn w-full md:w-auto inline-flex items-center justify-center gap-4 px-12 py-6 bg-curumim-orange hover:bg-curumim-red text-white font-black text-xl rounded-[2rem] transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-curumim-orange/20 group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100">
+                                            <span class="contact-btn-text">Enviar Mensagem</span>
+                                            <svg class="contact-spinner hidden w-6 h-6 animate-form-loading" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
                                             <Send class="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                                         </button>
                                     </div>
@@ -253,4 +272,39 @@ const base = import.meta.env.BASE_URL;
     } else {
         window.addEventListener('load', initMap);
     }
+</script>
+
+<script>
+    document.getElementById('contact-form')?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const btn = form.querySelector('.contact-btn');
+        const btnText = form.querySelector('.contact-btn-text');
+        const spinner = form.querySelector('.contact-spinner');
+        const inputs = form.querySelectorAll('.contact-input');
+        const formContent = document.getElementById('contact-form-content');
+        const successMsg = document.getElementById('contact-success');
+        
+        btn.disabled = true;
+        inputs.forEach(i => i.disabled = true);
+        btnText.classList.add('hidden');
+        spinner.classList.remove('hidden');
+        
+        try {
+            const formData = new FormData(form);
+            await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            });
+            
+            formContent.classList.add('hidden');
+            successMsg.classList.remove('hidden');
+            successMsg.classList.add('animate-form-success');
+        } catch {
+            btn.disabled = false;
+            inputs.forEach(i => i.disabled = false);
+            btnText.classList.remove('hidden');
+            spinner.classList.add('hidden');
+        }
+    });
 </script>
