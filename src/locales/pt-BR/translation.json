@@ -21,7 +21,7 @@
         },
         "schedule": {
             "title": "Horário",
-            "text": "Domingos das 10:00am às 12:00pm. (Não há aula em finais de semana prolongados dos feriados canadenses)"
+            "text": "Domingos das 10:00am às 12:00pm. (Não há aula nos fins de semana prolongados dos feriados canadenses)"
         },
         "location": {
             "title": "Localização das aulas",
@@ -32,7 +32,7 @@
             "title": "Nossa biblioteca",
             "description": "As famílias são voluntárias para a organização, catalogação, empréstimos e conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa. As famílias também podem escolher um título.",
             "note": "A leitura de livros, em português, é importante para a manutenção e estímulo do idioma.",
-            "stat": "Já contamos com + de 1000 títulos infantis."
+            "stat": "Já Contamos com mais de 1000 títulos infantis."
         },
         "features": {
             "language": {
