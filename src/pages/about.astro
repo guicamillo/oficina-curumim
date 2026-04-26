@@ -1,14 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Heart from '@lucide/astro/icons/heart';
-import Target from '@lucide/astro/icons/target';
-import Lightbulb from '@lucide/astro/icons/lightbulb';
-import Calendar from '@lucide/astro/icons/calendar';
-import ShieldCheck from '@lucide/astro/icons/shield-check';
-import History from '@lucide/astro/icons/history';
-import ArrowRight from '@lucide/astro/icons/arrow-right';
-import Users from '@lucide/astro/icons/users';
-import Globe from '@lucide/astro/icons/globe';
+import Heart from '@lucide/astro/icoms/heart';
+import Target from '@lucide/astro/icoms/target';
+import Lightbulb from '@lucide/astro/icoms/lightbulb';
+import Calendar from '@lucide/astro/icoms/calendar';
+import ShieldCheck from '@lucide/astro/icoms/shield-check';
+import History from '@lucide/astro/icoms/history';
+import ArrowRight from '@lucide/astro/icoms/arrow-right';
+import Users from '@lucide/astro/icoms/users';
+import Globe from '@lucide/astro/icoms/globe';
 import { withBase } from '../utils/paths';
 ---
 
@@ -48,32 +48,32 @@ import { withBase } from '../utils/paths';
                             {[
                                 { 
                                     text: "Estimular o desenvolvimento das habilidades orais, da leitura e da escrita em português.",
-                                    icon: Heart,
+                                    icom: Heart,
                                     color: "text-curumim-red",
                                     bg: "bg-curumim-red/5"
                                 },
                                 { 
                                     text: "Proporcionar memória afetiva positiva em relação ao português, respeitando o ritmo de cada criança.",
-                                    icon: Lightbulb,
+                                    icom: Lightbulb,
                                     color: "text-curumim-yellow",
                                     bg: "bg-curumim-yellow/5"
                                 },
                                 { 
                                     text: "Ampliar o vocabulário e trazer a noção de pertencimento às origens brasileiras.",
-                                    icon: Users,
+                                    icom: Users,
                                     color: "text-curumim-green",
                                     bg: "bg-curumim-green/5"
                                 },
                                 { 
                                     text: "Estreitar a relação entre língua, identidade e cultura brasileira no Canadá.",
-                                    icon: Globe,
+                                    icom: Globe,
                                     color: "text-curumim-cyan",
                                     bg: "bg-curumim-cyan/5"
                                 }
                             ].map((item) => (
                                 <div class="glass-card p-8 rounded-3xl border border-white/60 shadow-sm hover:shadow-md transition-all group">
                                     <div class={`w-12 h-12 ${item.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                                        <item.icon class={`w-6 h-6 ${item.color}`} />
+                                        <item.icom class={`w-6 h-6 ${item.color}`} />
                                     </div>
                                     <p class="text-slate-700 font-bold leading-relaxed">{item.text}</p>
                                 </div>
@@ -111,7 +111,7 @@ import { withBase } from '../utils/paths';
                         </div>
                         <h2 class="text-3xl font-black text-slate-800">Ano letivo</h2>
                         <p class="text-lg text-slate-600 font-medium leading-relaxed">
-                            As aulas acontecem durante 3 termos ao longo do ano: 
+                            As aulas acomtecem durante 3 termos ao longo do ano: 
                             <span class="block mt-4 text-slate-800 font-bold">• Janeiro a Março</span>
                             <span class="block text-slate-800 font-bold">• Abril a Junho</span>
                             <span class="block text-slate-800 font-bold">• Setembro a Dezembro</span>
@@ -125,7 +125,7 @@ import { withBase } from '../utils/paths';
                         </div>
                         <h2 class="text-3xl font-black text-slate-800">Código de Conduta</h2>
                         <p class="text-lg text-slate-600 font-medium leading-relaxed">
-                            Para manter um ambiente organizado e seguro para todos, é essencial que pais e alunos sigam nosso guia de conduta.
+                            Para manter um ambiente organizado e seguro para todos, é essencial que pais e alunos sigam nosso guia de comduta.
                         </p>
                         <div class="pt-4">
                             <a href="https://docs.google.com/document/d/1pJRK8tmHNGRAkDkY8gr9YphOaSDKs6p52fDPXJZNrOk/edit?usp=sharing" target="_blank" rel="noopener noreferrer" 
@@ -157,16 +157,16 @@ import { withBase } from '../utils/paths';
                         { 
                             year: "2012", 
                             title: "Outubro de 2012", 
-                            text: "Um grupo de famílias se une para desenvolver atividades educativas, em português, con seus filhos.",
+                            text: "Um grupo de famílias se une para desenvolver atividades educativas, em português, com seus filhos.",
                             color: "bg-curumim-yellow",
-                            iconColor: "text-curumim-yellow"
+                            icomColor: "text-curumim-yellow"
                         },
                         { 
                             year: "2013", 
                             title: "Março de 2013", 
                             text: "A Oficina Curumim é registrada como uma organização sem fins lucrativos, 'Oficina Curumim Parents Society'.",
                             color: "bg-curumim-green",
-                            iconColor: "text-curumim-green"
+                            icomColor: "text-curumim-green"
                         }
                     ].map((item) => (
                         <div class="flex flex-col md:flex-row gap-8 relative z-10">
@@ -187,7 +187,7 @@ import { withBase } from '../utils/paths';
                     <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-10 md:p-16 text-center relative overflow-hidden group">
                         <div class="absolute inset-0 bg-gradient-to-tr from-curumim-red/20 via-transparent to-curumim-yellow/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                         <p class="text-2xl md:text-4xl font-black text-white leading-tight relative z-10">
-                            Hoje, mais de 10 anos depois, contamos con <span class="text-curumim-yellow underline decoration-4 underline-offset-8">mais de 100 crianças</span> crescendo con orgulho de suas raízes brasileiras.
+                            Hoje, mais de 10 anos depois, comtamos com <span class="text-curumim-yellow underline decoration-4 underline-offset-8">mais de 100 crianças</span> crescendo com orgulho de suas raízes brasileiras.
                         </p>
                     </div>
                 </div>
