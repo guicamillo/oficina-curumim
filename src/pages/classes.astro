@@ -3,12 +3,12 @@ import Layout from '../layouts/Layout.astro';
 import Sparkles from '@lucide/astro/icons/sparkles';
 import ArrowRight from '@lucide/astro/icons/arrow-right';
 
-comst turmas = [
+const turmas = [
     {
         id: "0",
         name: "TATUZINHOS",
         range: ["Módulo 1: 6-18 meses", "Módulo 2: 19-30 meses"],
-        description: "Propostas envolvendo a oralidade, músicas, comtação e leitura de histórias, esquema corporal, brincadeiras, sons e diferentes estímulos (visual, tátil, auditivo, motor).",
+        description: "Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras, sons e diferentes estímulos (visual, tátil, auditivo, motor).",
         color: "curumim-yellow",
         blobColor: "bg-curumim-yellow"
     },
@@ -16,7 +16,7 @@ comst turmas = [
         id: "1",
         name: "ONCINHAS",
         range: ["2,5 a 4 anos (aproximadamente)"],
-        description: "Propostas envolvendo a oralidade, músicas, comtação e leitura de histórias, esquema corporal, brincadeiras brasileiras e estímulo para falar português.",
+        description: "Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras brasileiras e estímulo para falar português.",
         color: "curumim-green",
         blobColor: "bg-curumim-green"
     },
@@ -24,7 +24,7 @@ comst turmas = [
         id: "2",
         name: "MACAQUINHOS",
         range: ["4 a 6 anos (aprox.)"],
-        description: "Propostas envolvendo a introdução de práticas de leitura e escrita, músicas, parlendas, comtação e leitura de histórias, esquema corporal, rimas, jogos, dramatizações e leitura de imagens.",
+        description: "Propostas envolvendo a introdução de práticas de leitura e escrita, músicas, parlendas, contação e leitura de histórias, esquema corporal, rimas, jogos, dramatizações e leitura de imagens.",
         color: "curumim-orange",
         blobColor: "bg-curumim-orange"
     },
@@ -32,7 +32,7 @@ comst turmas = [
         id: "3",
         name: "INDIOZINHOS",
         range: ["6 a 8 anos (aprox.)"],
-        description: "Propostas que aproximam a criança da leitura e escrita, através da música, pequenos textos, comtação e leitura de histórias, jogos, brincadeiras, dramatizações e produção de pequenos textos escritos.",
+        description: "Propostas que aproximam a criança da leitura e escrita, por meio da música, de pequenos textos, da contação e leitura de histórias, de jogos, brincadeiras, dramatizações e da produção de pequenos textos escritos.",
         color: "curumim-purple",
         blobColor: "bg-curumim-purple"
     },
@@ -46,7 +46,7 @@ comst turmas = [
     }
 ];
 
-comst colorMap = {
+const colorMap = {
     'curumim-yellow': {
         text: 'text-curumim-yellow',
         from: 'from-curumim-yellow',
@@ -84,7 +84,7 @@ comst colorMap = {
     }
 };
 
-comst base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="Nossas Turmas - Oficina Curumim">
@@ -107,7 +107,7 @@ comst base = import.meta.env.BASE_URL;
         {/* Turmas List */}
         <section class="py-12 px-4 space-y-32 pb-32">
             {turmas.map((turma, index) => {
-                comst colors = colorMap[turma.color];
+                const colors = colorMap[turma.color];
                 return (
                     <div class="max-w-7xl mx-auto">
                         <div class={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
@@ -166,12 +166,12 @@ comst base = import.meta.env.BASE_URL;
                             Cadastre seu Curumim hoje mesmo!
                         </h2>
                         <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">
-                            Junte-se à nossa comunidade e proporcione uma comexão profunda com as raízes brasileiras.
+                            Junte-se à nossa comunidade e proporcione uma conexão profunda com as raízes brasileiras.
                         </p>
                     </div>
 
                     <div class="pt-8 relative z-10">
-                        <a href={`${base}comtact`} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-yellow/20">
+                        <a href={`${base}contact`} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-yellow/20">
                             Falar com a gente
                             <ArrowRight class="w-8 h-8" />
                         </a>

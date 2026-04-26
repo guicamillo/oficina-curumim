@@ -10,7 +10,7 @@ import Globe from '@lucide/astro/icons/globe';
 import Star from '@lucide/astro/icons/star';
 import { withBase } from '../utils/paths';
 
-comst events = [
+const events = [
     {
         name: "Carnaval",
         date: "Fevereiro/Março",
@@ -22,21 +22,21 @@ comst events = [
         name: "PLH",
         date: "16 de Maio",
         subtitle: "Português como Língua de Herança",
-        description: "Dia de unificar as iniciativas de PLH pelo mundo. Realizamos salas temáticas com propostas educativas que reforçam a noção de pertencimento e brasilidade.",
+        description: "Dia de unir as iniciativas de PLH pelo mundo. Realizamos salas temáticas com propostas educativas que reforçam a noção de pertencimento e brasilidade.",
         color: "curumim-green",
         icom: Globe
     },
     {
         name: "Festa Junina",
         date: "Junho",
-        description: "Um dos momentos mais esperados! Organizada por famílias e equipe, traz o melhor das tradições de São João para o comtexto canadense.",
+        description: "Um dos momentos mais esperados! Organizada por famílias e equipe, traz o melhor das tradições de São João para o contexto canadense.",
         color: "curumim-orange",
         icom: Music
     },
     {
         name: "Festa de Final de Ano",
         date: "Dezembro",
-        description: "Performance especial das crianças para as famílias, celebrando o fechamento do ano com muita música e valorização do nosso idioma.",
+        description: "Apresentação especial das crianças para as famílias, celebrando o fechamento do ano com muita música e valorização do nosso idioma.",
         color: "curumim-purple",
         icom: Star
     },
@@ -106,7 +106,7 @@ comst events = [
                             </div>
 
                             <div class="pt-8">
-                                <a href={withBase('comtact')} class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-all`}>
+                                <a href={withBase('contact')} class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-all`}>
                                     Saiba mais
                                     <ArrowRight class="w-4 h-4" />
                                 </a>
@@ -135,7 +135,7 @@ comst events = [
                     </div>
 
                     <div class="pt-8 relative z-10">
-                        <a href={withBase('comtact')} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-red/20">
+                        <a href={withBase('contact')} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-red/20">
                             Quero me envolver
                             <ArrowRight class="w-8 h-8" />
                         </a>

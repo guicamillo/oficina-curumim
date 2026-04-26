@@ -1,6 +1,6 @@
 {
     "welcome": "Bem-vindo à Oficina Curumim",
-    "mission": "Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da grande Vancouver.",
+    "mission": "Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da Grande Vancouver.",
     "nav": {
         "home": "Início",
         "about": "Sobre Nós",
@@ -30,7 +30,7 @@
         },
         "library": {
             "title": "Nossa biblioteca",
-            "description": "As famílias são voluntárias para a organização, catalogação, empréstimos e conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa. As famílias também podem escolher um título.",
+            "description": "As famílias atuam como voluntárias na organização, catalogação, nos empréstimos e na conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa. As famílias também podem escolher um título.",
             "note": "A leitura de livros, em português, é importante para a manutenção e estímulo do idioma.",
             "stat": "Já Contamos com mais de 1000 títulos infantis."
         },
