@@ -1,13 +1,20 @@
 {
   "name": "grubby-wind",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
-    "build": "bun run cleanup && astro build",
+    "build": "bun run i18n:extract && bun run cleanup && astro build",
     "cleanup": "knip --fix --allow-remove-files",
+    "format": "bun run scripts/run-oxfmt.ts --write",
+    "format:check": "bun run scripts/run-oxfmt.ts --check",
+    "i18n:extract": "bun run scripts/extract-i18n.ts",
+    "i18n:validate": "bun run scripts/validate-no-hardcoded-text.ts",
+    "lint": "oxlint --deny-warnings .",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "prepare": "husky",
+    "validate": "bun run i18n:validate && bun run i18n:extract && bun run format:check && bun run lint && astro build"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.3",
@@ -16,12 +23,21 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "astro": "^6.1.8",
+    "i18next": "^26.0.8",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
-    "knip": "^5.86.0"
+    "husky": "^9.1.7",
+    "knip": "^5.86.0",
+    "oxfmt": "^0.46.0",
+    "oxlint": "^1.61.0"
+  },
+  "knip": {
+    "ignoreDependencies": [
+      "oxfmt"
+    ]
   }
 }

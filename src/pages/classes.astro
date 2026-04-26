@@ -2,45 +2,49 @@
 import Layout from '../layouts/Layout.astro';
 import Sparkles from '@lucide/astro/icons/sparkles';
 import ArrowRight from '@lucide/astro/icons/arrow-right';
+import { getLangFromUrl, useTranslations } from '../utils/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const turmas = [
     {
         id: "0",
-        name: "TATUZINHOS",
-        range: ["Módulo 1: 6-18 meses", "Módulo 2: 19-30 meses"],
-        description: "Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras, sons e diferentes estímulos (visual, tátil, auditivo, motor).",
+        name: t({ key: 'classes.groups.tatuzinhos.name', message: 'TATUZINHOS' }),
+        range: [t({ key: 'classes.groups.tatuzinhos.moduleOne', message: 'Módulo 1: 6-18 meses' }), t({ key: 'classes.groups.tatuzinhos.moduleTwo', message: 'Módulo 2: 19-30 meses' })],
+        description: t({ key: 'classes.groups.tatuzinhos.description', message: 'Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras, sons e diferentes estímulos (visual, tátil, auditivo, motor).' }),
         color: "curumim-yellow",
         blobColor: "bg-curumim-yellow"
     },
     {
         id: "1",
-        name: "ONCINHAS",
-        range: ["2,5 a 4 anos (aproximadamente)"],
-        description: "Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras brasileiras e estímulo para falar português.",
+        name: t({ key: 'classes.groups.oncinhas.name', message: 'ONCINHAS' }),
+        range: [t({ key: 'classes.groups.oncinhas.range', message: '2,5 a 4 anos (aproximadamente)' })],
+        description: t({ key: 'classes.groups.oncinhas.description', message: 'Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras brasileiras e estímulo para falar português.' }),
         color: "curumim-green",
         blobColor: "bg-curumim-green"
     },
     {
         id: "2",
-        name: "MACAQUINHOS",
-        range: ["4 a 6 anos (aprox.)"],
-        description: "Propostas envolvendo a introdução de práticas de leitura e escrita, músicas, parlendas, contação e leitura de histórias, esquema corporal, rimas, jogos, dramatizações e leitura de imagens.",
+        name: t({ key: 'classes.groups.macaquinhos.name', message: 'MACAQUINHOS' }),
+        range: [t({ key: 'classes.groups.macaquinhos.range', message: '4 a 6 anos (aprox.)' })],
+        description: t({ key: 'classes.groups.macaquinhos.description', message: 'Propostas envolvendo a introdução de práticas de leitura e escrita, músicas, parlendas, contação e leitura de histórias, esquema corporal, rimas, jogos, dramatizações e leitura de imagens.' }),
         color: "curumim-orange",
         blobColor: "bg-curumim-orange"
     },
     {
         id: "3",
-        name: "INDIOZINHOS",
-        range: ["6 a 8 anos (aprox.)"],
-        description: "Propostas que aproximam a criança da leitura e escrita, por meio da música, de pequenos textos, da contação e leitura de histórias, de jogos, brincadeiras, dramatizações e da produção de pequenos textos escritos.",
+        name: t({ key: 'classes.groups.indiozinhos.name', message: 'INDIOZINHOS' }),
+        range: [t({ key: 'classes.groups.indiozinhos.range', message: '6 a 8 anos (aprox.)' })],
+        description: t({ key: 'classes.groups.indiozinhos.description', message: 'Propostas que aproximam a criança da leitura e escrita, por meio da música, de pequenos textos, da contação e leitura de histórias, de jogos, brincadeiras, dramatizações e da produção de pequenos textos escritos.' }),
         color: "curumim-purple",
         blobColor: "bg-curumim-purple"
     },
     {
         id: "4",
-        name: "TUCANOS",
-        range: ["8 a 12 anos (aprox.)"],
-        description: "Propostas envolvendo a compreensão da estrutura e o funcionamento básico da língua, utilizando-as em situações de comunicação oral, de leitura e de escrita. Produção formal através de diversos gêneros textuais.",
+        name: t({ key: 'classes.groups.tucanos.name', message: 'TUCANOS' }),
+        range: [t({ key: 'classes.groups.tucanos.range', message: '8 a 12 anos (aprox.)' })],
+        description: t({ key: 'classes.groups.tucanos.description', message: 'Propostas envolvendo a compreensão da estrutura e o funcionamento básico da língua, utilizando-as em situações de comunicação oral, de leitura e de escrita. Produção formal através de diversos gêneros textuais.' }),
         color: "curumim-red",
         blobColor: "bg-curumim-red"
     }
@@ -87,16 +91,16 @@ const colorMap = {
 const base = import.meta.env.BASE_URL;
 ---
 
-<Layout title="Nossas Turmas - Oficina Curumim">
+<Layout title={t({ key: 'classes.meta.title', message: 'Nossas Turmas - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
         <section class="relative pt-32 pb-20 px-4 overflow-hidden">
             <div class="max-w-7xl mx-auto text-center relative z-10">
                 <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
-                    Nossas <span class="text-curumim-cyan ">Turmas</span>
+                    {t({ key: 'classes.hero.titlePrefix', message: 'Nossas' })} <span class="text-curumim-cyan ">{t({ key: 'classes.hero.titleAccent', message: 'Turmas' })}</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                    Cada fase é única. Dividimos nossas turmas para explorar ao máximo o potencial de cada etapa, sempre respeitando o tempo individual de desenvolvimento de cada criança.
+                    {t({ key: 'classes.hero.subtitle', message: 'Cada fase é única. Dividimos nossas turmas para explorar ao máximo o potencial de cada etapa, sempre respeitando o tempo individual de desenvolvimento de cada criança.' })}
                 </p>
             </div>
             
@@ -161,18 +165,18 @@ const base = import.meta.env.BASE_URL;
                     <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-tr from-curumim-cyan/20 via-transparent to-curumim-green/20 opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
                     
                     <div class="space-y-6 relative z-10">
-                        <p class="text-curumim-yellow font-black text-xl uppercase tracking-widest">- Vem pra Oficina -</p>
+                        <p class="text-curumim-yellow font-black text-xl uppercase tracking-widest">{t({ key: 'classes.cta.badge', message: '- Vem pra Oficina -' })}</p>
                         <h2 class="text-4xl md:text-7xl font-black text-white leading-tight">
-                            Cadastre seu Curumim hoje mesmo!
+                            {t({ key: 'classes.cta.title', message: 'Cadastre seu Curumim hoje mesmo!' })}
                         </h2>
                         <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto font-medium">
-                            Junte-se à nossa comunidade e proporcione uma conexão profunda com as raízes brasileiras.
+                            {t({ key: 'classes.cta.body', message: 'Junte-se à nossa comunidade e proporcione uma conexão profunda com as raízes brasileiras.' })}
                         </p>
                     </div>
 
                     <div class="pt-8 relative z-10">
                         <a href={`${base}contact`} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-yellow/20">
-                            Falar com a gente
+                            {t({ key: 'classes.cta.button', message: 'Falar com a gente' })}
                             <ArrowRight class="w-8 h-8" />
                         </a>
                     </div>

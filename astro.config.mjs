@@ -7,19 +7,19 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://guicamillo.github.io",
-    base: "/oficina-curumim",
-    vite: {
-        plugins: [tailwindcss()],
-    },
+  site: "https://guicamillo.github.io",
+  base: "/oficina-curumim",
+  vite: {
+    plugins: [tailwindcss()],
+  },
 
-    integrations: [react()],
+  integrations: [react()],
 
-    i18n: {
-        defaultLocale: "pt-BR",
-        locales: ["pt-BR"],
-        routing: {
-            prefixDefaultLocale: false,
-        },
+  i18n: {
+    defaultLocale: "pt-BR",
+    locales: ["pt-BR"],
+    routing: {
+      prefixDefaultLocale: false,
     },
+  },
 });

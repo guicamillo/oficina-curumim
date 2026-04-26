@@ -9,64 +9,68 @@ import Heart from '@lucide/astro/icons/heart';
 import Globe from '@lucide/astro/icons/globe';
 import Star from '@lucide/astro/icons/star';
 import { withBase } from '../utils/paths';
+import { getLangFromUrl, useTranslations } from '../utils/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const events = [
     {
-        name: "Carnaval",
-        date: "Fevereiro/Março",
-        description: "Atividades lúdicas sobre a história e manifestações culturais das diferentes regiões do Brasil. Organizamos uma grande festa com ritmos, danças e trajes típicos.",
+        name: t({ key: 'events.cards.carnival.name', message: 'Carnaval' }),
+        date: t({ key: 'events.cards.carnival.date', message: 'Fevereiro/Março' }),
+        description: t({ key: 'events.cards.carnival.description', message: 'Atividades lúdicas sobre a história e manifestações culturais das diferentes regiões do Brasil. Organizamos uma grande festa com ritmos, danças e trajes típicos.' }),
         color: "curumim-yellow",
         icom: PartyPopper
     },
     {
-        name: "PLH",
-        date: "16 de Maio",
-        subtitle: "Português como Língua de Herança",
-        description: "Dia de unir as iniciativas de PLH pelo mundo. Realizamos salas temáticas com propostas educativas que reforçam a noção de pertencimento e brasilidade.",
+        name: t({ key: 'events.cards.plh.name', message: 'PLH' }),
+        date: t({ key: 'events.cards.plh.date', message: '16 de Maio' }),
+        subtitle: t({ key: 'events.cards.plh.subtitle', message: 'Português como Língua de Herança' }),
+        description: t({ key: 'events.cards.plh.description', message: 'Dia de unir as iniciativas de PLH pelo mundo. Realizamos salas temáticas com propostas educativas que reforçam a noção de pertencimento e brasilidade.' }),
         color: "curumim-green",
         icom: Globe
     },
     {
-        name: "Festa Junina",
-        date: "Junho",
-        description: "Um dos momentos mais esperados! Organizada por famílias e equipe, traz o melhor das tradições de São João para o contexto canadense.",
+        name: t({ key: 'events.cards.juneParty.name', message: 'Festa Junina' }),
+        date: t({ key: 'events.cards.juneParty.date', message: 'Junho' }),
+        description: t({ key: 'events.cards.juneParty.description', message: 'Um dos momentos mais esperados! Organizada por famílias e equipe, traz o melhor das tradições de São João para o contexto canadense.' }),
         color: "curumim-orange",
         icom: Music
     },
     {
-        name: "Festa de Final de Ano",
-        date: "Dezembro",
-        description: "Apresentação especial das crianças para as famílias, celebrando o fechamento do ano com muita música e valorização do nosso idioma.",
+        name: t({ key: 'events.cards.yearEnd.name', message: 'Festa de Final de Ano' }),
+        date: t({ key: 'events.cards.yearEnd.date', message: 'Dezembro' }),
+        description: t({ key: 'events.cards.yearEnd.description', message: 'Apresentação especial das crianças para as famílias, celebrando o fechamento do ano com muita música e valorização do nosso idioma.' }),
         color: "curumim-purple",
         icom: Star
     },
     {
-        name: "Aniversários",
-        date: "Durante o ano todo",
-        description: "Celebramos cada aniversário com parabéns em português e cartões confeccionados pelos amigos, promovendo alegria e interação na turma.",
+        name: t({ key: 'events.cards.birthdays.name', message: 'Aniversários' }),
+        date: t({ key: 'events.cards.birthdays.date', message: 'Durante o ano todo' }),
+        description: t({ key: 'events.cards.birthdays.description', message: 'Celebramos cada aniversário com parabéns em português e cartões confeccionados pelos amigos, promovendo alegria e interação na turma.' }),
         color: "curumim-red",
         icom: Heart
     },
     {
-        name: "Comunidade Brasileira",
-        date: "Eventos abertos",
-        description: "Participação em eventos abertos em Vancouver, compartilhando nossas propostas com o público e mantendo vivas nossas tradições.",
+        name: t({ key: 'events.cards.community.name', message: 'Comunidade Brasileira' }),
+        date: t({ key: 'events.cards.community.date', message: 'Eventos abertos' }),
+        description: t({ key: 'events.cards.community.description', message: 'Participação em eventos abertos em Vancouver, compartilhando nossas propostas com o público e mantendo vivas nossas tradições.' }),
         color: "curumim-cyan",
         icom: Users
     }
 ];
 ---
 
-<Layout title="Eventos Culturais - Oficina Curumim">
+<Layout title={t({ key: 'events.meta.title', message: 'Eventos Culturais - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
         <section class="relative pt-32 pb-20 px-4 overflow-hidden">
             <div class="max-w-7xl mx-auto text-center relative z-10">
                 <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
-                    Eventos <span class="text-curumim-red ">Culturais</span>
+                    {t({ key: 'events.hero.titlePrefix', message: 'Eventos' })} <span class="text-curumim-red ">{t({ key: 'events.hero.titleAccent', message: 'Culturais' })}</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                    A preservação da nossa cultura através do envolvimento das famílias. Planejamos cada momento para que nossas raízes floresçam em Vancouver.
+                    {t({ key: 'events.hero.subtitle', message: 'A preservação da nossa cultura através do envolvimento das famílias. Planejamos cada momento para que nossas raízes floresçam em Vancouver.' })}
                 </p>
             </div>
             
@@ -107,7 +111,7 @@ const events = [
 
                             <div class="pt-8">
                                 <a href={withBase('contact')} class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-all`}>
-                                    Saiba mais
+                                    {t({ key: 'events.cards.cta', message: 'Saiba mais' })}
                                     <ArrowRight class="w-4 h-4" />
                                 </a>
                             </div>
@@ -125,18 +129,18 @@ const events = [
                     <div class="absolute -top-20 -right-20 w-96 h-96 bg-curumim-yellow/10 rounded-full blur-[100px] -z-10 group-hover:bg-curumim-yellow/20 transition-colors duration-1000"></div>
                     
                     <div class="space-y-6 relative z-10">
-                        <p class="text-curumim-red font-black text-xl uppercase tracking-widest animate-pulse">- Participe -</p>
+                        <p class="text-curumim-red font-black text-xl uppercase tracking-widest animate-pulse">{t({ key: 'events.cta.badge', message: '- Participe -' })}</p>
                         <h2 class="text-4xl md:text-7xl font-black text-slate-800 leading-tight">
-                            Não perca nenhum <span class="text-curumim-red">evento cultural!</span>
+                            {t({ key: 'events.cta.titlePrefix', message: 'Não perca nenhum' })} <span class="text-curumim-red">{t({ key: 'events.cta.titleAccent', message: 'evento cultural!' })}</span>
                         </h2>
                         <p class="text-slate-500 text-lg md:text-xl max-w-2xl mx-auto font-medium">
-                            Nossa comunidade é vibrante e acolhedora. Venha vivenciar o Brasil em Vancouver com a gente.
+                            {t({ key: 'events.cta.body', message: 'Nossa comunidade é vibrante e acolhedora. Venha vivenciar o Brasil em Vancouver com a gente.' })}
                         </p>
                     </div>
 
                     <div class="pt-8 relative z-10">
                         <a href={withBase('contact')} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-red/20">
-                            Quero me envolver
+                            {t({ key: 'events.cta.button', message: 'Quero me envolver' })}
                             <ArrowRight class="w-8 h-8" />
                         </a>
                     </div>

@@ -1,21 +1,22 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
 import { getCollection } from 'astro:content';
+import { getLangFromUrl, useTranslations } from '../../utils/i18n';
 
 const posts = await getCollection('blog', ({ id }) => {
   return id.startsWith('pt-BR/');
 });
 
 posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Blog - Oficina Curumim">
-  <Header />
+<Layout title={t({ key: 'blog.index.meta.title', message: 'Blog - Oficina Curumim' })}>
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="text-center mb-12">
-        <h1 class="text-4xl font-bold text-slate-900 mb-4">Blog</h1>
-        <p class="text-xl text-slate-600">Acompanhe nossas novidades e artigos.</p>
+        <h1 class="text-4xl font-bold text-slate-900 mb-4">{t({ key: 'blog.index.title', message: 'Blog' })}</h1>
+        <p class="text-xl text-slate-600">{t({ key: 'blog.index.subtitle', message: 'Acompanhe nossas novidades e artigos.' })}</p>
     </div>
     
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -45,7 +46,7 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
                     {post.data.description}
                 </p>
                 <a href={`/blog/${post.id.replace('pt-BR/', '').replace('.md', '')}`} class="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 text-sm">
-                    Ler mais <span class="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    {t({ key: 'blog.index.readMore', message: 'Ler mais' })} <span class="ml-1 group-hover:translate-x-1 transition-transform">&rarr;</span>
                 </a>
             </div>
         </article>

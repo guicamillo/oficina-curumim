@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { getLangFromUrl } from '../utils/i18n';
+import { getLangFromUrl, useTranslations } from '../utils/i18n';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import { withBase } from '../utils/paths';
@@ -10,8 +10,15 @@ interface Props {
     description?: string;
 }
 
-const { title, description = "Oficina Curumim - Português e Cultura Brasileira em Vancouver" } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const {
+	title,
+    description = t({
+        key: 'layout.meta.description',
+        message: 'Oficina Curumim - Português e Cultura Brasileira em Vancouver',
+    }),
+} = Astro.props;
 ---
 
 <!doctype html>

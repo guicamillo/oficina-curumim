@@ -7,22 +7,30 @@ import CheckCircle from '@lucide/astro/icons/circle-check';
 import AlertCircle from '@lucide/astro/icons/circle-alert';
 import ArrowRight from '@lucide/astro/icons/arrow-right';
 import { withBase } from '../utils/paths';
+import { getLangFromUrl, useTranslations } from '../utils/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const jobsEmail = t({
+    key: 'jobs.apply.email',
+    message: 'oficinacurumim@gmail.com',
+});
 ---
 
-<Layout title="Trabalhe Conosco - Oficina Curumim">
+<Layout title={t({ key: 'jobs.meta.title', message: 'Trabalhe Conosco - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
         <section class="relative pt-32 pb-20 px-4 overflow-hidden">
             <div class="max-w-7xl mx-auto text-center relative z-10">
                 <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-green font-bold text-sm shadow-sm mb-8 animate-pulse">
                     <Briefcase class="w-4 h-4" />
-                    Oportunidades
+                    {t({ key: 'jobs.hero.badge', message: 'Oportunidades' })}
                 </div>
                 <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
-                    Trabalhe <span class="text-curumim-green ">Conosco</span>
+                    {t({ key: 'jobs.hero.titlePrefix', message: 'Trabalhe' })} <span class="text-curumim-green ">{t({ key: 'jobs.hero.titleAccent', message: 'Conosco' })}</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                    Nossa missão é feita de amor, dedicação e boa vontade. Quer nos ajudar a construir essa linda história juntos? Adoraríamos te conhecer.
+                    {t({ key: 'jobs.hero.subtitle', message: 'Nossa missão é feita de amor, dedicação e boa vontade. Quer nos ajudar a construir essa linda história juntos? Adoraríamos te conhecer.' })}
                 </p>
             </div>
             
@@ -39,10 +47,10 @@ import { withBase } from '../utils/paths';
                     <div class="grid grid-cols-1 lg:grid-cols-[1fr_250px] gap-12 items-center">
                         <div class="space-y-6">
                             <p class="text-xl text-slate-600 leading-relaxed font-medium">
-                                Nosso corpo docente é composto por profissionais remunerados e voluntários. Ter formação pedagógica acadêmica com experiência no Brasil é sempre bom, mas não obrigatório. 
+                                {t({ key: 'jobs.intro.bodyPrimary', message: 'Nosso corpo docente é composto por profissionais remunerados e voluntários. Ter formação pedagógica acadêmica com experiência no Brasil é sempre bom, mas não obrigatório.' })} 
                             </p>
                             <p class="text-lg text-slate-500 leading-relaxed">
-                                A Oficina Curumim é feita por pais, parceiros e voluntários dedicados. Acha que seu perfil combina com a gente?
+                                {t({ key: 'jobs.intro.bodySecondary', message: 'A Oficina Curumim é feita por pais, parceiros e voluntários dedicados. Acha que seu perfil combina com a gente?' })}
                             </p>
                         </div>
                         <div class="relative group">
@@ -59,16 +67,16 @@ import { withBase } from '../utils/paths';
                         <div class="w-16 h-16 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center">
                             <CheckCircle class="w-8 h-8 text-curumim-cyan" />
                         </div>
-                        <h2 class="text-3xl font-black text-slate-800">Como se candidatar</h2>
+                        <h2 class="text-3xl font-black text-slate-800">{t({ key: 'jobs.apply.title', message: 'Como se candidatar' })}</h2>
                         <div class="space-y-4">
-                            <p class="text-slate-600 font-medium">Envie um e-mail com seu currículo para <a href="mailto:oficinacurumim@gmail.com" class="text-curumim-cyan font-bold hover:underline">oficinacurumim@gmail.com</a> incluindo os seguintes dados:</p>
+                            <p class="text-slate-600 font-medium">{t({ key: 'jobs.apply.bodyPrefix', message: 'Envie um e-mail com seu currículo para' })} <a href="mailto:oficinacurumim@gmail.com" class="text-curumim-cyan font-bold hover:underline">{jobsEmail}</a> {t({ key: 'jobs.apply.bodySuffix', message: 'incluindo os seguintes dados:' })}</p>
                             <ul class="space-y-3">
                                 {[
-                                    "Nome completo e telefone",
-                                    "Endereço em Vancouver",
-                                    "Status no Canadá (Study Permit, Work Permit, P.R. ou Nacionalidade)",
-                                    "Disponibilidade para domingos",
-                                    "Declaração de antecedentes criminais"
+                                    t({ key: 'jobs.apply.items.name', message: 'Nome completo e telefone' }),
+                                    t({ key: 'jobs.apply.items.address', message: 'Endereço em Vancouver' }),
+                                    t({ key: 'jobs.apply.items.status', message: 'Status no Canadá (Study Permit, Work Permit, P.R. ou Nacionalidade)' }),
+                                    t({ key: 'jobs.apply.items.availability', message: 'Disponibilidade para domingos' }),
+                                    t({ key: 'jobs.apply.items.backgroundCheck', message: 'Declaração de antecedentes criminais' })
                                 ].map(item => (
                                     <li class="flex items-center gap-3 text-slate-500 font-bold text-sm">
                                         <div class="w-1.5 h-1.5 bg-curumim-cyan rounded-full"></div>
@@ -83,14 +91,14 @@ import { withBase } from '../utils/paths';
                         <div class="w-16 h-16 bg-curumim-yellow/10 rounded-2xl flex items-center justify-center">
                             <AlertCircle class="w-8 h-8 text-curumim-yellow" />
                         </div>
-                        <h2 class="text-3xl font-black text-slate-800">Notas Importantes</h2>
+                        <h2 class="text-3xl font-black text-slate-800">{t({ key: 'jobs.notes.title', message: 'Notas Importantes' })}</h2>
                         <ul class="space-y-4">
                              {[
-                                "Disponibilidade para domingos e eventos",
-                                "Vagas para biblioteca, eventos e mais",
-                                "Não realizamos vistos de imigração",
-                                "Experiência não válida para fins de NOC/PR",
-                                "Foco em educação e herança cultural"
+                                t({ key: 'jobs.notes.items.availability', message: 'Disponibilidade para domingos e eventos' }),
+                                t({ key: 'jobs.notes.items.openings', message: 'Vagas para biblioteca, eventos e mais' }),
+                                t({ key: 'jobs.notes.items.visas', message: 'Não realizamos vistos de imigração' }),
+                                t({ key: 'jobs.notes.items.experience', message: 'Experiência não válida para fins de NOC/PR' }),
+                                t({ key: 'jobs.notes.items.focus', message: 'Foco em educação e herança cultural' })
                              ].map(item => (
                                 <li class="flex items-start gap-3 text-slate-500 font-medium text-sm">
                                     <AlertCircle class="w-4 h-4 text-curumim-yellow flex-shrink-0 mt-0.5" />
@@ -106,10 +114,10 @@ import { withBase } from '../utils/paths';
                     <div class="glass-card inline-block p-10 md:p-16 rounded-[4rem] border border-white/60 shadow-2xl relative overflow-hidden group max-w-3xl w-full">
                         <div class="absolute inset-0 bg-gradient-to-br from-curumim-green/5 to-transparent"></div>
                         <div class="space-y-8 relative z-10">
-                            <h2 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight">Preparado para fazer <span class="text-curumim-green">parte da equipe?</span></h2>
-                            <p class="text-slate-500 font-medium max-w-xl mx-auto">Mande seu currículo agora e vamos construir o futuro da nossa comunidade juntos.</p>
+                            <h2 class="text-3xl md:text-5xl font-black text-slate-800 leading-tight">{t({ key: 'jobs.cta.titlePrefix', message: 'Preparado para fazer' })} <span class="text-curumim-green">{t({ key: 'jobs.cta.titleAccent', message: 'parte da equipe?' })}</span></h2>
+                            <p class="text-slate-500 font-medium max-w-xl mx-auto">{t({ key: 'jobs.cta.body', message: 'Mande seu currículo agora e vamos construir o futuro da nossa comunidade juntos.' })}</p>
                             <a href="mailto:oficinacurumim@gmail.com" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-green hover:bg-curumim-cyan text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-105 active:scale-95 shadow-2xl shadow-curumim-green/20">
-                                Enviar Candidatura
+                                {t({ key: 'jobs.cta.button', message: 'Enviar candidatura' })}
                                 <Mail class="w-7 h-7" />
                             </a>
                         </div>

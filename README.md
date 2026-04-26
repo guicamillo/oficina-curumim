@@ -25,11 +25,13 @@ This is the new website for Oficina Curumim, built with [Astro](https://astro.bu
 ## Getting Started
 
 1. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 2. **Start the development server**:
+
    ```bash
    npm run dev
    ```
@@ -43,6 +45,7 @@ This is the new website for Oficina Curumim, built with [Astro](https://astro.bu
 
 To add a new blog post, create a markdown file in `src/content/blog/[lang]/[slug].md`.
 Ensure the frontmatter includes:
+
 ```yaml
 ---
 title: "Post Title"

@@ -1,57 +1,442 @@
 {
-    "welcome": "Bem-vindo à Oficina Curumim",
-    "mission": "Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da Grande Vancouver.",
-    "nav": {
-        "home": "Início",
-        "about": "Sobre Nós",
-        "classes": "Nossas Turmas",
-        "events": "Eventos Culturais",
-        "jobs": "Trabalhe com a Gente",
-        "partnerships": "Parcerias",
-        "contact": "Contato"
+  "about": {
+    "academicYear": {
+      "body": "As aulas acontecem durante três períodos ao longo do ano:",
+      "periodOne": "Janeiro a Março",
+      "periodThree": "Setembro a Dezembro",
+      "periodTwo": "Abril a Junho",
+      "title": "Ano letivo"
     },
-    "home": {
-        "hero": {
-            "title": "Bem-vindo à Oficina Curumim",
-            "subtitle": "em Vancouver",
-            "tagline1": "No coração de Vancouver.",
-            "tagline2": "E com o BRASIL no coração.",
-            "cta1": "Entre em contato",
-            "cta2": "Saiba mais"
+    "conduct": {
+      "body": "Para manter um ambiente organizado e seguro para todos, é essencial que pais e alunos sigam nosso guia de conduta.",
+      "cta": "Acessar o guia",
+      "title": "Código de Conduta"
+    },
+    "hero": {
+      "subtitle": "Unindo famílias brasileiras em Vancouver por meio da língua, da cultura e do afeto.",
+      "titleAccent": "Nós",
+      "titlePrefix": "Sobre"
+    },
+    "history": {
+      "highlight": {
+        "emphasis": "mais de 100 crianças",
+        "prefix": "Hoje, mais de 10 anos depois, contamos com",
+        "suffix": "crescendo com orgulho de suas raízes brasileiras."
+      },
+      "timeline": {
+        "2012": {
+          "body": "Um grupo de famílias se une para desenvolver atividades educativas, em português, com seus filhos.",
+          "title": "Outubro de 2012"
         },
-        "schedule": {
-            "title": "Horário",
-            "text": "Domingos das 10:00 às 12:00. (Não há aula nos feriados prolongados do Canadá)"
-        },
-        "location": {
-            "title": "Localização das aulas",
-            "name": "Mount Pleasant Neighbourhood House",
-            "address": "800 E Broadway, Vancouver, BC V5T 1Y1"
-        },
-        "library": {
-            "title": "Nossa biblioteca",
-            "description": "As famílias atuam como voluntárias na organização, catalogação, nos empréstimos e na conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa. As famílias também podem escolher um título.",
-            "note": "A leitura de livros, em português, é importante para a manutenção e estímulo do idioma.",
-            "stat": "Já Contamos com mais de 1000 títulos infantis."
-        },
-        "features": {
-            "language": {
-                "title": "Língua Portuguesa",
-                "description": "Aulas dinâmicas focadas na oralidade e escrita para crianças e jovens."
-            },
-            "culture": {
-                "title": "Cultura Brasileira",
-                "description": "Música, arte, folclore e tradições que conectam com as raízes."
-            },
-            "community": {
-                "title": "Comunidade",
-                "description": "Um espaço de encontro e troca para famílias brasileiras."
-            }
+        "2013": {
+          "body": "A Oficina Curumim é registrada como uma organização sem fins lucrativos, 'Oficina Curumim Parents Society'.",
+          "title": "Março de 2013"
         }
+      },
+      "titleAccent": "História",
+      "titlePrefix": "Nossa"
     },
-    "footer": {
-        "copyright": "© 2022 Oficina Curumim.",
-        "photos": "Photos: Maria Tebet",
-        "design": "Rebrand: Bruno Cirello"
+    "meta": {
+      "title": "Sobre Nós - Oficina Curumim"
+    },
+    "mission": {
+      "cards": {
+        "belonging": "Ampliar o vocabulário e trazer a noção de pertencimento às origens brasileiras.",
+        "identity": "Estreitar a relação entre língua, identidade e cultura brasileira no Canadá.",
+        "language": "Estimular o desenvolvimento das habilidades orais, da leitura e da escrita em português.",
+        "memory": "Proporcionar memória afetiva positiva em relação ao português, respeitando o ritmo de cada criança."
+      },
+      "quote": "Priorizamos que a criança seja feliz na Oficina Curumim.",
+      "titleAccent": "Missão",
+      "titlePrefix": "Nossa"
+    },
+    "pedagogy": {
+      "body": "Em um ambiente lúdico e participativo, as crianças desenvolvem atividades relacionadas às manifestações folclóricas, personalidades, fatos, arte, literatura e histórias brasileiras. As propostas das atividades são pautadas a partir de um tema de estudo.",
+      "titleAccent": "pedagógica",
+      "titlePrefix": "Proposta"
     }
+  },
+  "blog": {
+    "index": {
+      "meta": {
+        "title": "Blog - Oficina Curumim"
+      },
+      "readMore": "Ler mais",
+      "subtitle": "Acompanhe nossas novidades e artigos.",
+      "title": "Blog"
+    },
+    "post": {
+      "meta": {
+        "title": "{{title}} - Oficina Curumim"
+      }
+    }
+  },
+  "classes": {
+    "cta": {
+      "badge": "- Vem pra Oficina -",
+      "body": "Junte-se à nossa comunidade e proporcione uma conexão profunda com as raízes brasileiras.",
+      "button": "Falar com a gente",
+      "title": "Cadastre seu Curumim hoje mesmo!"
+    },
+    "groups": {
+      "indiozinhos": {
+        "description": "Propostas que aproximam a criança da leitura e escrita, por meio da música, de pequenos textos, da contação e leitura de histórias, de jogos, brincadeiras, dramatizações e da produção de pequenos textos escritos.",
+        "name": "INDIOZINHOS",
+        "range": "6 a 8 anos (aprox.)"
+      },
+      "macaquinhos": {
+        "description": "Propostas envolvendo a introdução de práticas de leitura e escrita, músicas, parlendas, contação e leitura de histórias, esquema corporal, rimas, jogos, dramatizações e leitura de imagens.",
+        "name": "MACAQUINHOS",
+        "range": "4 a 6 anos (aprox.)"
+      },
+      "oncinhas": {
+        "description": "Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras brasileiras e estímulo para falar português.",
+        "name": "ONCINHAS",
+        "range": "2,5 a 4 anos (aproximadamente)"
+      },
+      "tatuzinhos": {
+        "description": "Propostas envolvendo a oralidade, músicas, contação e leitura de histórias, esquema corporal, brincadeiras, sons e diferentes estímulos (visual, tátil, auditivo, motor).",
+        "moduleOne": "Módulo 1: 6-18 meses",
+        "moduleTwo": "Módulo 2: 19-30 meses",
+        "name": "TATUZINHOS"
+      },
+      "tucanos": {
+        "description": "Propostas envolvendo a compreensão da estrutura e o funcionamento básico da língua, utilizando-as em situações de comunicação oral, de leitura e de escrita. Produção formal através de diversos gêneros textuais.",
+        "name": "TUCANOS",
+        "range": "8 a 12 anos (aprox.)"
+      }
+    },
+    "hero": {
+      "subtitle": "Cada fase é única. Dividimos nossas turmas para explorar ao máximo o potencial de cada etapa, sempre respeitando o tempo individual de desenvolvimento de cada criança.",
+      "titleAccent": "Turmas",
+      "titlePrefix": "Nossas"
+    },
+    "meta": {
+      "title": "Nossas Turmas - Oficina Curumim"
+    }
+  },
+  "contact": {
+    "cards": {
+      "email": {
+        "address": "oficinacurumim@gmail.com",
+        "title": "E-mail"
+      },
+      "location": {
+        "address": "800 E Broadway, Vancouver, BC",
+        "name": "Mount Pleasant Neighbourhood House",
+        "title": "Onde estamos"
+      },
+      "mailing": {
+        "lineOne": "PO Box 78030 Grandview PO",
+        "lineTwo": "Vancouver BC V5N 5W1",
+        "title": "Correspondência"
+      }
+    },
+    "form": {
+      "emailLabel": "Seu melhor e-mail",
+      "emailPlaceholder": "exemplo@email.com",
+      "messageLabel": "Como podemos ajudar?",
+      "messagePlaceholder": "Sua mensagem...",
+      "nameLabel": "Nome completo",
+      "namePlaceholder": "Seu nome",
+      "subject": "Nova mensagem do site - Oficina Curumim",
+      "submit": "Enviar mensagem",
+      "subtitle": "Preencha o formulário abaixo e retornaremos o quanto antes.",
+      "successBody": "Retornaremos o quanto antes.",
+      "successTitle": "Mensagem enviada!",
+      "titleAccent": "mensagem",
+      "titlePrefix": "Mande uma"
+    },
+    "hero": {
+      "badge": "Diga oi!",
+      "subtitle": "Adoraríamos ouvir de você. Seja para tirar dúvidas, sugerir parcerias ou matricular seu curumim.",
+      "titleAccent": "Conversar",
+      "titlePrefix": "Vamos"
+    },
+    "map": {
+      "legendBody": "Mount Pleasant Neighbourhood House",
+      "legendTitle": "Oficina Curumim"
+    },
+    "meta": {
+      "title": "Contato - Oficina Curumim"
+    }
+  },
+  "events": {
+    "cards": {
+      "birthdays": {
+        "date": "Durante o ano todo",
+        "description": "Celebramos cada aniversário com parabéns em português e cartões confeccionados pelos amigos, promovendo alegria e interação na turma.",
+        "name": "Aniversários"
+      },
+      "carnival": {
+        "date": "Fevereiro/Março",
+        "description": "Atividades lúdicas sobre a história e manifestações culturais das diferentes regiões do Brasil. Organizamos uma grande festa com ritmos, danças e trajes típicos.",
+        "name": "Carnaval"
+      },
+      "community": {
+        "date": "Eventos abertos",
+        "description": "Participação em eventos abertos em Vancouver, compartilhando nossas propostas com o público e mantendo vivas nossas tradições.",
+        "name": "Comunidade Brasileira"
+      },
+      "cta": "Saiba mais",
+      "juneParty": {
+        "date": "Junho",
+        "description": "Um dos momentos mais esperados! Organizada por famílias e equipe, traz o melhor das tradições de São João para o contexto canadense.",
+        "name": "Festa Junina"
+      },
+      "plh": {
+        "date": "16 de Maio",
+        "description": "Dia de unir as iniciativas de PLH pelo mundo. Realizamos salas temáticas com propostas educativas que reforçam a noção de pertencimento e brasilidade.",
+        "name": "PLH",
+        "subtitle": "Português como Língua de Herança"
+      },
+      "yearEnd": {
+        "date": "Dezembro",
+        "description": "Apresentação especial das crianças para as famílias, celebrando o fechamento do ano com muita música e valorização do nosso idioma.",
+        "name": "Festa de Final de Ano"
+      }
+    },
+    "cta": {
+      "badge": "- Participe -",
+      "body": "Nossa comunidade é vibrante e acolhedora. Venha vivenciar o Brasil em Vancouver com a gente.",
+      "button": "Quero me envolver",
+      "titleAccent": "evento cultural!",
+      "titlePrefix": "Não perca nenhum"
+    },
+    "hero": {
+      "subtitle": "A preservação da nossa cultura através do envolvimento das famílias. Planejamos cada momento para que nossas raízes floresçam em Vancouver.",
+      "titleAccent": "Culturais",
+      "titlePrefix": "Eventos"
+    },
+    "meta": {
+      "title": "Eventos Culturais - Oficina Curumim"
+    }
+  },
+  "footer": {
+    "bottom": {
+      "privacy": "Privacidade",
+      "tagline": "Oficina Curumim - Português e Cultura Brasileira em Vancouver",
+      "terms": "Termos de uso"
+    },
+    "brand": {
+      "name": "Oficina Curumim"
+    },
+    "credits": {
+      "branding": "Branding por",
+      "designerName": "Bruno Cirello",
+      "developerName": "Guilherme Camillo",
+      "website": "Website desenvolvido por"
+    },
+    "links": {
+      "jobs": "Trabalhe conosco",
+      "partnerships": "Parcerias",
+      "title": "Links rápidos"
+    },
+    "logo": {
+      "alt": "Oficina Curumim"
+    },
+    "newsletter": {
+      "button": "Inscrever",
+      "emailPlaceholder": "Seu melhor e-mail",
+      "subject": "Nova inscrição na newsletter - Oficina Curumim",
+      "successBody": "Fique de olho no seu e-mail.",
+      "successTitle": "Inscrição feita!",
+      "title": "Fique por dentro das novidades"
+    },
+    "social": {
+      "facebookLabel": "Facebook",
+      "instagramLabel": "Instagram",
+      "title": "Conecte-se conosco"
+    }
+  },
+  "header": {
+    "logo": {
+      "alt": "Oficina Curumim"
+    },
+    "menu": {
+      "ariaLabel": "Menu"
+    }
+  },
+  "home": {
+    "about": {
+      "bodyPrimary": "Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da Grande Vancouver.",
+      "bodySecondary": "Os aspectos culturais, artísticos e sociais da cultura brasileira são utilizados como contexto para o desenvolvimento das propostas nas turmas.",
+      "cta": "Saiba mais",
+      "titleAccent": "somos",
+      "titlePrefix": "Quem",
+      "visualLabel": "Nossa comunidade"
+    },
+    "classes": {
+      "cards": {
+        "babies": {
+          "age": "6 meses - 3 anos",
+          "description": "Primeiros passos na língua portuguesa por meio de músicas, histórias e brincadeiras sensoriais.",
+          "title": "Turma Bebê"
+        },
+        "children": {
+          "age": "4 - 6 anos",
+          "description": "Desenvolvimento da oralidade e introdução à escrita com brincadeiras e contação de histórias.",
+          "title": "Turma Infantil"
+        },
+        "kids": {
+          "age": "7 - 12 anos",
+          "description": "Aprofundamento da língua portuguesa com leitura, escrita e imersão na cultura brasileira.",
+          "title": "Turma Kids"
+        }
+      },
+      "cta": "Ver todas as turmas",
+      "subtitle": "Temos turmas de crianças a partir de 6 meses até 12 anos de idade. Conheça as atividades e propostas de cada uma.",
+      "titleAccent": "turmas",
+      "titlePrefix": "Nossas"
+    },
+    "events": {
+      "body": "Temos eventos culturais durante o ano todo na Oficina Curumim. Confira nosso calendário anual.",
+      "cta": "Calendário anual",
+      "titleAccent": "culturais",
+      "titlePrefix": "Eventos"
+    },
+    "hero": {
+      "imageAlt": "Imagem de destaque da Oficina Curumim",
+      "primaryCta": "Conheça nossa história",
+      "secondaryCta": "Nossas turmas",
+      "subtitleAccent": "BRASIL",
+      "subtitlePrefix": "E com o",
+      "subtitleSuffix": "no coração.",
+      "titleAccent": "Vancouver",
+      "titlePrefix": "No coração de"
+    },
+    "jobs": {
+      "body": "Estamos sempre buscando voluntários e parceiros apaixonados por educação e cultura.",
+      "cta": "Faça parte da equipe",
+      "titleAccent": "conosco?",
+      "titlePrefix": "Quer trabalhar"
+    },
+    "library": {
+      "description": "As famílias atuam como voluntárias na organização, catalogação, nos empréstimos e na conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa.",
+      "imageAlt": "Biblioteca da Oficina Curumim",
+      "statLabel": "títulos infantis!",
+      "statValue": "mais de 1.000",
+      "titleAccent": "biblioteca",
+      "titlePrefix": "Nossa"
+    },
+    "location": {
+      "address": "800 E Broadway, Vancouver, BC",
+      "name": "Mount Pleasant Neighbourhood House",
+      "title": "Localização"
+    },
+    "meta": {
+      "title": "Oficina Curumim - Português e Cultura Brasileira"
+    },
+    "schedule": {
+      "hours": "Domingos das 10:00 às 12:00",
+      "note": "(Não há aula nos feriados prolongados do Canadá)",
+      "title": "Horário"
+    }
+  },
+  "jobs": {
+    "apply": {
+      "bodyPrefix": "Envie um e-mail com seu currículo para",
+      "bodySuffix": "incluindo os seguintes dados:",
+      "email": "oficinacurumim@gmail.com",
+      "items": {
+        "address": "Endereço em Vancouver",
+        "availability": "Disponibilidade para domingos",
+        "backgroundCheck": "Declaração de antecedentes criminais",
+        "name": "Nome completo e telefone",
+        "status": "Status no Canadá (Study Permit, Work Permit, P.R. ou Nacionalidade)"
+      },
+      "title": "Como se candidatar"
+    },
+    "cta": {
+      "body": "Mande seu currículo agora e vamos construir o futuro da nossa comunidade juntos.",
+      "button": "Enviar candidatura",
+      "titleAccent": "parte da equipe?",
+      "titlePrefix": "Preparado para fazer"
+    },
+    "hero": {
+      "badge": "Oportunidades",
+      "subtitle": "Nossa missão é feita de amor, dedicação e boa vontade. Quer nos ajudar a construir essa linda história juntos? Adoraríamos te conhecer.",
+      "titleAccent": "Conosco",
+      "titlePrefix": "Trabalhe"
+    },
+    "intro": {
+      "bodyPrimary": "Nosso corpo docente é composto por profissionais remunerados e voluntários. Ter formação pedagógica acadêmica com experiência no Brasil é sempre bom, mas não obrigatório.",
+      "bodySecondary": "A Oficina Curumim é feita por pais, parceiros e voluntários dedicados. Acha que seu perfil combina com a gente?"
+    },
+    "meta": {
+      "title": "Trabalhe Conosco - Oficina Curumim"
+    },
+    "notes": {
+      "items": {
+        "availability": "Disponibilidade para domingos e eventos",
+        "experience": "Experiência não válida para fins de NOC/PR",
+        "focus": "Foco em educação e herança cultural",
+        "openings": "Vagas para biblioteca, eventos e mais",
+        "visas": "Não realizamos vistos de imigração"
+      },
+      "title": "Notas Importantes"
+    }
+  },
+  "layout": {
+    "meta": {
+      "description": "Oficina Curumim - Português e Cultura Brasileira em Vancouver"
+    }
+  },
+  "nav": {
+    "about": "Sobre nós",
+    "classes": "Nossas turmas",
+    "contact": "Contato",
+    "events": "Eventos culturais",
+    "home": "Início"
+  },
+  "partnerships": {
+    "cta": {
+      "body": "Envie sua proposta e vamos conversar sobre como podemos impactar positivamente nossa comunidade.",
+      "button": "Enviar proposta",
+      "titleAccent": "juntar a nós?",
+      "titlePrefix": "Interessado em se"
+    },
+    "hero": {
+      "badge": "Colaboração",
+      "subtitle": "Acreditamos que grandes conquistas são frutos de esforços coletivos. Juntos, podemos fortalecer a cultura brasileira em Vancouver.",
+      "titleAccent": "Parcerias",
+      "titlePrefix": "Nossas"
+    },
+    "howItWorks": {
+      "body": "Acreditamos que uma parceria de sucesso é aquela em que ambas as partes se beneficiam mutuamente. Valorizamos a colaboração e o trabalho em equipe, buscando criar sinergias e maximizar o impacto positivo.",
+      "title": "Como funciona?"
+    },
+    "intro": {
+      "bodyPrimary": "A Oficina Curumim é uma organização sem fins lucrativos, comprometida em promover o desenvolvimento infantil por meio de atividades educativas e lúdicas.",
+      "bodySecondary": "Estamos abertos a discutir parcerias com empresas e pessoas físicas que compartilham de nossa missão e desejam contribuir para o desenvolvimento cultural das nossas crianças."
+    },
+    "meta": {
+      "title": "Parcerias - Oficina Curumim"
+    },
+    "support": {
+      "body": "Estamos abertos a diferentes formas de colaboração: apoio financeiro, doação de livros, material didático, recursos computacionais ou compartilhamento de conhecimentos e experiências.",
+      "title": "Formas de Apoio"
+    }
+  },
+  "registration": {
+    "form": {
+      "iframeTitle": "Ficha de Inscrição Oficina Curumim",
+      "loading": "Carregando…",
+      "scrollHint": "Role para preencher"
+    },
+    "help": {
+      "body": "Nossa equipe está à disposição para ajudar você em cada passo do processo de inscrição.",
+      "cta": "Entre em contato",
+      "title": "Ficou com alguma dúvida?"
+    },
+    "hero": {
+      "badge": "Pré-inscrição",
+      "subtitle": "Garanta a vaga do seu curumim! Preencha o formulário abaixo para iniciar o processo.",
+      "titleAccent": "Inscrição",
+      "titlePrefix": "Ficha de"
+    },
+    "meta": {
+      "title": "Ficha de Inscrição | Oficina Curumim"
+    }
+  }
 }

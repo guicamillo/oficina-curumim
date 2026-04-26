@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
-import Header from '../../components/Header.astro';
 import { render } from 'astro:content';
+import { getLangFromUrl, useTranslations } from '../../utils/i18n';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ id }) => id.startsWith('pt-BR/'));
@@ -14,10 +14,11 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title={`${post.data.title} - Oficina Curumim`}>
-  <Header />
+<Layout title={t({ key: 'blog.post.meta.title', message: '{{title}} - Oficina Curumim' }, { title: post.data.title })}>
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <article class="prose prose-slate lg:prose-lg mx-auto">
         <header class="mb-8 not-prose">

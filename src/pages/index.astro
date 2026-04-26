@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { useTranslations } from '../utils/i18n';
+import { getLangFromUrl, useTranslations } from '../utils/i18n';
 import ArrowRight from '@lucide/astro/icons/arrow-right';
 import Calendar from '@lucide/astro/icons/calendar';
 import MapPin from '@lucide/astro/icons/map-pin';
@@ -17,7 +17,8 @@ import heroImg3 from '../assets/img/hero_3.jpeg';
 import { Image } from 'astro:assets';
 import { withBase } from '../utils/paths';
 
-const t = useTranslations('pt-BR');
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 
 const bibliotecaImages = [bibliotecaImg1, bibliotecaImg2, bibliotecaImg3];
 const randomBibliotecaImg = bibliotecaImages[Math.floor(Math.random() * bibliotecaImages.length)];
@@ -26,13 +27,13 @@ const heroImages = [heroImg1, heroImg2, heroImg3];
 const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
 ---
 
-<Layout title="Oficina Curumim - Português e Cultura Brasileira">
+<Layout title={t({ key: 'home.meta.title', message: 'Oficina Curumim - Português e Cultura Brasileira' })}>
 	<main>
 		{/* Hero Section */}
 		<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
              {/* Background Image */}
             <div class="absolute inset-0 z-0">
-                <Image src={randomHeroImg} alt="Background" class="w-full h-full object-cover" loading="eager" />
+                <Image src={randomHeroImg} alt={t({ key: 'home.hero.imageAlt', message: 'Imagem de destaque da Oficina Curumim' })} class="w-full h-full object-cover" loading="eager" />
                 <div class="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/30"></div>
             </div>
 
@@ -42,19 +43,19 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
 			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full pt-20">
                 <div class="max-w-3xl">
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-8 drop-shadow-lg">
-                        No coração de <span class="text-curumim-red">Vancouver</span>.
+                        {t({ key: 'home.hero.titlePrefix', message: 'No coração de' })} <span class="text-curumim-red">{t({ key: 'home.hero.titleAccent', message: 'Vancouver' })}</span>.
                     </h1>
                     <h2 class="text-2xl md:text-4xl font-bold text-slate-200 leading-relaxed mb-10 max-w-2xl">
-                        E com o <span class="bg-gradient-to-r from-curumim-green to-curumim-yellow bg-clip-text text-transparent font-black">BRASIL</span> no coração.
+                        {t({ key: 'home.hero.subtitlePrefix', message: 'E com o' })} <span class="bg-gradient-to-r from-curumim-green to-curumim-yellow bg-clip-text text-transparent font-black">{t({ key: 'home.hero.subtitleAccent', message: 'BRASIL' })}</span> {t({ key: 'home.hero.subtitleSuffix', message: 'no coração.' })}
                     </h2>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href={withBase('about')} class="px-8 py-4 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black rounded-2xl transition-all hover:scale-[1.05] active:scale-95 shadow-lg shadow-curumim-yellow/20 flex items-center justify-center gap-2 text-lg">
-                            Conheça nossa história
+                            {t({ key: 'home.hero.primaryCta', message: 'Conheça nossa história' })}
                             <ArrowRight class="w-5 h-5" />
                         </a>
                         <a href={withBase('classes')} class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-2xl transition-all hover:scale-[1.05] active:scale-95 border border-white/30 flex items-center justify-center gap-2 text-lg">
-                            Nossas Turmas
+                            {t({ key: 'home.hero.secondaryCta', message: 'Nossas turmas' })}
                         </a>
                     </div>
                 </div>
@@ -72,7 +73,7 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                                  <Heart class="w-32 h-32 text-curumim-red/20 absolute -top-8 -right-8 rotate-12" />
                                  <Users class="w-64 h-64 text-slate-200" />
                                  <div class="absolute inset-0 flex items-center justify-center">
-                                     <span class="text-slate-400 font-black text-xl uppercase tracking-widest opacity-50">Nossa Comunidade</span>
+                                     <span class="text-slate-400 font-black text-xl uppercase tracking-widest opacity-50">{t({ key: 'home.about.visualLabel', message: 'Nossa comunidade' })}</span>
                                  </div>
                              </div>
                              <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-curumim-yellow rounded-3xl -z-10 rotate-12"></div>
@@ -80,17 +81,17 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
 
                         <div class="space-y-8 order-1 lg:order-2">
                             <h2 class="text-4xl md:text-6xl font-black text-slate-800 leading-tight">
-                                Quem <span class="text-curumim-red">somos</span>
+                                {t({ key: 'home.about.titlePrefix', message: 'Quem' })} <span class="text-curumim-red">{t({ key: 'home.about.titleAccent', message: 'somos' })}</span>
                             </h2>
                             <p class="text-xl text-slate-600 leading-relaxed font-medium">
-                                Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da Grande Vancouver. 
+                                {t({ key: 'home.about.bodyPrimary', message: 'Oficina Curumim é uma organização sem fins lucrativos com a missão de estimular o uso da Língua Portuguesa oral e escrita, bem como valorizar o contato com a cultura brasileira para famílias brasileiras da Grande Vancouver.' })}
                             </p>
                             <p class="text-lg text-slate-500 leading-relaxed">
-                                Os aspectos culturais, artísticos e sociais da cultura brasileira são utilizados como contexto para o desenvolvimento das propostas nas turmas.
+                                {t({ key: 'home.about.bodySecondary', message: 'Os aspectos culturais, artísticos e sociais da cultura brasileira são utilizados como contexto para o desenvolvimento das propostas nas turmas.' })}
                             </p>
                             <div>
                                 <a href={withBase('about')} class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-red transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
-                                    Saiba mais
+                                    {t({ key: 'home.about.cta', message: 'Saiba mais' })}
                                     <ArrowRight class="w-5 h-5" />
                                 </a>
                             </div>
@@ -106,18 +107,18 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                 <div class="glass-card rounded-[3rem] p-12 md:p-20 text-center space-y-10 border border-white/50 shadow-xl relative overflow-hidden">
                     <div class="space-y-4">
                         <h2 class="text-4xl md:text-6xl font-black text-slate-800">
-                            Nossas <span class="text-curumim-cyan">turmas</span>
+                            {t({ key: 'home.classes.titlePrefix', message: 'Nossas' })} <span class="text-curumim-cyan">{t({ key: 'home.classes.titleAccent', message: 'turmas' })}</span>
                         </h2>
                         <p class="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto font-medium">
-                            Temos turmas de crianças a partir de 6 meses até 12 anos de idade. Conheça as atividades e propostas de cada uma.
+                            {t({ key: 'home.classes.subtitle', message: 'Temos turmas de crianças a partir de 6 meses até 12 anos de idade. Conheça as atividades e propostas de cada uma.' })}
                         </p>
                     </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                          {[
-                             { title: "Turma Bebê", age: "6 meses - 3 anos", desc: "Primeiros passos na língua portuguesa por meio de músicas, histórias e brincadeiras sensoriais." },
-                             { title: "Turma Infantil", age: "4 - 6 anos", desc: "Desenvolvimento da oralidade e introdução à escrita com brincadeiras e contação de histórias." },
-                             { title: "Turma Kids", age: "7 - 12 anos", desc: "Aprofundamento da língua portuguesa com leitura, escrita e imersão na cultura brasileira." }
+                             { title: t({ key: 'home.classes.cards.babies.title', message: 'Turma Bebê' }), age: t({ key: 'home.classes.cards.babies.age', message: '6 meses - 3 anos' }), desc: t({ key: 'home.classes.cards.babies.description', message: 'Primeiros passos na língua portuguesa por meio de músicas, histórias e brincadeiras sensoriais.' }) },
+                             { title: t({ key: 'home.classes.cards.children.title', message: 'Turma Infantil' }), age: t({ key: 'home.classes.cards.children.age', message: '4 - 6 anos' }), desc: t({ key: 'home.classes.cards.children.description', message: 'Desenvolvimento da oralidade e introdução à escrita com brincadeiras e contação de histórias.' }) },
+                             { title: t({ key: 'home.classes.cards.kids.title', message: 'Turma Kids' }), age: t({ key: 'home.classes.cards.kids.age', message: '7 - 12 anos' }), desc: t({ key: 'home.classes.cards.kids.description', message: 'Aprofundamento da língua portuguesa com leitura, escrita e imersão na cultura brasileira.' }) }
                          ].map(turma => (
                             <div class="glass-card p-8 rounded-3xl border border-white/60 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 text-left">
                                 <div class="flex items-start gap-4 mb-3">
@@ -136,7 +137,7 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
 
                     <div class="pt-4">
                         <a href={withBase('classes')} class="inline-flex items-center gap-3 px-10 py-5 bg-curumim-cyan hover:bg-curumim-green text-white font-black rounded-2xl transition-all shadow-lg shadow-curumim-cyan/20 active:scale-95">
-                            Ver todas as turmas
+                            {t({ key: 'home.classes.cta', message: 'Ver todas as turmas' })}
                             <ArrowRight class="w-6 h-6" />
                         </a>
                     </div>
@@ -154,13 +155,13 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                                 <Calendar class="w-8 h-8 text-curumim-red" />
                             </div>
                             <div class="space-y-2">
-                                <h2 class="text-3xl font-black text-slate-800">Horário</h2>
+                                <h2 class="text-3xl font-black text-slate-800">{t({ key: 'home.schedule.title', message: 'Horário' })}</h2>
                                 <p class="text-xl text-slate-600 font-bold">
-                                    Domingos das 10:00 às 12:00
+                                    {t({ key: 'home.schedule.hours', message: 'Domingos das 10:00 às 12:00' })}
                                 </p>
                             </div>
                             <p class="text-slate-400 text-sm ">
-                                (Não há aula nos feriados prolongados do Canadá)
+                                {t({ key: 'home.schedule.note', message: '(Não há aula nos feriados prolongados do Canadá)' })}
                             </p>
                         </div>
 					</div>
@@ -171,12 +172,12 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                                 <MapPin class="w-8 h-8 text-curumim-green" />
                             </div>
                             <div class="space-y-2">
-                                <h2 class="text-3xl font-black text-slate-800">Localização</h2>
-                                <p class="text-xl font-bold text-slate-600 leading-snug">Mount Pleasant Neighbourhood House</p>
+                                <h2 class="text-3xl font-black text-slate-800">{t({ key: 'home.location.title', message: 'Localização' })}</h2>
+                                <p class="text-xl font-bold text-slate-600 leading-snug">{t({ key: 'home.location.name', message: 'Mount Pleasant Neighbourhood House' })}</p>
                             </div>
                             <a href="https://www.google.com/maps/place/Mount+Pleasant+Neighbourhood+House/@49.2623148,-123.0891644,17z" target="_blank" rel="noopener noreferrer" 
                                class="inline-flex items-center gap-2 text-lg text-curumim-cyan hover:text-curumim-green underline font-bold transition-all decoration-2 underline-offset-4">
-                                800 E Broadway, Vancouver, BC
+                                {t({ key: 'home.location.address', message: '800 E Broadway, Vancouver, BC' })}
                                 <ArrowRight class="w-4 h-4" />
                             </a>
                         </div>
@@ -192,10 +193,10 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
 					<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 						<div class="space-y-8">
 							<h2 class="text-4xl md:text-6xl font-black text-slate-800 leading-tight">
-								Nossa <span class="text-curumim-purple">biblioteca</span>
+									{t({ key: 'home.library.titlePrefix', message: 'Nossa' })} <span class="text-curumim-purple">{t({ key: 'home.library.titleAccent', message: 'biblioteca' })}</span>
 							</h2>
 							<p class="text-lg text-slate-600 leading-relaxed font-medium">
-								As famílias atuam como voluntárias na organização, catalogação, nos empréstimos e na conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa.
+									{t({ key: 'home.library.description', message: 'As famílias atuam como voluntárias na organização, catalogação, nos empréstimos e na conferência do acervo. A criança é incentivada a escolher um livro por semana e fazer a leitura com a família em casa.' })}
 							</p>
 							<div class="bg-gradient-to-r from-curumim-yellow/20 to-curumim-orange/20 rounded-[2rem] p-8 border border-white shadow-inner">
                                 <div class="flex items-center gap-6">
@@ -204,9 +205,9 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                                     </div>
                                     <div>
                                         <p class="text-3xl md:text-4xl font-black text-slate-800">
-                                            mais de 1.000
+	                                            {t({ key: 'home.library.statValue', message: 'mais de 1.000' })}
                                         </p>
-                                        <p class="text-slate-600 font-bold uppercase tracking-widest text-sm">títulos infantis!</p>
+	                                        <p class="text-slate-600 font-bold uppercase tracking-widest text-sm">{t({ key: 'home.library.statLabel', message: 'títulos infantis!' })}</p>
                                     </div>
                                 </div>
 							</div>
@@ -216,7 +217,7 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                              <div class="aspect-square glass-card rounded-[2.5rem] border border-white/60 flex items-center justify-center relative overflow-hidden shadow-xl group">
                                  <Image 
                                     src={randomBibliotecaImg} 
-                                    alt="Library"
+                                    alt={t({ key: 'home.library.imageAlt', message: 'Biblioteca da Oficina Curumim' })}
                                     loading="eager" 
                                     widths={[400, 800, 1200, bibliotecaImages[0].width]} 
                                     sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
@@ -237,14 +238,14 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                     {/* Eventos */}
                     <div class="glass-card rounded-[2.5rem] p-10 md:p-16 border border-white/50 shadow-xl space-y-8 group relative overflow-hidden">
                         <h2 class="text-4xl md:text-5xl font-black text-slate-800 leading-tight">
-                            Eventos <span class="text-curumim-red">culturais</span>
+                            {t({ key: 'home.events.titlePrefix', message: 'Eventos' })} <span class="text-curumim-red">{t({ key: 'home.events.titleAccent', message: 'culturais' })}</span>
                         </h2>
                         <p class="text-lg text-slate-600 font-medium">
-                            Temos eventos culturais durante o ano todo na Oficina Curumim. Confira nosso calendário anual.
+                            {t({ key: 'home.events.body', message: 'Temos eventos culturais durante o ano todo na Oficina Curumim. Confira nosso calendário anual.' })}
                         </p>
                         <div>
                             <a href={withBase('events')} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-red text-white font-black rounded-2xl hover:bg-curumim-purple transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
-                                Calendário anual
+                                {t({ key: 'home.events.cta', message: 'Calendário anual' })}
                                 <ArrowRight class="w-5 h-5" />
                             </a>
                         </div>
@@ -253,14 +254,14 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                     {/* Trabalho */}
                     <div class="glass-card rounded-[2.5rem] p-10 md:p-16 border border-white/50 shadow-xl space-y-8 group relative overflow-hidden">
                         <h2 class="text-4xl md:text-5xl font-black text-slate-800 leading-tight">
-                            Quer trabalhar <span class="text-curumim-green">conosco?</span>
+                            {t({ key: 'home.jobs.titlePrefix', message: 'Quer trabalhar' })} <span class="text-curumim-green">{t({ key: 'home.jobs.titleAccent', message: 'conosco?' })}</span>
                         </h2>
                         <p class="text-lg text-slate-600 font-medium">
-                            Estamos sempre buscando voluntários e parceiros apaixonados por educação e cultura.
+                            {t({ key: 'home.jobs.body', message: 'Estamos sempre buscando voluntários e parceiros apaixonados por educação e cultura.' })}
                         </p>
                         <div>
                             <a href={withBase('jobs')} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-green text-white font-black rounded-2xl hover:bg-curumim-cyan transition-all shadow-lg hover:shadow-curumim-green/20 active:scale-95">
-                                Faça parte da equipe
+                                {t({ key: 'home.jobs.cta', message: 'Faça parte da equipe' })}
                                 <ArrowRight class="w-5 h-5" />
                             </a>
                         </div>

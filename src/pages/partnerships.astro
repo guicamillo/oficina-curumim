@@ -5,22 +5,26 @@ import Mail from '@lucide/astro/icons/mail';
 import Lightbulb from '@lucide/astro/icons/lightbulb';
 import Users from '@lucide/astro/icons/users';
 import { withBase } from '../utils/paths';
+import { getLangFromUrl, useTranslations } from '../utils/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Parcerias - Oficina Curumim">
+<Layout title={t({ key: 'partnerships.meta.title', message: 'Parcerias - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
         <section class="relative pt-32 pb-20 px-4 overflow-hidden">
             <div class="max-w-7xl mx-auto text-center relative z-10">
                 <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-purple font-bold text-sm shadow-sm mb-8 animate-pulse">
                     <Handshake class="w-4 h-4" />
-                    Colaboração
+                    {t({ key: 'partnerships.hero.badge', message: 'Colaboração' })}
                 </div>
                 <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
-                    Nossas <span class="text-curumim-purple ">Parcerias</span>
+                    {t({ key: 'partnerships.hero.titlePrefix', message: 'Nossas' })} <span class="text-curumim-purple ">{t({ key: 'partnerships.hero.titleAccent', message: 'Parcerias' })}</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
-                    Acreditamos que grandes conquistas são frutos de esforços coletivos. Juntos, podemos fortalecer a cultura brasileira em Vancouver.
+                    {t({ key: 'partnerships.hero.subtitle', message: 'Acreditamos que grandes conquistas são frutos de esforços coletivos. Juntos, podemos fortalecer a cultura brasileira em Vancouver.' })}
                 </p>
             </div>
             
@@ -36,10 +40,10 @@ import { withBase } from '../utils/paths';
                     <div class="absolute -top-10 -right-10 w-64 h-64 bg-curumim-purple/5 rounded-full blur-3xl group-hover:bg-curumim-purple/10 transition-colors"></div>
                     <div class="space-y-8 relative z-10">
                         <p class="text-2xl text-slate-700 leading-relaxed font-black">
-                            A Oficina Curumim é uma organização sem fins lucrativos, comprometida em promover o desenvolvimento infantil por meio de atividades educativas e lúdicas.
+                            {t({ key: 'partnerships.intro.bodyPrimary', message: 'A Oficina Curumim é uma organização sem fins lucrativos, comprometida em promover o desenvolvimento infantil por meio de atividades educativas e lúdicas.' })}
                         </p>
                         <p class="text-xl text-slate-500 font-medium leading-relaxed">
-                            Estamos abertos a discutir parcerias com empresas e pessoas físicas que compartilham de nossa missão e desejam contribuir para o desenvolvimento cultural das nossas crianças.
+                            {t({ key: 'partnerships.intro.bodySecondary', message: 'Estamos abertos a discutir parcerias com empresas e pessoas físicas que compartilham de nossa missão e desejam contribuir para o desenvolvimento cultural das nossas crianças.' })}
                         </p>
                     </div>
                 </div>
@@ -50,9 +54,9 @@ import { withBase } from '../utils/paths';
                         <div class="w-16 h-16 bg-curumim-yellow/10 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
                             <Lightbulb class="w-8 h-8 text-curumim-yellow" />
                         </div>
-                        <h2 class="text-3xl font-black text-slate-800">Como funciona?</h2>
+                        <h2 class="text-3xl font-black text-slate-800">{t({ key: 'partnerships.howItWorks.title', message: 'Como funciona?' })}</h2>
                         <p class="text-slate-600 font-medium leading-relaxed">
-                            Acreditamos que uma parceria de sucesso é aquela em que ambas as partes se beneficiam mutuamente. Valorizamos a colaboração e o trabalho em equipe, buscando criar sinergias e maximizar o impacto positivo.
+                            {t({ key: 'partnerships.howItWorks.body', message: 'Acreditamos que uma parceria de sucesso é aquela em que ambas as partes se beneficiam mutuamente. Valorizamos a colaboração e o trabalho em equipe, buscando criar sinergias e maximizar o impacto positivo.' })}
                         </p>
                     </div>
 
@@ -60,9 +64,9 @@ import { withBase } from '../utils/paths';
                         <div class="w-16 h-16 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
                             <Users class="w-8 h-8 text-curumim-cyan" />
                         </div>
-                        <h2 class="text-3xl font-black text-slate-800">Formas de Apoio</h2>
+                        <h2 class="text-3xl font-black text-slate-800">{t({ key: 'partnerships.support.title', message: 'Formas de Apoio' })}</h2>
                         <p class="text-slate-600 font-medium leading-relaxed">
-                            Estamos abertos a diferentes formas de colaboração: apoio financeiro, doação de livros, material didático, recursos computacionais ou compartilhamento de conhecimentos e experiências.
+                            {t({ key: 'partnerships.support.body', message: 'Estamos abertos a diferentes formas de colaboração: apoio financeiro, doação de livros, material didático, recursos computacionais ou compartilhamento de conhecimentos e experiências.' })}
                         </p>
                     </div>
                 </div>
@@ -74,16 +78,16 @@ import { withBase } from '../utils/paths';
                         
                         <div class="space-y-6 relative z-10">
                             <h2 class="text-3xl md:text-5xl font-black text-white leading-tight">
-                                Interessado em se <span class="text-curumim-purple underline decoration-white/20 decoration-4 underline-offset-8">juntar a nós?</span>
+                                {t({ key: 'partnerships.cta.titlePrefix', message: 'Interessado em se' })} <span class="text-curumim-purple underline decoration-white/20 decoration-4 underline-offset-8">{t({ key: 'partnerships.cta.titleAccent', message: 'juntar a nós?' })}</span>
                             </h2>
                             <p class="text-slate-400 text-lg md:text-xl max-w-xl mx-auto font-medium">
-                                Envie sua proposta e vamos conversar sobre como podemos impactar positivamente nossa comunidade.
+                                {t({ key: 'partnerships.cta.body', message: 'Envie sua proposta e vamos conversar sobre como podemos impactar positivamente nossa comunidade.' })}
                             </p>
                         </div>
 
                         <div class="pt-8 relative z-10">
                             <a href="mailto:oficinacurumim@gmail.com" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-purple hover:bg-curumim-cyan text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-purple/20">
-                                Enviar Proposta
+                                {t({ key: 'partnerships.cta.button', message: 'Enviar proposta' })}
                                 <Mail class="w-8 h-8" />
                             </a>
                         </div>

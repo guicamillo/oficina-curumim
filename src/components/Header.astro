@@ -15,11 +15,11 @@ const eventsUrl = withBase('events');
 const contactUrl = withBase('contact');
 
 const navItems = [
-  { href: homeUrl, label: t('nav.home') },
-  { href: aboutUrl, label: t('nav.about') },
-  { href: classesUrl, label: t('nav.classes') },
-  { href: eventsUrl, label: t('nav.events') },
-  { href: contactUrl, label: t('nav.contact') },
+  { href: homeUrl, label: t({ key: 'nav.home', message: 'Início' }) },
+  { href: aboutUrl, label: t({ key: 'nav.about', message: 'Sobre nós' }) },
+  { href: classesUrl, label: t({ key: 'nav.classes', message: 'Nossas turmas' }) },
+  { href: eventsUrl, label: t({ key: 'nav.events', message: 'Eventos culturais' }) },
+  { href: contactUrl, label: t({ key: 'nav.contact', message: 'Contato' }) },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -41,7 +41,7 @@ function isActive(href: string) {
       {/* Logo */}
       <div class="flex-shrink-0">
         <a href={homeUrl} class="block transition-transform hover:scale-105 active:scale-95 duration-300">
-           <img id="logo" src={withBase('logo.svg')} alt="Oficina Curumim" class="h-12 md:h-16 w-auto" />
+           <img id="logo" src={withBase('logo.svg')} alt={t({ key: 'header.logo.alt', message: 'Oficina Curumim' })} class="h-12 md:h-16 w-auto" />
         </a>
       </div>
       
@@ -67,7 +67,7 @@ function isActive(href: string) {
       {/* Action Area */}
       <div class="flex items-center gap-4">
           {/* Mobile menu button */}
-          <button id="mobile-menu-button" class="md:hidden p-2 rounded-xl hover:bg-slate-100 transition-colors" aria-label="Menu">
+          <button id="mobile-menu-button" class="md:hidden p-2 rounded-xl hover:bg-slate-100 transition-colors" aria-label={t({ key: 'header.menu.ariaLabel', message: 'Menu' })}>
             <Menu class="w-6 h-6 text-slate-700" id="menu-icon" />
             <X class="w-6 h-6 text-slate-700 hidden" id="close-icon" />
           </button>

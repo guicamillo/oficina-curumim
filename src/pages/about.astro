@@ -10,18 +10,22 @@ import ArrowRight from '@lucide/astro/icons/arrow-right';
 import Users from '@lucide/astro/icons/users';
 import Globe from '@lucide/astro/icons/globe';
 import { withBase } from '../utils/paths';
+import { getLangFromUrl, useTranslations } from '../utils/i18n';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<Layout title="Sobre Nós - Oficina Curumim">
+<Layout title={t({ key: 'about.meta.title', message: 'Sobre Nós - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
         <section class="relative pt-32 pb-20 px-4 overflow-hidden">
             <div class="max-w-7xl mx-auto text-center relative z-10">
                 <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-6 tracking-tight">
-                    Sobre <span class="text-curumim-red ">Nós</span>
+                    {t({ key: 'about.hero.titlePrefix', message: 'Sobre' })} <span class="text-curumim-red ">{t({ key: 'about.hero.titleAccent', message: 'Nós' })}</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
-                    Unindo famílias brasileiras em Vancouver por meio da língua, da cultura e do afeto.
+                    {t({ key: 'about.hero.subtitle', message: 'Unindo famílias brasileiras em Vancouver por meio da língua, da cultura e do afeto.' })}
                 </p>
             </div>
             
@@ -39,33 +43,33 @@ import { withBase } from '../utils/paths';
                             <div class="w-20 h-20 bg-curumim-red/10 rounded-3xl flex items-center justify-center">
                                 <Target class="w-10 h-10 text-curumim-red" />
                             </div>
-                            <h2 class="text-4xl md:text-6xl font-black text-slate-800">Nossa <span class="text-curumim-red underline decoration-curumim-yellow/30 decoration-8 underline-offset-8">Missão</span></h2>
+                            <h2 class="text-4xl md:text-6xl font-black text-slate-800">{t({ key: 'about.mission.titlePrefix', message: 'Nossa' })} <span class="text-curumim-red underline decoration-curumim-yellow/30 decoration-8 underline-offset-8">{t({ key: 'about.mission.titleAccent', message: 'Missão' })}</span></h2>
                             <p class="text-xl text-slate-500 font-medium italic leading-relaxed">
-                                "Priorizamos que a criança seja feliz na Oficina Curumim."
+                                "{t({ key: 'about.mission.quote', message: 'Priorizamos que a criança seja feliz na Oficina Curumim.' })}"
                             </p>
                         </div>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             {[
                                 { 
-                                    text: "Estimular o desenvolvimento das habilidades orais, da leitura e da escrita em português.",
+                                    text: t({ key: 'about.mission.cards.language', message: 'Estimular o desenvolvimento das habilidades orais, da leitura e da escrita em português.' }),
                                     icom: Heart,
                                     color: "text-curumim-red",
                                     bg: "bg-curumim-red/5"
                                 },
                                 { 
-                                    text: "Proporcionar memória afetiva positiva em relação ao português, respeitando o ritmo de cada criança.",
+                                    text: t({ key: 'about.mission.cards.memory', message: 'Proporcionar memória afetiva positiva em relação ao português, respeitando o ritmo de cada criança.' }),
                                     icom: Lightbulb,
                                     color: "text-curumim-yellow",
                                     bg: "bg-curumim-yellow/5"
                                 },
                                 { 
-                                    text: "Ampliar o vocabulário e trazer a noção de pertencimento às origens brasileiras.",
+                                    text: t({ key: 'about.mission.cards.belonging', message: 'Ampliar o vocabulário e trazer a noção de pertencimento às origens brasileiras.' }),
                                     icom: Users,
                                     color: "text-curumim-green",
                                     bg: "bg-curumim-green/5"
                                 },
                                 { 
-                                    text: "Estreitar a relação entre língua, identidade e cultura brasileira no Canadá.",
+                                    text: t({ key: 'about.mission.cards.identity', message: 'Estreitar a relação entre língua, identidade e cultura brasileira no Canadá.' }),
                                     icom: Globe,
                                     color: "text-curumim-cyan",
                                     bg: "bg-curumim-cyan/5"
@@ -89,11 +93,11 @@ import { withBase } from '../utils/paths';
             <div class="max-w-5xl mx-auto">
                 <div class="text-center space-y-8">
                     
-                    <h2 class="text-4xl md:text-6xl font-black text-slate-800">Proposta <span class="text-curumim-green">pedagógica</span></h2>
+                    <h2 class="text-4xl md:text-6xl font-black text-slate-800">{t({ key: 'about.pedagogy.titlePrefix', message: 'Proposta' })} <span class="text-curumim-green">{t({ key: 'about.pedagogy.titleAccent', message: 'pedagógica' })}</span></h2>
                     <div class="glass-card p-10 md:p-16 rounded-[3rem] border border-white/60 shadow-xl relative">
                         <div class="absolute -top-12 -left-12 w-24 h-24 bg-curumim-yellow rounded-[2rem] -z-10 rotate-12 opacity-20"></div>
                         <p class="text-xl md:text-2xl text-slate-600 leading-relaxed font-medium">
-                            Em um ambiente lúdico e participativo, as crianças desenvolvem atividades relacionadas às manifestações folclóricas, personalidades, fatos, arte, literatura e histórias brasileiras. As propostas das atividades são pautadas a partir de um tema de estudo.
+                            {t({ key: 'about.pedagogy.body', message: 'Em um ambiente lúdico e participativo, as crianças desenvolvem atividades relacionadas às manifestações folclóricas, personalidades, fatos, arte, literatura e histórias brasileiras. As propostas das atividades são pautadas a partir de um tema de estudo.' })}
                         </p>
                     </div>
                 </div>
@@ -109,12 +113,12 @@ import { withBase } from '../utils/paths';
                         <div class="w-16 h-16 bg-curumim-orange/10 rounded-2xl flex items-center justify-center">
                             <Calendar class="w-8 h-8 text-curumim-orange" />
                         </div>
-                        <h2 class="text-3xl font-black text-slate-800">Ano letivo</h2>
+                        <h2 class="text-3xl font-black text-slate-800">{t({ key: 'about.academicYear.title', message: 'Ano letivo' })}</h2>
                         <p class="text-lg text-slate-600 font-medium leading-relaxed">
-                            As aulas acontecem durante três períodos ao longo do ano: 
-                            <span class="block mt-4 text-slate-800 font-bold">• Janeiro a Março</span>
-                            <span class="block text-slate-800 font-bold">• Abril a Junho</span>
-                            <span class="block text-slate-800 font-bold">• Setembro a Dezembro</span>
+                            {t({ key: 'about.academicYear.body', message: 'As aulas acontecem durante três períodos ao longo do ano:' })} 
+                            <span class="block mt-4 text-slate-800 font-bold">• {t({ key: 'about.academicYear.periodOne', message: 'Janeiro a Março' })}</span>
+                            <span class="block text-slate-800 font-bold">• {t({ key: 'about.academicYear.periodTwo', message: 'Abril a Junho' })}</span>
+                            <span class="block text-slate-800 font-bold">• {t({ key: 'about.academicYear.periodThree', message: 'Setembro a Dezembro' })}</span>
                         </p>
                     </div>
 
@@ -123,14 +127,14 @@ import { withBase } from '../utils/paths';
                         <div class="w-16 h-16 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center">
                             <ShieldCheck class="w-8 h-8 text-curumim-cyan" />
                         </div>
-                        <h2 class="text-3xl font-black text-slate-800">Código de Conduta</h2>
+                        <h2 class="text-3xl font-black text-slate-800">{t({ key: 'about.conduct.title', message: 'Código de Conduta' })}</h2>
                         <p class="text-lg text-slate-600 font-medium leading-relaxed">
-                            Para manter um ambiente organizado e seguro para todos, é essencial que pais e alunos sigam nosso guia de conduta.
+                            {t({ key: 'about.conduct.body', message: 'Para manter um ambiente organizado e seguro para todos, é essencial que pais e alunos sigam nosso guia de conduta.' })}
                         </p>
                         <div class="pt-4">
                             <a href="https://docs.google.com/document/d/1pJRK8tmHNGRAkDkY8gr9YphOaSDKs6p52fDPXJZNrOk/edit?usp=sharing" target="_blank" rel="noopener noreferrer" 
                                class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white font-bold rounded-xl hover:bg-curumim-cyan transition-all">
-                                Acessar o Guia
+                                {t({ key: 'about.conduct.cta', message: 'Acessar o guia' })}
                                 <ArrowRight class="w-4 h-4" />
                             </a>
                         </div>
@@ -147,7 +151,7 @@ import { withBase } from '../utils/paths';
                     <div class="w-20 h-20 bg-white glass-card rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-lg">
                         <History class="w-10 h-10 text-curumim-orange" />
                     </div>
-                    <h2 class="text-4xl md:text-6xl font-black text-slate-800">Nossa <span class="text-curumim-orange">História</span></h2>
+                    <h2 class="text-4xl md:text-6xl font-black text-slate-800">{t({ key: 'about.history.titlePrefix', message: 'Nossa' })} <span class="text-curumim-orange">{t({ key: 'about.history.titleAccent', message: 'História' })}</span></h2>
                 </div>
 
                 <div class="space-y-12 relative">
@@ -156,15 +160,15 @@ import { withBase } from '../utils/paths';
                     {[
                         { 
                             year: "2012", 
-                            title: "Outubro de 2012", 
-                            text: "Um grupo de famílias se une para desenvolver atividades educativas, em português, com seus filhos.",
+                            title: t({ key: 'about.history.timeline.2012.title', message: 'Outubro de 2012' }), 
+                            text: t({ key: 'about.history.timeline.2012.body', message: 'Um grupo de famílias se une para desenvolver atividades educativas, em português, com seus filhos.' }),
                             color: "bg-curumim-yellow",
                             icomColor: "text-curumim-yellow"
                         },
                         { 
                             year: "2013", 
-                            title: "Março de 2013", 
-                            text: "A Oficina Curumim é registrada como uma organização sem fins lucrativos, 'Oficina Curumim Parents Society'.",
+                            title: t({ key: 'about.history.timeline.2013.title', message: 'Março de 2013' }), 
+                            text: t({ key: 'about.history.timeline.2013.body', message: "A Oficina Curumim é registrada como uma organização sem fins lucrativos, 'Oficina Curumim Parents Society'." }),
                             color: "bg-curumim-green",
                             icomColor: "text-curumim-green"
                         }
@@ -187,7 +191,7 @@ import { withBase } from '../utils/paths';
                     <div class="bg-gradient-to-br from-slate-900 to-slate-800 rounded-[3rem] p-10 md:p-16 text-center relative overflow-hidden group">
                         <div class="absolute inset-0 bg-gradient-to-tr from-curumim-red/20 via-transparent to-curumim-yellow/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                         <p class="text-2xl md:text-4xl font-black text-white leading-tight relative z-10">
-                            Hoje, mais de 10 anos depois, contamos com <span class="text-curumim-yellow underline decoration-4 underline-offset-8">mais de 100 crianças</span> crescendo com orgulho de suas raízes brasileiras.
+                            {t({ key: 'about.history.highlight.prefix', message: 'Hoje, mais de 10 anos depois, contamos com' })} <span class="text-curumim-yellow underline decoration-4 underline-offset-8">{t({ key: 'about.history.highlight.emphasis', message: 'mais de 100 crianças' })}</span> {t({ key: 'about.history.highlight.suffix', message: 'crescendo com orgulho de suas raízes brasileiras.' })}
                         </p>
                     </div>
                 </div>
