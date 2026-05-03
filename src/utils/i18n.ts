@@ -1,15 +1,19 @@
 import i18next, { type TOptions } from "i18next";
 import ptBR from "../locales/pt-BR/translation.json";
+import enCA from "../locales/en-CA/translation.json";
 
-const defaultLang = "pt-BR";
+export const defaultLang = "pt-BR";
 
-const resources = {
+export const resources = {
   "pt-BR": {
     translation: ptBR,
   },
+  "en-CA": {
+    translation: enCA,
+  },
 } as const;
 
-type Lang = keyof typeof resources;
+export type Lang = keyof typeof resources;
 
 type MessageDescriptor = {
   key: string;
@@ -38,9 +42,18 @@ function getInstance(lang: Lang) {
 }
 
 export function getLangFromUrl(url: URL) {
-  const [, lang] = url.pathname.split("/");
-  if (lang in resources) return lang as Lang;
+  const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const pathname = url.pathname.startsWith(basePath)
+    ? url.pathname.slice(basePath.length)
+    : url.pathname;
+  const [, maybeLang] = pathname.split("/");
+
+  if (maybeLang in resources) return maybeLang as Lang;
   return defaultLang;
+}
+
+export function isLang(value: string): value is Lang {
+  return value in resources;
 }
 
 export function useTranslations(lang: Lang) {

@@ -110,7 +110,7 @@ const events = [
                             </div>
 
                             <div class="pt-8">
-                                <a href={withBase('contact')} class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-all`}>
+                                <a href={withBase('contact', lang)} class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-all`}>
                                     {t({ key: 'events.cards.cta', message: 'Saiba mais' })}
                                     <ArrowRight class="w-4 h-4" />
                                 </a>
@@ -139,7 +139,7 @@ const events = [
                     </div>
 
                     <div class="pt-8 relative z-10">
-                        <a href={withBase('contact')} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-red/20">
+                        <a href={withBase('contact', lang)} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-red/20">
                             {t({ key: 'events.cta.button', message: 'Quero me envolver' })}
                             <ArrowRight class="w-8 h-8" />
                         </a>

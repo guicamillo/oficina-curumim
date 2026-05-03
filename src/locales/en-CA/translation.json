@@ -1,0 +1,447 @@
+{
+  "about": {
+    "academicYear": {
+      "body": "Classes take place during three periods throughout the year:",
+      "periodOne": "January to March",
+      "periodThree": "September to December",
+      "periodTwo": "April to June",
+      "title": "School year"
+    },
+    "conduct": {
+      "body": "To maintain an organized and safe environment for everyone, it is essential that parents and students follow our code of conduct.",
+      "cta": "Open the guide",
+      "title": "Code of Conduct"
+    },
+    "hero": {
+      "subtitle": "Bringing Brazilian families together in Vancouver through language, culture, and care.",
+      "titleAccent": "Us",
+      "titlePrefix": "About"
+    },
+    "history": {
+      "highlight": {
+        "emphasis": "more than 100 children",
+        "prefix": "Today, more than 10 years later, we have",
+        "suffix": "growing up proud of their Brazilian roots."
+      },
+      "timeline": {
+        "2012": {
+          "body": "A group of families came together to create educational activities in Portuguese for their children.",
+          "title": "October 2012"
+        },
+        "2013": {
+          "body": "Oficina Curumim is registered as a non-profit organization, \"Oficina Curumim Parents Society\".",
+          "title": "March 2013"
+        }
+      },
+      "titleAccent": "History",
+      "titlePrefix": "Our"
+    },
+    "meta": {
+      "title": "About Us - Oficina Curumim"
+    },
+    "mission": {
+      "cards": {
+        "belonging": "Expand vocabulary and nurture a sense of belonging to Brazilian roots.",
+        "identity": "Strengthen the relationship between language, identity, and Brazilian culture in Canada.",
+        "language": "Encourage the development of speaking, reading, and writing skills in Portuguese.",
+        "memory": "Create positive emotional memories connected to Portuguese while respecting each child's pace."
+      },
+      "quote": "We prioritize making sure every child is happy at Oficina Curumim.",
+      "titleAccent": "Mission",
+      "titlePrefix": "Our"
+    },
+    "pedagogy": {
+      "body": "In a playful and participatory environment, children engage in activities related to Brazilian folklore, notable figures, historical facts, art, literature, and storytelling. Each activity proposal is guided by a study theme.",
+      "titleAccent": "approach",
+      "titlePrefix": "Educational"
+    }
+  },
+  "blog": {
+    "index": {
+      "meta": {
+        "title": "Blog - Oficina Curumim"
+      },
+      "readMore": "Read more",
+      "subtitle": "Follow our news and articles.",
+      "title": "Blog"
+    },
+    "post": {
+      "meta": {
+        "title": "{{title}} - Oficina Curumim"
+      }
+    }
+  },
+  "classes": {
+    "cta": {
+      "badge": "- Join Oficina -",
+      "body": "Join our community and create a deep connection to Brazilian roots.",
+      "button": "Talk to us",
+      "title": "Register your Curumim today!"
+    },
+    "groups": {
+      "indiozinhos": {
+        "description": "Activities that bring children closer to reading and writing through music, short texts, storytelling, games, dramatic play, and the creation of short written texts.",
+        "name": "INDIOZINHOS",
+        "range": "6 to 8 years old (approx.)"
+      },
+      "macaquinhos": {
+        "description": "Activities that introduce reading and writing practices, songs, nursery rhymes, storytelling, body awareness, rhymes, games, dramatization, and image reading.",
+        "name": "MACAQUINHOS",
+        "range": "4 to 6 years old (approx.)"
+      },
+      "oncinhas": {
+        "description": "Activities focused on oral language, songs, storytelling and read-alouds, body awareness, Brazilian games, and encouragement to speak Portuguese.",
+        "name": "ONCINHAS",
+        "range": "2.5 to 4 years old (approx.)"
+      },
+      "tatuzinhos": {
+        "description": "Activities centred on oral language, songs, storytelling and read-alouds, body awareness, play, sounds, and different kinds of stimulation (visual, tactile, auditory, motor).",
+        "moduleOne": "Module 1: 6-18 months",
+        "moduleTwo": "Module 2: 19-30 months",
+        "name": "TATUZINHOS"
+      },
+      "tucanos": {
+        "description": "Activities focused on understanding the structure and basic functioning of the language and using it in oral communication, reading, and writing situations. Formal production through a variety of text genres.",
+        "name": "TUCANOS",
+        "range": "8 to 12 years old (approx.)"
+      }
+    },
+    "hero": {
+      "subtitle": "Each stage is unique. We divide our groups to explore the full potential of each phase while respecting every child's individual pace of development.",
+      "titleAccent": "Groups",
+      "titlePrefix": "Our"
+    },
+    "meta": {
+      "title": "Our Groups - Oficina Curumim"
+    }
+  },
+  "contact": {
+    "cards": {
+      "email": {
+        "address": "oficinacurumim@gmail.com",
+        "title": "Email"
+      },
+      "location": {
+        "address": "800 E Broadway, Vancouver, BC",
+        "name": "Mount Pleasant Neighbourhood House",
+        "title": "Where we are"
+      },
+      "mailing": {
+        "lineOne": "PO Box 78030 Grandview PO",
+        "lineTwo": "Vancouver BC V5N 5W1",
+        "title": "Mailing address"
+      }
+    },
+    "form": {
+      "emailLabel": "Your best email",
+      "emailPlaceholder": "example@email.com",
+      "messageLabel": "How can we help?",
+      "messagePlaceholder": "Your message...",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your name",
+      "subject": "New website message - Oficina Curumim",
+      "submit": "Send message",
+      "subtitle": "Fill out the form below and we’ll get back to you as soon as possible.",
+      "successBody": "We’ll get back to you as soon as possible.",
+      "successTitle": "Message sent!",
+      "titleAccent": "message",
+      "titlePrefix": "Send a"
+    },
+    "hero": {
+      "badge": "Say hello!",
+      "subtitle": "We’d love to hear from you, whether you have questions, partnership ideas, or want to register your Curumim.",
+      "titleAccent": "Talk",
+      "titlePrefix": "Let’s"
+    },
+    "map": {
+      "legendBody": "Mount Pleasant Neighbourhood House",
+      "legendTitle": "Oficina Curumim"
+    },
+    "meta": {
+      "title": "Contact - Oficina Curumim"
+    }
+  },
+  "events": {
+    "cards": {
+      "birthdays": {
+        "date": "Throughout the year",
+        "description": "We celebrate every birthday with songs in Portuguese and cards made by classmates, encouraging joy and interaction in the group.",
+        "name": "Birthdays"
+      },
+      "carnival": {
+        "date": "February/March",
+        "description": "Playful activities about the history and cultural expressions of Brazil’s different regions. We organize a big celebration with music, dance, and traditional costumes.",
+        "name": "Carnival"
+      },
+      "community": {
+        "date": "Open events",
+        "description": "Participation in public events in Vancouver, sharing our work with the wider community and keeping our traditions alive.",
+        "name": "Brazilian Community"
+      },
+      "cta": "Learn more",
+      "juneParty": {
+        "date": "June",
+        "description": "One of the most anticipated moments of the year. Organized by families and staff, it brings the best of Sao Joao traditions into the Canadian context.",
+        "name": "June Festival"
+      },
+      "plh": {
+        "date": "May 16",
+        "description": "A day to connect Portuguese as a Heritage Language initiatives around the world. We host themed rooms with educational activities that reinforce belonging and Brazilian identity.",
+        "name": "PHL",
+        "subtitle": "Portuguese as a Heritage Language"
+      },
+      "yearEnd": {
+        "date": "December",
+        "description": "A special presentation by the children for their families, celebrating the end of the year with music and pride in our language.",
+        "name": "Year-End Celebration"
+      }
+    },
+    "cta": {
+      "badge": "- Join in -",
+      "body": "Our community is vibrant and welcoming. Come experience Brazil in Vancouver with us.",
+      "button": "I want to get involved",
+      "titleAccent": "cultural event!",
+      "titlePrefix": "Don’t miss a single"
+    },
+    "hero": {
+      "subtitle": "Preserving our culture through family involvement. We plan each moment so our roots can flourish in Vancouver.",
+      "titleAccent": "Events",
+      "titlePrefix": "Cultural"
+    },
+    "meta": {
+      "title": "Cultural Events - Oficina Curumim"
+    }
+  },
+  "footer": {
+    "bottom": {
+      "privacy": "Privacy",
+      "tagline": "Oficina Curumim - Portuguese and Brazilian Culture in Vancouver",
+      "terms": "Terms of use"
+    },
+    "brand": {
+      "name": "Oficina Curumim"
+    },
+    "credits": {
+      "branding": "Branding by",
+      "designerName": "Bruno Cirello",
+      "developerName": "Guilherme Camillo",
+      "website": "Website by"
+    },
+    "links": {
+      "jobs": "Work with us",
+      "partnerships": "Partnerships",
+      "title": "Quick links"
+    },
+    "logo": {
+      "alt": "Oficina Curumim"
+    },
+    "newsletter": {
+      "button": "Subscribe",
+      "emailPlaceholder": "Your best email",
+      "subject": "New newsletter signup - Oficina Curumim",
+      "successBody": "Keep an eye on your inbox.",
+      "successTitle": "Signed up!",
+      "title": "Stay up to date"
+    },
+    "social": {
+      "facebookLabel": "Facebook",
+      "instagramLabel": "Instagram",
+      "title": "Connect with us"
+    }
+  },
+  "header": {
+    "language": {
+      "ariaLabel": "Language selector",
+      "switchToEnglish": "Switch to English",
+      "switchToPortuguese": "Trocar para Português"
+    },
+    "logo": {
+      "alt": "Oficina Curumim"
+    },
+    "menu": {
+      "ariaLabel": "Menu"
+    }
+  },
+  "home": {
+    "about": {
+      "bodyPrimary": "Oficina Curumim is a non-profit organization whose mission is to encourage the use of spoken and written Portuguese while strengthening connections to Brazilian culture for Brazilian families across Greater Vancouver.",
+      "bodySecondary": "Brazilian cultural, artistic, and social elements are used as the context for the learning experiences in our groups.",
+      "cta": "Learn more",
+      "titleAccent": "we are",
+      "titlePrefix": "Who",
+      "visualLabel": "Our community"
+    },
+    "classes": {
+      "cards": {
+        "babies": {
+          "age": "6 months - 3 years",
+          "description": "First steps in Portuguese through songs, stories, and sensory play.",
+          "title": "Baby Group"
+        },
+        "children": {
+          "age": "4 - 6 years",
+          "description": "Oral language development and an introduction to writing through play and storytelling.",
+          "title": "Children’s Group"
+        },
+        "kids": {
+          "age": "7 - 12 years",
+          "description": "A deeper experience with Portuguese through reading, writing, and immersion in Brazilian culture.",
+          "title": "Kids Group"
+        }
+      },
+      "cta": "See all groups",
+      "subtitle": "We offer groups for children from 6 months to 12 years old. Explore the activities and learning focus of each one.",
+      "titleAccent": "groups",
+      "titlePrefix": "Our"
+    },
+    "events": {
+      "body": "We host cultural events all year long at Oficina Curumim. Explore our annual calendar.",
+      "cta": "Annual calendar",
+      "titleAccent": "events",
+      "titlePrefix": "Cultural"
+    },
+    "hero": {
+      "imageAlt": "Oficina Curumim featured image",
+      "primaryCta": "Discover our story",
+      "secondaryCta": "Our groups",
+      "subtitleAccent": "BRAZIL",
+      "subtitlePrefix": "And with",
+      "subtitleSuffix": "in our hearts.",
+      "titleAccent": "Vancouver",
+      "titlePrefix": "In the heart of"
+    },
+    "jobs": {
+      "body": "We are always looking for volunteers and partners who are passionate about education and culture.",
+      "cta": "Join the team",
+      "titleAccent": "with us?",
+      "titlePrefix": "Want to work"
+    },
+    "library": {
+      "description": "Families volunteer to organize, catalogue, lend, and review the collection. Each child is encouraged to choose one book per week and read it at home with their family.",
+      "imageAlt": "Oficina Curumim library",
+      "statLabel": "children’s titles!",
+      "statValue": "more than 1,000",
+      "titleAccent": "library",
+      "titlePrefix": "Our"
+    },
+    "location": {
+      "address": "800 E Broadway, Vancouver, BC",
+      "name": "Mount Pleasant Neighbourhood House",
+      "title": "Location"
+    },
+    "meta": {
+      "title": "Oficina Curumim - Portuguese and Brazilian Culture"
+    },
+    "schedule": {
+      "hours": "Sundays from 10:00 AM to 12:00 PM",
+      "note": "(No classes on Canadian long weekends)",
+      "title": "Schedule"
+    }
+  },
+  "jobs": {
+    "apply": {
+      "bodyPrefix": "Send an email with your resume to",
+      "bodySuffix": "including the following information:",
+      "email": "oficinacurumim@gmail.com",
+      "items": {
+        "address": "Address in Vancouver",
+        "availability": "Availability on Sundays",
+        "backgroundCheck": "Criminal record check declaration",
+        "name": "Full name and phone number",
+        "status": "Status in Canada (Study Permit, Work Permit, P.R., or citizenship)"
+      },
+      "title": "How to apply"
+    },
+    "cta": {
+      "body": "Send your resume now and let’s build the future of our community together.",
+      "button": "Send application",
+      "titleAccent": "part of the team?",
+      "titlePrefix": "Ready to become"
+    },
+    "hero": {
+      "badge": "Opportunities",
+      "subtitle": "Our mission is built with love, dedication, and goodwill. Want to help us build this beautiful story together? We’d love to meet you.",
+      "titleAccent": "With Us",
+      "titlePrefix": "Work"
+    },
+    "intro": {
+      "bodyPrimary": "Our teaching team includes both paid professionals and volunteers. Academic training in education and experience in Brazil are always welcome, but not required.",
+      "bodySecondary": "Oficina Curumim is made possible by parents, partners, and dedicated volunteers. Do you think your profile is a good fit for us?"
+    },
+    "meta": {
+      "title": "Work With Us - Oficina Curumim"
+    },
+    "notes": {
+      "items": {
+        "availability": "Availability for Sundays and events",
+        "experience": "Experience does not count toward NOC/PR purposes",
+        "focus": "Focus on education and cultural heritage",
+        "openings": "Opportunities in the library, events, and more",
+        "visas": "We do not sponsor immigration visas"
+      },
+      "title": "Important Notes"
+    }
+  },
+  "layout": {
+    "meta": {
+      "description": "Oficina Curumim - Portuguese and Brazilian Culture in Vancouver"
+    }
+  },
+  "nav": {
+    "about": "About us",
+    "classes": "Our groups",
+    "contact": "Contact",
+    "events": "Cultural events",
+    "home": "Home"
+  },
+  "partnerships": {
+    "cta": {
+      "body": "Send us your proposal and let’s talk about how we can create a positive impact together in our community.",
+      "button": "Send proposal",
+      "titleAccent": "join us?",
+      "titlePrefix": "Interested in"
+    },
+    "hero": {
+      "badge": "Collaboration",
+      "subtitle": "We believe great achievements come from collective effort. Together, we can strengthen Brazilian culture in Vancouver.",
+      "titleAccent": "Partnerships",
+      "titlePrefix": "Our"
+    },
+    "howItWorks": {
+      "body": "We believe a successful partnership is one where both sides benefit. We value collaboration and teamwork, always looking to create synergy and maximize positive impact.",
+      "title": "How does it work?"
+    },
+    "intro": {
+      "bodyPrimary": "Oficina Curumim is a non-profit organization committed to promoting child development through educational and playful activities.",
+      "bodySecondary": "We are open to discussing partnerships with companies and individuals who share our mission and want to contribute to the cultural development of our children."
+    },
+    "meta": {
+      "title": "Partnerships - Oficina Curumim"
+    },
+    "support": {
+      "body": "We welcome different forms of collaboration: financial support, book donations, educational materials, computer resources, or sharing knowledge and experience.",
+      "title": "Ways to support"
+    }
+  },
+  "registration": {
+    "form": {
+      "iframeTitle": "Oficina Curumim Registration Form",
+      "loading": "Loading…",
+      "scrollHint": "Scroll to fill it out"
+    },
+    "help": {
+      "body": "Our team is here to help you through every step of the registration process.",
+      "cta": "Get in touch",
+      "title": "Do you have any questions?"
+    },
+    "hero": {
+      "badge": "Pre-registration",
+      "subtitle": "Save your Curumim’s spot. Fill out the form below to begin the process.",
+      "titleAccent": "Registration",
+      "titlePrefix": "Registration"
+    },
+    "meta": {
+      "title": "Registration Form | Oficina Curumim"
+    }
+  }
+}

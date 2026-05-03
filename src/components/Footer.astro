@@ -3,18 +3,18 @@ import { getLangFromUrl, useTranslations } from '../utils/i18n';
 import Instagram from '@lucide/astro/icons/instagram';
 import Facebook from '@lucide/astro/icons/facebook';
 import Mail from '@lucide/astro/icons/mail';
-import { base, withBase } from '../utils/paths';
+import { withBase } from '../utils/paths';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const homeUrl = base;
-const aboutUrl = withBase('about');
-const classesUrl = withBase('classes');
-const eventsUrl = withBase('events');
-const jobsUrl = withBase('jobs');
-const partnershipsUrl = withBase('partnerships');
-const contactUrl = withBase('contact');
+const homeUrl = withBase('', lang);
+const aboutUrl = withBase('about', lang);
+const classesUrl = withBase('classes', lang);
+const eventsUrl = withBase('events', lang);
+const jobsUrl = withBase('jobs', lang);
+const partnershipsUrl = withBase('partnerships', lang);
+const contactUrl = withBase('contact', lang);
 const newsletterSubject = t({
     key: 'footer.newsletter.subject',
     message: 'Nova inscrição na newsletter - Oficina Curumim',

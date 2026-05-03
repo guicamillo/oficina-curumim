@@ -3,16 +3,28 @@ import {ClientRouter} from "astro:transitions"
 import { getLangFromUrl, useTranslations } from '../utils/i18n';
 import Menu from '@lucide/astro/icons/menu';
 import X from '@lucide/astro/icons/x';
-import { base, withBase } from '../utils/paths';
+import { switchLocalePath, withBase } from '../utils/paths';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const homeUrl = base;
-const aboutUrl = withBase('about');
-const classesUrl = withBase('classes');
-const eventsUrl = withBase('events');
-const contactUrl = withBase('contact');
+const homeUrl = withBase('', lang);
+const aboutUrl = withBase('about', lang);
+const classesUrl = withBase('classes', lang);
+const eventsUrl = withBase('events', lang);
+const contactUrl = withBase('contact', lang);
+const localeToggle =
+  lang === 'pt-BR'
+    ? {
+        flag: '🇨🇦',
+        href: switchLocalePath(Astro.url.pathname, 'en-CA'),
+        title: t({ key: 'header.language.switchToEnglish', message: 'Switch to English' }),
+      }
+    : {
+        flag: '🇧🇷',
+        href: switchLocalePath(Astro.url.pathname, 'pt-BR'),
+        title: t({ key: 'header.language.switchToPortuguese', message: 'Trocar para Português' }),
+      };
 
 const navItems = [
   { href: homeUrl, label: t({ key: 'nav.home', message: 'Início' }) },
@@ -27,7 +39,7 @@ function isActive(href: string) {
   const normalizedPath = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
   const normalizedHref = href.endsWith('/') ? href : `${href}/`;
   
-  if (href === base || href === `${base}/`) {
+  if (href === homeUrl || href === `${homeUrl}/`) {
     return normalizedPath === normalizedHref;
   }
   return normalizedPath.startsWith(normalizedHref);
@@ -66,6 +78,15 @@ function isActive(href: string) {
 
       {/* Action Area */}
       <div class="flex items-center gap-4">
+          <div class="hidden md:flex items-center gap-2 rounded-2xl border border-white/60 bg-white/60 p-1 shadow-sm backdrop-blur-md" aria-label={t({ key: 'header.language.ariaLabel', message: 'Language selector' })}>
+            <a
+              href={localeToggle.href}
+              class="inline-flex items-center justify-center rounded-xl px-3 py-2 text-lg text-slate-600 transition-all hover:bg-white hover:text-slate-900"
+              title={localeToggle.title}
+            >
+              <span aria-hidden="true">{localeToggle.flag}</span>
+            </a>
+          </div>
           {/* Mobile menu button */}
           <button id="mobile-menu-button" class="md:hidden p-2 rounded-xl hover:bg-slate-100 transition-colors" aria-label={t({ key: 'header.menu.ariaLabel', message: 'Menu' })}>
             <Menu class="w-6 h-6 text-slate-700" id="menu-icon" />
@@ -77,6 +98,17 @@ function isActive(href: string) {
 
   {/* Mobile Menu */}
   <div id="mobile-menu" class="hidden md:hidden glass-header border-t border-white/20 absolute w-full left-0 animate-in fade-in slide-in-from-top-4 duration-300">
+      <div class="px-4 pt-4">
+        <div class="flex items-center gap-2 rounded-2xl border border-white/60 bg-white/60 p-1 shadow-sm backdrop-blur-md">
+          <a
+            href={localeToggle.href}
+            class="inline-flex flex-1 items-center justify-center rounded-xl px-3 py-2 text-lg text-slate-600 transition-all hover:bg-white hover:text-slate-900"
+            title={localeToggle.title}
+          >
+            <span aria-hidden="true">{localeToggle.flag}</span>
+          </a>
+        </div>
+      </div>
       <nav class="flex flex-col p-4 space-y-2">
         {navItems.map((item) => (
           <a

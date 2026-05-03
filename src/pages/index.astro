@@ -50,11 +50,11 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                     </h2>
                     
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href={withBase('about')} class="px-8 py-4 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black rounded-2xl transition-all hover:scale-[1.05] active:scale-95 shadow-lg shadow-curumim-yellow/20 flex items-center justify-center gap-2 text-lg">
+                        <a href={withBase('about', lang)} class="px-8 py-4 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black rounded-2xl transition-all hover:scale-[1.05] active:scale-95 shadow-lg shadow-curumim-yellow/20 flex items-center justify-center gap-2 text-lg">
                             {t({ key: 'home.hero.primaryCta', message: 'Conheça nossa história' })}
                             <ArrowRight class="w-5 h-5" />
                         </a>
-                        <a href={withBase('classes')} class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-2xl transition-all hover:scale-[1.05] active:scale-95 border border-white/30 flex items-center justify-center gap-2 text-lg">
+                        <a href={withBase('classes', lang)} class="px-8 py-4 bg-white/10 hover:bg-white/20 backdrop-blur-md text-white font-bold rounded-2xl transition-all hover:scale-[1.05] active:scale-95 border border-white/30 flex items-center justify-center gap-2 text-lg">
                             {t({ key: 'home.hero.secondaryCta', message: 'Nossas turmas' })}
                         </a>
                     </div>
@@ -90,7 +90,7 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                                 {t({ key: 'home.about.bodySecondary', message: 'Os aspectos culturais, artísticos e sociais da cultura brasileira são utilizados como contexto para o desenvolvimento das propostas nas turmas.' })}
                             </p>
                             <div>
-                                <a href={withBase('about')} class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-red transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
+                                <a href={withBase('about', lang)} class="inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white font-black rounded-2xl hover:bg-curumim-red transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
                                     {t({ key: 'home.about.cta', message: 'Saiba mais' })}
                                     <ArrowRight class="w-5 h-5" />
                                 </a>
@@ -136,7 +136,7 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                     </div>
 
                     <div class="pt-4">
-                        <a href={withBase('classes')} class="inline-flex items-center gap-3 px-10 py-5 bg-curumim-cyan hover:bg-curumim-green text-white font-black rounded-2xl transition-all shadow-lg shadow-curumim-cyan/20 active:scale-95">
+                        <a href={withBase('classes', lang)} class="inline-flex items-center gap-3 px-10 py-5 bg-curumim-cyan hover:bg-curumim-green text-white font-black rounded-2xl transition-all shadow-lg shadow-curumim-cyan/20 active:scale-95">
                             {t({ key: 'home.classes.cta', message: 'Ver todas as turmas' })}
                             <ArrowRight class="w-6 h-6" />
                         </a>
@@ -244,7 +244,7 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                             {t({ key: 'home.events.body', message: 'Temos eventos culturais durante o ano todo na Oficina Curumim. Confira nosso calendário anual.' })}
                         </p>
                         <div>
-                            <a href={withBase('events')} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-red text-white font-black rounded-2xl hover:bg-curumim-purple transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
+                            <a href={withBase('events', lang)} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-red text-white font-black rounded-2xl hover:bg-curumim-purple transition-all shadow-lg hover:shadow-curumim-red/20 active:scale-95">
                                 {t({ key: 'home.events.cta', message: 'Calendário anual' })}
                                 <ArrowRight class="w-5 h-5" />
                             </a>
@@ -260,7 +260,7 @@ const randomHeroImg = heroImages[Math.floor(Math.random() * heroImages.length)];
                             {t({ key: 'home.jobs.body', message: 'Estamos sempre buscando voluntários e parceiros apaixonados por educação e cultura.' })}
                         </p>
                         <div>
-                            <a href={withBase('jobs')} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-green text-white font-black rounded-2xl hover:bg-curumim-cyan transition-all shadow-lg hover:shadow-curumim-green/20 active:scale-95">
+                            <a href={withBase('jobs', lang)} class="inline-flex items-center gap-3 px-8 py-4 bg-curumim-green text-white font-black rounded-2xl hover:bg-curumim-cyan transition-all shadow-lg hover:shadow-curumim-green/20 active:scale-95">
                                 {t({ key: 'home.jobs.cta', message: 'Faça parte da equipe' })}
                                 <ArrowRight class="w-5 h-5" />
                             </a>
