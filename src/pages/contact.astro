@@ -239,17 +239,52 @@ const mailingLineTwo = t({
     }
 </style>
 
-<head>
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-        crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin=""></script>
-    </head>
-
 <script is:inline>
+    function ensureLeafletAssets() {
+        if (!document.querySelector('link[data-leaflet-css]')) {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+            link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+            link.crossOrigin = '';
+            link.setAttribute('data-leaflet-css', 'true');
+            document.head.appendChild(link);
+        }
+
+        if (typeof window.L !== 'undefined') {
+            return Promise.resolve();
+        }
+
+        const existingScript = document.querySelector('script[data-leaflet-js]');
+        if (existingScript) {
+            return new Promise((resolve, reject) => {
+                existingScript.addEventListener('load', () => resolve(), { once: true });
+                existingScript.addEventListener('error', reject, { once: true });
+            });
+        }
+
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+            script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+            script.crossOrigin = '';
+            script.setAttribute('data-leaflet-js', 'true');
+            script.addEventListener('load', () => resolve(), { once: true });
+            script.addEventListener('error', reject, { once: true });
+            document.head.appendChild(script);
+        });
+    }
+
     function initMap() {
+        const mapElement = document.getElementById('map');
+        if (!mapElement || typeof window.L === 'undefined') return;
+
+        const existingMap = mapElement._leaflet_map_instance;
+        if (existingMap) {
+            existingMap.remove();
+            mapElement._leaflet_map_instance = null;
+        }
+
         const coords = [49.2623, -123.0917]; // Mount Pleasant Neighbourhood House
         const map = L.map('map', {
             zoomControl: false,
@@ -276,14 +311,20 @@ const mailingLineTwo = t({
         // Disable scroll zoom but keep draggable
         map.on('focus', () => { map.scrollWheelZoom.enable(); });
         map.on('blur', () => { map.scrollWheelZoom.disable(); });
+
+        mapElement._leaflet_map_instance = map;
     }
 
-    // Initialize map after script loads
-    if (typeof L !== 'undefined') {
-        initMap();
-    } else {
-        window.addEventListener('load', initMap);
+    async function setupMap() {
+        try {
+            await ensureLeafletAssets();
+            initMap();
+        } catch (error) {
+            console.error('Failed to initialize Leaflet map', error);
+        }
     }
+
+    document.addEventListener('astro:page-load', setupMap);
 </script>
 
 <script>
