@@ -190,6 +190,11 @@ const mailingLineTwo = t({
     .leaflet-container {
         background-color: #f8fafc !important;
     }
+    @media (prefers-color-scheme: dark) {
+        .leaflet-container {
+            background-color: #0f172a !important;
+        }
+    }
     .custom-div-icon {
         background: none;
         border: none;
@@ -291,7 +296,9 @@ const mailingLineTwo = t({
             scrollWheelZoom: false
         }).setView(coords, 16);
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        const tileTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark_all' : 'light_all';
+
+        L.tileLayer(`https://{s}.basemaps.cartocdn.com/${tileTheme}/{z}/{x}/{y}{r}.png`, {
             attribution: '&copy; OpenStreetMap'
         }).addTo(map);
 
