@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Mail from '@lucide/astro/icons/mail';
 import MapPin from '@lucide/astro/icons/map-pin';
 import Send from '@lucide/astro/icons/send';
-import MessageSquare from '@lucide/astro/icons/message-square';
 import Compass from '@lucide/astro/icons/compass';
 import ArrowRight from '@lucide/astro/icons/arrow-right';
 import { getLangFromUrl, useTranslations } from '../utils/i18n';
@@ -31,10 +30,6 @@ const mailingLineTwo = t({
         {/* Hero Section */}
         <section class="relative pt-32 pb-20 px-4 overflow-hidden">
             <div class="max-w-7xl mx-auto text-center relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-orange font-bold text-sm shadow-sm mb-8 animate-pulse">
-                    <MessageSquare class="w-4 h-4" />
-                    {t({ key: 'contact.hero.badge', message: 'Diga oi!' })}
-                </div>
                 <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
                     {t({ key: 'contact.hero.titlePrefix', message: 'Vamos' })} <span class="text-curumim-orange ">{t({ key: 'contact.hero.titleAccent', message: 'Conversar' })}</span>
                 </h1>

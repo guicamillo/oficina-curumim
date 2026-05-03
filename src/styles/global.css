@@ -120,6 +120,43 @@ body::before {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+.glass-header.header-scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.glass-header.header-scrolled #header-inner {
+  height: 4.25rem;
+}
+
+.glass-header.header-scrolled #logo {
+  height: 2.5rem;
+}
+
+#logo-link,
+#logo {
+  transform-origin: 50% 50%;
+}
+
+.glass-header.header-scrolled #desktop-nav {
+  gap: 0.1rem;
+}
+
+.glass-header.header-scrolled .header-nav-link {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.8rem;
+  border-radius: 0.9rem;
+}
+
+.glass-header.header-scrolled #header-actions {
+  gap: 0.75rem;
+}
+
+.glass-header.header-scrolled #desktop-locale-toggle {
+  transform: scale(0.92);
+  transform-origin: center;
+}
+
 .glass-footer {
   background: rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: var(--glass-blur-card);
