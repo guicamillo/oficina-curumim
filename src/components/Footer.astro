@@ -4,6 +4,7 @@ import { siFacebook, siInstagram } from 'simple-icons';
 import Mail from '@lucide/astro/icons/mail';
 import { withBase } from '../utils/paths';
 
+const newsletterAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY?.trim();
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
@@ -83,79 +84,53 @@ const designerName = t({
                     </ul>
                 </nav>
 
-                <!-- Newsletter Component -->
-                <div class="glass-card rounded-3xl p-8 border border-white/40 shadow-lg relative overflow-hidden group">
-                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-curumim-yellow/10 rounded-full blur-2xl group-hover:bg-curumim-yellow/20 transition-colors"></div>
-                    <h3 class="text-lg font-bold mb-4 text-slate-800 flex items-center gap-2">
-                        <Mail class="w-5 h-5 text-curumim-orange" />
-                        {t({ key: 'footer.newsletter.title', message: 'Fique por dentro das novidades' })}
-                    </h3>
-                    <form id="newsletter-form">
-                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-                        <input type="hidden" name="subject" value={newsletterSubject} />
-                        <div class="flex flex-wrap gap-3">
-                            <input 
-                                type="email" 
-                                name="email"
-                                placeholder={t({ key: 'footer.newsletter.emailPlaceholder', message: 'Seu melhor e-mail' })} 
-                                required
-                                class="newsletter-input min-w-0 flex-[1_1_14rem] px-5 py-3.5 rounded-2xl bg-white/50 border border-white/40 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-curumim-yellow/50 text-base backdrop-blur-sm shadow-inner disabled:opacity-50"
-                            />
-                            <button 
-                                type="submit" 
-                                class="newsletter-btn px-8 py-3.5 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-bold rounded-2xl transition-[background-color,opacity,scale] duration-150 ease-out motion-safe:enabled:active:scale-96 shadow-md shadow-curumim-yellow/20 text-sm whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                            >
-                                <span class="newsletter-btn-text">{t({ key: 'footer.newsletter.button', message: 'Inscrever' })}</span>
-                                <svg class="newsletter-spinner hidden w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                                </svg>
-                            </button>
-                        </div>
-                    </form>
-                    <div id="newsletter-success" class="hidden form-message-enter mt-3">
-                        <div class="glass-card rounded-[2rem] p-6 border-2 border-curumim-green bg-curumim-green/10 text-center">
-                            <svg class="w-12 h-12 text-curumim-green mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                            <p class="text-xl font-black text-slate-800 mb-1">{t({ key: 'footer.newsletter.successTitle', message: 'Inscrição feita!' })}</p>
-                            <p class="text-slate-600 font-medium text-sm">{t({ key: 'footer.newsletter.successBody', message: 'Fique de olho no seu e-mail.' })}</p>
-                        </div>
+                {newsletterAccessKey && (
+                    <div class="glass-card rounded-3xl p-8 border border-white/40 shadow-lg relative overflow-hidden group">
+                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-curumim-yellow/10 rounded-full blur-2xl group-hover:bg-curumim-yellow/20 transition-colors"></div>
+                        <h3 class="text-lg font-bold mb-4 text-slate-800 flex items-center gap-2">
+                            <Mail class="w-5 h-5 text-curumim-orange" />
+                            {t({ key: 'footer.newsletter.title', message: 'Fique por dentro das novidades' })}
+                        </h3>
+                        <form id="newsletter-form" data-web3forms method="post" action="https://api.web3forms.com/submit" class="space-y-3">
+                            <input type="hidden" name="access_key" value={newsletterAccessKey} />
+                            <input type="hidden" name="subject" value={newsletterSubject} />
+                            <input type="checkbox" name="botcheck" hidden tabindex="-1" />
+                            <fieldset class="min-w-0 flex flex-wrap gap-3">
+                                <input
+                                    type="email"
+                                    name="email"
+                                    autocomplete="email"
+                                    aria-label={t({ key: 'footer.newsletter.emailLabel', message: 'Endereço de e-mail' })}
+                                    placeholder={t({ key: 'footer.newsletter.emailPlaceholder', message: 'Seu melhor e-mail' })}
+                                    required
+                                    class="newsletter-input min-w-0 flex-[1_1_14rem] px-5 py-3.5 rounded-2xl bg-white/50 border border-white/40 text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-curumim-yellow/50 text-base backdrop-blur-sm shadow-inner disabled:opacity-50"
+                                />
+                                <button
+                                    type="submit"
+                                    class="newsletter-btn px-8 py-3.5 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-bold rounded-2xl transition-[background-color,opacity,scale] duration-150 ease-out motion-safe:enabled:active:scale-96 shadow-md shadow-curumim-yellow/20 text-sm whitespace-nowrap disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                >
+                                    <span>{t({ key: 'footer.newsletter.button', message: 'Inscrever' })}</span>
+                                    <svg data-form-spinner aria-hidden="true" class="hidden w-4 h-4 animate-form-loading" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                    </svg>
+                                </button>
+                            </fieldset>
+                            <p data-form-error class="hidden text-sm font-semibold text-slate-700" role="alert" tabindex="-1">
+                                {t({ key: 'footer.newsletter.error', message: 'Não foi possível receber seu e-mail. Tente novamente.' })}
+                            </p>
+                            <div data-form-success class="hidden form-message-enter" role="status" tabindex="-1">
+                                <div class="glass-card rounded-[2rem] p-6 border-2 border-curumim-green bg-curumim-green/10 text-center">
+                                    <svg class="w-12 h-12 text-curumim-green mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                    <p class="text-xl font-black text-slate-800 mb-1">{t({ key: 'footer.newsletter.successTitle', message: 'E-mail recebido!' })}</p>
+                                    <p class="text-slate-600 font-medium text-sm">{t({ key: 'footer.newsletter.successBody', message: 'Obrigado pelo seu interesse nas novidades da Oficina Curumim.' })}</p>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                </div>
-
-                <script>
-                    document.getElementById('newsletter-form')?.addEventListener('submit', async (e) => {
-                        e.preventDefault();
-                        const form = e.target;
-                        const btn = form.querySelector('.newsletter-btn');
-                        const btnText = form.querySelector('.newsletter-btn-text');
-                        const spinner = form.querySelector('.newsletter-spinner');
-                        const input = form.querySelector('.newsletter-input');
-                        const successMsg = document.getElementById('newsletter-success');
-                        
-                        btn.disabled = true;
-                        input.disabled = true;
-                        btnText.classList.add('hidden');
-                        spinner.classList.remove('hidden');
-                        
-                        try {
-                            const formData = new FormData(form);
-                            await fetch('https://api.web3forms.com/submit', {
-                                method: 'POST',
-                                body: formData
-                            });
-                            
-                            form.classList.add('hidden');
-                            successMsg.classList.remove('hidden');
-                        } catch {
-                            btn.disabled = false;
-                            input.disabled = false;
-                            btnText.classList.remove('hidden');
-                            spinner.classList.add('hidden');
-                        }
-                    });
-                </script>
+                )}
             </div>
         </div>
         
