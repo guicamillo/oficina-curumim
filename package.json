@@ -17,23 +17,23 @@
     "validate": "bun run i18n:validate && bun run i18n:extract && bun run format:check && bun run lint && astro build"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.3",
-    "@lucide/astro": "^0.577.0",
-    "@tailwindcss/vite": "^4.1.17",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "astro": "^6.1.8",
-    "i18next": "^26.0.8",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "tailwindcss": "^4.1.17"
+    "@astrojs/react": "^7.1.9",
+    "@lucide/astro": "^1.81.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.3",
+    "@types/react-dom": "^19.3.0",
+    "astro": "^7.4.13",
+    "i18next": "^27.2.9",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "simple-icons": "^16.38.1",
+    "tailwindcss": "^4.3.5"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19",
     "husky": "^9.1.7",
-    "knip": "^5.86.0",
-    "oxfmt": "^0.46.0",
-    "oxlint": "^1.61.0"
+    "knip": "^6.48.0",
+    "oxfmt": "^0.80.0",
+    "oxlint": "^1.95.0"
   },
   "knip": {
     "ignoreDependencies": [
