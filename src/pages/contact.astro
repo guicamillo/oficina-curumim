@@ -28,12 +28,12 @@ const mailingLineTwo = t({
 <Layout title={t({ key: 'contact.meta.title', message: 'Contato - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
-        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
-            <div class="max-w-7xl mx-auto text-center relative z-10">
-                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+        <section class="page-intro relative overflow-hidden">
+            <div class="site-container text-center relative z-10">
+                <h1 class="page-title text-slate-800">
                     {t({ key: 'contact.hero.titlePrefix', message: 'Vamos' })} <span class="text-curumim-orange ">{t({ key: 'contact.hero.titleAccent', message: 'Conversar' })}</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-2xl mx-auto leading-relaxed">
+                <p class="page-lead text-slate-600">
                     {t({ key: 'contact.hero.subtitle', message: 'Adoraríamos ouvir de você. Seja para tirar dúvidas, sugerir parcerias ou matricular seu curumim.' })}
                 </p>
             </div>
@@ -43,20 +43,20 @@ const mailingLineTwo = t({
         </section>
 
         {/* Contact Content */}
-        <section class="py-12 px-4 pb-32">
-            <div class="max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <section class="py-12 pb-32">
+            <div class="site-container">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
                     {/* Left Column - Contact Info */}
-                    <div class="lg:col-span-4 space-y-6">
+                    <div class="min-w-0 lg:col-span-4 space-y-6">
                         {/* Email Card */}
-                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:-translate-y-1 transition-all duration-300">
+                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group">
                             <div class="space-y-6">
-                                <div class="w-14 h-14 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <div class="w-14 h-14 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center motion-safe:group-hover:scale-110 transition-transform">
                                     <Mail class="w-7 h-7 text-curumim-cyan" />
                                 </div>
                                 <div class="space-y-2">
                                     <h3 class="text-xl font-black text-slate-800 tracking-tight">{t({ key: 'contact.cards.email.title', message: 'E-mail' })}</h3>
-                                    <a href="mailto:oficinacurumim@gmail.com" class="text-lg text-slate-600 font-bold hover:text-curumim-cyan transition-colors break-all">
+                                    <a href="mailto:oficinacurumim@gmail.com" class="text-lg text-slate-600 font-semibold hover:text-curumim-cyan transition-colors wrap-anywhere">
                                         {contactEmail}
                                     </a>
                                 </div>
@@ -64,9 +64,9 @@ const mailingLineTwo = t({
                         </div>
 
                         {/* Location Card */}
-                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:-translate-y-1 transition-all duration-300 overflow-hidden relative">
+                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group overflow-hidden relative">
                             <div class="space-y-6 relative z-10">
-                                <div class="w-14 h-14 bg-curumim-green/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <div class="w-14 h-14 bg-curumim-green/10 rounded-2xl flex items-center justify-center motion-safe:group-hover:scale-110 transition-transform">
                                     <MapPin class="w-7 h-7 text-curumim-green" />
                                 </div>
                                 <div class="space-y-2">
@@ -81,9 +81,9 @@ const mailingLineTwo = t({
                         </div>
 
                         {/* Mailing Card */}
-                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group hover:-translate-y-1 transition-all duration-300">
+                        <div class="glass-card p-8 rounded-[2.5rem] border border-white/60 shadow-xl group">
                             <div class="space-y-6">
-                                <div class="w-14 h-14 bg-curumim-purple/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                                <div class="w-14 h-14 bg-curumim-purple/10 rounded-2xl flex items-center justify-center motion-safe:group-hover:scale-110 transition-transform">
                                     <Compass class="w-7 h-7 text-curumim-purple" />
                                 </div>
                                 <div class="space-y-2">
@@ -98,41 +98,41 @@ const mailingLineTwo = t({
                     </div>
 
                     {/* Right Column - Form */}
-                    <div class="lg:col-span-8">
-                        <div class="glass-card rounded-[3rem] p-8 md:p-16 border border-white/60 shadow-2xl relative overflow-hidden h-full">
+                    <div class="min-w-0 lg:col-span-8">
+                        <div class="glass-card rounded-[3rem] p-5 sm:p-8 lg:p-12 border border-white/60 shadow-2xl relative overflow-hidden h-full">
                             <div class="absolute -top-20 -right-20 w-80 h-80 bg-curumim-orange/5 rounded-full blur-[100px] -z-10"></div>
                             
-                            <div class="space-y-12 h-full flex flex-col">
+                            <div class="space-y-8 h-full flex flex-col">
                                 <div class="space-y-4">
                                     <h2 class="text-4xl md:text-5xl font-black text-slate-800">{t({ key: 'contact.form.titlePrefix', message: 'Mande uma' })} <span class="text-curumim-orange underline decoration-curumim-yellow/30 decoration-8 underline-offset-8">{t({ key: 'contact.form.titleAccent', message: 'mensagem' })}</span></h2>
                                     <p class="text-lg text-slate-500 font-medium">{t({ key: 'contact.form.subtitle', message: 'Preencha o formulário abaixo e retornaremos o quanto antes.' })}</p>
                                 </div>
 
-                                <form id="contact-form" class="space-y-8 flex-grow">
+                                <form id="contact-form" class="space-y-6 flex-grow">
                                     <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
                                     <input type="hidden" name="subject" value={contactSubject} />
-                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         <div class="space-y-3">
-                                            <label for="name" class="block text-sm font-black text-slate-400 uppercase tracking-widest ml-4">{t({ key: 'contact.form.nameLabel', message: 'Nome completo' })}</label>
+                                            <label for="name" class="block text-sm font-bold text-slate-600 uppercase tracking-wider ms-1">{t({ key: 'contact.form.nameLabel', message: 'Nome completo' })}</label>
                                             <input type="text" id="name" name="name" 
-                                                class="contact-input w-full px-8 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner disabled:opacity-50" 
+                                                class="contact-input w-full px-4 sm:px-6 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-[background-color,border-color,color,box-shadow,opacity] shadow-inner disabled:opacity-50"
                                                 placeholder={t({ key: 'contact.form.namePlaceholder', message: 'Seu nome' })}
                                                 required
                                             />
                                         </div>
                                         <div class="space-y-3">
-                                            <label for="email" class="block text-sm font-black text-slate-400 uppercase tracking-widest ml-4">{t({ key: 'contact.form.emailLabel', message: 'Seu melhor e-mail' })}</label>
+                                            <label for="email" class="block text-sm font-bold text-slate-600 uppercase tracking-wider ms-1">{t({ key: 'contact.form.emailLabel', message: 'Seu melhor e-mail' })}</label>
                                             <input type="email" id="email" name="email" 
-                                                class="contact-input w-full px-8 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner disabled:opacity-50"
+                                                class="contact-input w-full px-4 sm:px-6 py-5 rounded-[2rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-[background-color,border-color,color,box-shadow,opacity] shadow-inner disabled:opacity-50"
                                                 placeholder={t({ key: 'contact.form.emailPlaceholder', message: 'exemplo@email.com' })}
                                                 required
                                             />
                                         </div>
                                     </div>
                                     <div class="space-y-3">
-                                        <label for="message" class="block text-sm font-black text-slate-400 uppercase tracking-widest ml-4">{t({ key: 'contact.form.messageLabel', message: 'Como podemos ajudar?' })}</label>
+                                        <label for="message" class="block text-sm font-bold text-slate-600 uppercase tracking-wider ms-1">{t({ key: 'contact.form.messageLabel', message: 'Como podemos ajudar?' })}</label>
                                         <textarea id="message" name="message" rows="6" 
-                                            class="contact-input w-full px-8 py-6 rounded-[2.5rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-all shadow-inner resize-none disabled:opacity-50"
+                                            class="contact-input w-full px-4 sm:px-6 py-6 rounded-[2.5rem] bg-white/40 border border-white/60 text-slate-800 font-bold placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-curumim-orange/10 focus:bg-white/80 transition-[background-color,border-color,color,box-shadow,opacity] shadow-inner resize-none disabled:opacity-50"
                                             placeholder={t({ key: 'contact.form.messagePlaceholder', message: 'Sua mensagem...' })}
                                             required
                                         ></textarea>
@@ -150,13 +150,13 @@ const mailingLineTwo = t({
                                     
                                     <div id="contact-form-content" class="pt-4">
                                         <button type="submit" 
-                                            class="contact-btn w-full md:w-auto inline-flex items-center justify-center gap-4 px-12 py-6 bg-curumim-orange hover:bg-curumim-red text-white font-black text-xl rounded-[2rem] transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-curumim-orange/20 group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100">
+                                            class="contact-btn w-full md:w-auto inline-flex items-center justify-center gap-3 px-5 sm:px-8 py-4 bg-curumim-orange hover:bg-curumim-red text-white font-black text-xl rounded-[2rem] transition-[background-color,border-color,color,scale,opacity] duration-150 ease-out motion-safe:enabled:active:scale-96 shadow-xl shadow-curumim-orange/20 group disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100">
                                             <span class="contact-btn-text">{t({ key: 'contact.form.submit', message: 'Enviar mensagem' })}</span>
                                             <svg class="contact-spinner hidden w-6 h-6 animate-form-loading" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                                                 <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                                                 <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                                             </svg>
-                                            <Send class="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                            <Send class="w-6 h-6 motion-safe:group-hover:translate-x-1 motion-safe:group-hover:-translate-y-1 transition-transform" />
                                         </button>
                                     </div>
                                 </form>
@@ -168,10 +168,10 @@ const mailingLineTwo = t({
         </section>
 
         {/* Interactive Map */}
-        <section class="pb-32 px-4">
-            <div class="max-w-7xl mx-auto">
+        <section class="pb-32">
+            <div class="site-container">
                 <div class="glass-card rounded-[4rem] h-[500px] md:h-[600px] border border-white/60 overflow-hidden shadow-2xl relative">
-                    <div id="map" class="w-full h-full grayscale hover:grayscale-0 transition-all duration-700"></div>
+                    <div id="map" class="w-full h-full grayscale hover:grayscale-0 transition-[filter] duration-700"></div>
                     
                     {/* Custom Legend/Overlay */}
                     <div class="absolute bottom-8 left-8 z-[1000] pointer-events-none">
@@ -359,7 +359,6 @@ const mailingLineTwo = t({
             
             formContent.classList.add('hidden');
             successMsg.classList.remove('hidden');
-            successMsg.classList.add('animate-form-success');
         } catch {
             btn.disabled = false;
             inputs.forEach(i => i.disabled = false);

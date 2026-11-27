@@ -14,16 +14,16 @@ const t = useTranslations(lang);
 <Layout title={t({ key: 'partnerships.meta.title', message: 'Parcerias - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
-        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
-            <div class="max-w-7xl mx-auto text-center relative z-10">
-                <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-purple font-bold text-sm shadow-sm mb-8 animate-pulse">
+        <section class="page-intro relative overflow-hidden">
+            <div class="site-container text-center relative z-10">
+                <div class="inline-flex items-center gap-2 px-4 py-2 glass-card rounded-full text-curumim-purple font-bold text-sm shadow-sm mb-8">
                     <Handshake class="w-4 h-4" />
                     {t({ key: 'partnerships.hero.badge', message: 'Colaboração' })}
                 </div>
-                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+                <h1 class="page-title text-slate-800">
                     {t({ key: 'partnerships.hero.titlePrefix', message: 'Nossas' })} <span class="text-curumim-purple ">{t({ key: 'partnerships.hero.titleAccent', message: 'Parcerias' })}</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                <p class="page-lead text-slate-600">
                     {t({ key: 'partnerships.hero.subtitle', message: 'Acreditamos que grandes conquistas são frutos de esforços coletivos. Juntos, podemos fortalecer a cultura brasileira em Vancouver.' })}
                 </p>
             </div>
@@ -51,7 +51,7 @@ const t = useTranslations(lang);
                 {/* Features Grid */}
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="glass-card p-10 rounded-[2.5rem] border border-white/60 shadow-xl space-y-6 group">
-                        <div class="w-16 h-16 bg-curumim-yellow/10 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+                        <div class="w-16 h-16 bg-curumim-yellow/10 rounded-2xl flex items-center justify-center motion-safe:group-hover:rotate-12 transition-transform">
                             <Lightbulb class="w-8 h-8 text-curumim-yellow" />
                         </div>
                         <h2 class="text-3xl font-black text-slate-800">{t({ key: 'partnerships.howItWorks.title', message: 'Como funciona?' })}</h2>
@@ -61,7 +61,7 @@ const t = useTranslations(lang);
                     </div>
 
                     <div class="glass-card p-10 rounded-[2.5rem] border border-white/60 shadow-xl space-y-6 group">
-                        <div class="w-16 h-16 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform">
+                        <div class="w-16 h-16 bg-curumim-cyan/10 rounded-2xl flex items-center justify-center motion-safe:group-hover:rotate-12 transition-transform">
                             <Users class="w-8 h-8 text-curumim-cyan" />
                         </div>
                         <h2 class="text-3xl font-black text-slate-800">{t({ key: 'partnerships.support.title', message: 'Formas de Apoio' })}</h2>
@@ -86,7 +86,7 @@ const t = useTranslations(lang);
                         </div>
 
                         <div class="pt-8 relative z-10">
-                            <a href="mailto:oficinacurumim@gmail.com" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-purple hover:bg-curumim-cyan text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-purple/20">
+                            <a href="mailto:oficinacurumim@gmail.com" class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-purple hover:bg-curumim-cyan text-white font-black text-2xl rounded-[2rem] transition-[background-color,border-color,color,scale] duration-150 ease-out motion-safe:active:scale-96 shadow-2xl shadow-curumim-purple/20">
                                 {t({ key: 'partnerships.cta.button', message: 'Enviar proposta' })}
                                 <Mail class="w-8 h-8" />
                             </a>
