@@ -19,12 +19,12 @@ const t = useTranslations(lang);
 <Layout title={t({ key: 'about.meta.title', message: 'Sobre Nós - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
-        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
-            <div class="max-w-7xl mx-auto text-center relative z-10">
-                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-6 tracking-tight">
+        <section class="page-intro relative overflow-hidden">
+            <div class="site-container text-center relative z-10">
+                <h1 class="page-title text-slate-800">
                     {t({ key: 'about.hero.titlePrefix', message: 'Sobre' })} <span class="text-curumim-red ">{t({ key: 'about.hero.titleAccent', message: 'Nós' })}</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed">
+                <p class="page-lead text-slate-600">
                     {t({ key: 'about.hero.subtitle', message: 'Unindo famílias brasileiras em Vancouver por meio da língua, da cultura e do afeto.' })}
                 </p>
             </div>
@@ -34,8 +34,8 @@ const t = useTranslations(lang);
         </section>
 
         {/* Mission Section */}
-        <section class="py-24 px-4">
-            <div class="max-w-7xl mx-auto">
+        <section class="py-24">
+            <div class="site-container">
                 <div class="glass-card rounded-[3rem] p-8 md:p-16 border border-white/40 shadow-2xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-64 h-64 bg-curumim-red/5 rounded-full blur-3xl -z-10"></div>
                     <div class="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-16 items-start">
@@ -75,8 +75,8 @@ const t = useTranslations(lang);
                                     bg: "bg-curumim-cyan/5"
                                 }
                             ].map((item) => (
-                                <div class="glass-card p-8 rounded-3xl border border-white/60 shadow-sm hover:shadow-md transition-all group">
-                                    <div class={`w-12 h-12 ${item.bg} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                                <div class="glass-card p-8 rounded-3xl border border-white/60 shadow-sm hover:shadow-md transition-[box-shadow] group">
+                                    <div class={`w-12 h-12 ${item.bg} rounded-2xl flex items-center justify-center mb-6 motion-safe:group-hover:scale-110 transition-transform`}>
                                         <item.icom class={`w-6 h-6 ${item.color}`} />
                                     </div>
                                     <p class="text-slate-700 font-bold leading-relaxed">{item.text}</p>
@@ -105,8 +105,8 @@ const t = useTranslations(lang);
         </section>
 
         {/* Academic Year & Conduct */}
-        <section class="py-24 px-4">
-            <div class="max-w-7xl mx-auto">
+        <section class="py-24">
+            <div class="site-container">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div class="glass-card p-12 rounded-[3rem] border border-white/50 shadow-xl space-y-6 relative overflow-hidden group">
                         <div class="absolute -top-10 -right-10 w-40 h-40 bg-curumim-orange/5 rounded-full blur-3xl"></div>
@@ -133,7 +133,7 @@ const t = useTranslations(lang);
                         </p>
                         <div class="pt-4">
                             <a href="https://docs.google.com/document/d/1pJRK8tmHNGRAkDkY8gr9YphOaSDKs6p52fDPXJZNrOk/edit?usp=sharing" target="_blank" rel="noopener noreferrer" 
-                               class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white font-bold rounded-xl hover:bg-curumim-cyan transition-all">
+                               class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 text-white font-bold rounded-xl hover:bg-curumim-cyan transition-colors">
                                 {t({ key: 'about.conduct.cta', message: 'Acessar o guia' })}
                                 <ArrowRight class="w-4 h-4" />
                             </a>
@@ -175,7 +175,7 @@ const t = useTranslations(lang);
                     ].map((item) => (
                         <div class="flex flex-col md:flex-row gap-8 relative z-10">
                             <div class="flex-shrink-0">
-                                <div class={`w-20 h-20 ${item.color} rounded-3xl flex items-center justify-center shadow-lg transform hover:rotate-12 transition-transform`}>
+                                <div class={`w-20 h-20 ${item.color} rounded-3xl flex items-center justify-center shadow-lg transform motion-safe:hover:rotate-12 transition-transform`}>
                                     <span class="text-xl font-black text-slate-900">{item.year}</span>
                                 </div>
                             </div>

@@ -47,24 +47,24 @@ function isActive(href: string) {
 ---
 
 <ClientRouter />
-<header id="header" class="glass-header sticky top-0 left-0 right-0 z-50 transition-all duration-200">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div id="header-inner" class="flex justify-between items-center h-20 md:h-24 transition-[height,padding] duration-200 ease-out">
+<header id="header" class="glass-header sticky top-0 left-0 right-0 z-50 transition-[background-color,box-shadow] duration-150 ease-out">
+  <div class="site-container">
+    <div id="header-inner" class="flex justify-between items-center gap-4">
       {/* Logo */}
       <div class="flex-shrink-0">
-        <a id="logo-link" href={homeUrl} class="block transition-transform duration-200 hover:scale-105 active:scale-95">
-           <img id="logo" src={withBase('logo.svg')} alt={t({ key: 'header.logo.alt', message: 'Oficina Curumim' })} class="h-12 md:h-16 w-auto transition-[height,width,transform] duration-200 ease-out" />
+        <a id="logo-link" href={homeUrl} class="block">
+           <img id="logo" src={withBase('logo.svg')} alt={t({ key: 'header.logo.alt', message: 'Oficina Curumim' })} class="h-12 lg:h-16 w-auto" />
         </a>
       </div>
       
       {/* Desktop Navigation */}
-      <nav id="desktop-nav" class="hidden md:flex items-center space-x-1 transition-[gap] duration-200 ease-out">
+      <nav id="desktop-nav" class="hidden lg:flex items-center gap-1">
         {navItems.map((item) => {
           const active = isActive(item.href);
           return (
             <a
               href={item.href}
-              class={`header-nav-link px-4 py-2 rounded-xl text-sm font-bold transition-all duration-200 ${
+              class={`px-4 py-2 rounded-xl text-sm font-bold transition-colors duration-150 ${
                 active
                   ? 'text-curumim-orange bg-curumim-orange/5'
                   : 'text-slate-600 hover:text-curumim-orange hover:bg-slate-50'
@@ -77,18 +77,18 @@ function isActive(href: string) {
       </nav>
 
       {/* Action Area */}
-      <div id="header-actions" class="flex items-center gap-4 transition-[gap] duration-200 ease-out">
-          <div id="desktop-locale-toggle" class="hidden md:flex items-center gap-2 rounded-2xl border border-white/60 bg-white/60 p-1 shadow-sm backdrop-blur-md transition-all duration-200 ease-out" aria-label={t({ key: 'header.language.ariaLabel', message: 'Language selector' })}>
+      <div id="header-actions" class="flex items-center">
+          <div id="desktop-locale-toggle" class="hidden lg:flex items-center gap-2 rounded-2xl border border-white/60 bg-white/60 p-1 shadow-sm backdrop-blur-md" aria-label={t({ key: 'header.language.ariaLabel', message: 'Language selector' })}>
             <a
               href={localeToggle.href}
-              class="inline-flex items-center justify-center rounded-xl px-3 py-2 text-lg text-slate-600 transition-all duration-200 hover:bg-white hover:text-slate-900"
+              class="inline-flex items-center justify-center rounded-xl px-3 py-2 text-lg text-slate-600 transition-colors duration-150 hover:bg-white hover:text-slate-900"
               title={localeToggle.title}
             >
               <span aria-hidden="true">{localeToggle.flag}</span>
             </a>
           </div>
           {/* Mobile menu button */}
-          <button id="mobile-menu-button" class="md:hidden p-2 rounded-xl hover:bg-slate-100 transition-colors" aria-label={t({ key: 'header.menu.ariaLabel', message: 'Menu' })}>
+          <button id="mobile-menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden p-2 rounded-xl hover:bg-slate-100 transition-colors" aria-label={t({ key: 'header.menu.ariaLabel', message: 'Menu' })}>
             <Menu class="w-6 h-6 text-slate-700" id="menu-icon" />
             <X class="w-6 h-6 text-slate-700 hidden" id="close-icon" />
           </button>
@@ -97,23 +97,23 @@ function isActive(href: string) {
   </div>
 
   {/* Mobile Menu */}
-  <div id="mobile-menu" class="hidden md:hidden glass-header border-t border-white/20 absolute w-full left-0 animate-in fade-in slide-in-from-top-4 duration-300">
-      <div class="px-4 pt-4">
+  <div id="mobile-menu" inert class="hidden lg:hidden glass-header border-t border-white/20 absolute inset-x-0 top-full">
+      <div class="site-container pt-4">
         <div class="flex items-center gap-2 rounded-2xl border border-white/60 bg-white/60 p-1 shadow-sm backdrop-blur-md">
           <a
             href={localeToggle.href}
-            class="inline-flex flex-1 items-center justify-center rounded-xl px-3 py-2 text-lg text-slate-600 transition-all hover:bg-white hover:text-slate-900"
+            class="inline-flex flex-1 items-center justify-center rounded-xl px-3 py-2 text-lg text-slate-600 transition-colors hover:bg-white hover:text-slate-900"
             title={localeToggle.title}
           >
             <span aria-hidden="true">{localeToggle.flag}</span>
           </a>
         </div>
       </div>
-      <nav class="flex flex-col p-4 space-y-2">
+      <nav class="site-container flex flex-col gap-2 py-4">
         {navItems.map((item) => (
           <a
             href={item.href}
-            class={`px-4 py-3 rounded-xl text-base font-bold transition-all ${
+            class={`px-4 py-3 rounded-xl text-base font-bold transition-colors ${
               isActive(item.href)
                 ? 'text-curumim-orange bg-curumim-orange/5'
                 : 'text-slate-600 hover:bg-slate-50'
@@ -127,39 +127,45 @@ function isActive(href: string) {
 </header>
 
 <script>
+    function syncHeaderState() {
+        document.getElementById('header')?.classList.toggle('header-scrolled', window.scrollY > 24);
+    }
+
     function initMobileMenu() {
-        const header = document.getElementById('header');
         const button = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
         const closeIcon = document.getElementById('close-icon');
-        const scrollThreshold = 24;
+        if (!button || !menu || !menuIcon || !closeIcon) return;
 
-        const syncHeaderState = () => {
-            if (!header) return;
-            header.classList.toggle('header-scrolled', window.scrollY > scrollThreshold);
+        const setMenuOpen = (open: boolean) => {
+            button.setAttribute('aria-expanded', String(open));
+            menu.inert = !open;
+            menu.classList.toggle('hidden', !open);
+            menuIcon.classList.toggle('hidden', open);
+            closeIcon.classList.toggle('hidden', !open);
         };
 
-        button?.addEventListener('click', () => {
-            menu?.classList.toggle('hidden');
-            menuIcon?.classList.toggle('hidden');
-            closeIcon?.classList.toggle('hidden');
+        button.addEventListener('click', () => {
+            setMenuOpen(button.getAttribute('aria-expanded') !== 'true');
         });
 
-        // Close menu when clicking a link
-        const links = menu?.querySelectorAll('a');
-        links?.forEach(link => {
-            link.addEventListener('click', () => {
-                menu?.classList.add('hidden');
-                menuIcon?.classList.remove('hidden');
-                closeIcon?.classList.add('hidden');
+        menu.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => setMenuOpen(false));
+        });
+
+        for (const element of [button, menu]) {
+            element.addEventListener('keydown', (event) => {
+                if (event.key !== 'Escape' || menu.inert) return;
+                setMenuOpen(false);
+                button.focus();
             });
-        });
-
-        syncHeaderState();
-        window.removeEventListener('scroll', syncHeaderState);
-        window.addEventListener('scroll', syncHeaderState, { passive: true });
+        }
     }
 
-    document.addEventListener('astro:page-load', initMobileMenu);
+    window.addEventListener('scroll', syncHeaderState, { passive: true });
+    document.addEventListener('astro:page-load', () => {
+        syncHeaderState();
+        initMobileMenu();
+    });
 </script>

@@ -64,12 +64,12 @@ const events = [
 <Layout title={t({ key: 'events.meta.title', message: 'Eventos Culturais - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
-        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
-            <div class="max-w-7xl mx-auto text-center relative z-10">
-                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+        <section class="page-intro relative overflow-hidden">
+            <div class="site-container text-center relative z-10">
+                <h1 class="page-title text-slate-800">
                     {t({ key: 'events.hero.titlePrefix', message: 'Eventos' })} <span class="text-curumim-red ">{t({ key: 'events.hero.titleAccent', message: 'Culturais' })}</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                <p class="page-lead text-slate-600">
                     {t({ key: 'events.hero.subtitle', message: 'A preservação da nossa cultura através do envolvimento das famílias. Planejamos cada momento para que nossas raízes floresçam em Vancouver.' })}
                 </p>
             </div>
@@ -79,15 +79,15 @@ const events = [
         </section>
 
         {/* Events Grid */}
-        <section class="py-12 px-4 pb-32">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section class="py-12 pb-32">
+            <div class="site-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {events.map((event) => (
                     <div class="group h-full">
-                        <div class="glass-card h-full rounded-[2.5rem] p-8 md:p-10 border border-white/60 shadow-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden flex flex-col">
+                        <div class="glass-card h-full rounded-[2.5rem] p-8 md:p-10 border border-white/60 shadow-xl transition-[box-shadow,translate] duration-500 motion-safe:hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden flex flex-col">
                             <div class={`absolute top-0 right-0 w-32 h-32 bg-${event.color}/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-${event.color}/20 transition-colors`}></div>
                             
                             <div class="space-y-6 flex-grow">
-                                <div class={`w-16 h-16 bg-${event.color}/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                                <div class={`w-16 h-16 bg-${event.color}/10 rounded-2xl flex items-center justify-center motion-safe:group-hover:scale-110 transition-transform`}>
                                     <event.icom class={`w-8 h-8 text-${event.color}`} />
                                 </div>
                                 
@@ -110,7 +110,7 @@ const events = [
                             </div>
 
                             <div class="pt-8">
-                                <a href={withBase('contact', lang)} class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-all`}>
+                                <a href={withBase('contact', lang)} class={`w-full py-4 rounded-2xl border-2 border-${event.color}/20 flex items-center justify-center gap-2 font-black text-slate-700 hover:bg-${event.color} hover:text-white transition-colors`}>
                                     {t({ key: 'events.cards.cta', message: 'Saiba mais' })}
                                     <ArrowRight class="w-4 h-4" />
                                 </a>
@@ -129,7 +129,7 @@ const events = [
                     <div class="absolute -top-20 -right-20 w-96 h-96 bg-curumim-yellow/10 rounded-full blur-[100px] -z-10 group-hover:bg-curumim-yellow/20 transition-colors duration-1000"></div>
                     
                     <div class="space-y-6 relative z-10">
-                        <p class="text-curumim-red font-black text-xl uppercase tracking-widest animate-pulse">{t({ key: 'events.cta.badge', message: '- Participe -' })}</p>
+                        <p class="text-curumim-red font-black text-xl uppercase tracking-widest">{t({ key: 'events.cta.badge', message: '- Participe -' })}</p>
                         <h2 class="text-4xl md:text-7xl font-black text-slate-800 leading-tight">
                             {t({ key: 'events.cta.titlePrefix', message: 'Não perca nenhum' })} <span class="text-curumim-red">{t({ key: 'events.cta.titleAccent', message: 'evento cultural!' })}</span>
                         </h2>
@@ -139,7 +139,7 @@ const events = [
                     </div>
 
                     <div class="pt-8 relative z-10">
-                        <a href={withBase('contact', lang)} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-red/20">
+                        <a href={withBase('contact', lang)} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-red hover:bg-curumim-purple text-white font-black text-2xl rounded-[2rem] transition-[background-color,border-color,color,scale] duration-150 ease-out motion-safe:active:scale-96 shadow-2xl shadow-curumim-red/20">
                             {t({ key: 'events.cta.button', message: 'Quero me envolver' })}
                             <ArrowRight class="w-8 h-8" />
                         </a>

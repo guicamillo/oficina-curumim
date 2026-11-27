@@ -94,12 +94,12 @@ const colorMap = {
 <Layout title={t({ key: 'classes.meta.title', message: 'Nossas Turmas - Oficina Curumim' })}>
     <main>
         {/* Hero Section */}
-        <section class="relative pt-32 pb-20 px-4 overflow-hidden">
-            <div class="max-w-7xl mx-auto text-center relative z-10">
-                <h1 class="text-5xl md:text-8xl font-black text-slate-800 mb-8 tracking-tight">
+        <section class="page-intro relative overflow-hidden">
+            <div class="site-container text-center relative z-10">
+                <h1 class="page-title text-slate-800">
                     {t({ key: 'classes.hero.titlePrefix', message: 'Nossas' })} <span class="text-curumim-cyan ">{t({ key: 'classes.hero.titleAccent', message: 'Turmas' })}</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-slate-600 font-medium max-w-4xl mx-auto leading-relaxed">
+                <p class="page-lead text-slate-600">
                     {t({ key: 'classes.hero.subtitle', message: 'Cada fase é única. Dividimos nossas turmas para explorar ao máximo o potencial de cada etapa, sempre respeitando o tempo individual de desenvolvimento de cada criança.' })}
                 </p>
             </div>
@@ -109,11 +109,11 @@ const colorMap = {
         </section>
 
         {/* Turmas List */}
-        <section class="py-12 px-4 space-y-32 pb-32">
+        <section class="py-12 space-y-32 pb-32">
             {turmas.map((turma, index) => {
                 const colors = colorMap[turma.color];
                 return (
-                    <div class="max-w-7xl mx-auto">
+                    <div class="site-container">
                         <div class={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
                             {/* Visual Side */}
                             <div class={`${index % 2 !== 0 ? 'lg:order-2' : ''}`}>
@@ -121,7 +121,7 @@ const colorMap = {
                                     <div class={`absolute -top-12 -left-12 w-24 h-24 ${colors.blob} rounded-[2rem] -z-10 rotate-12 opacity-10`}></div>
                                     <div class={`absolute -inset-4 bg-gradient-to-tr ${colors.gradient} to-transparent rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-700`}></div>
                                     <div class="relative aspect-video lg:aspect-square glass-card rounded-[3rem] border border-white/60 overflow-hidden shadow-2xl flex items-center justify-center p-12">
-                                        <img src={withBase('logo.svg', lang)} alt="" class="w-1/2 opacity-10 group-hover:scale-110 transition duration-1000" />
+                                        <img src={withBase('logo.svg', lang)} alt="" class="w-1/2 opacity-10 motion-safe:group-hover:scale-110 transition duration-1000" />
                                         <div class={`absolute inset-0 bg-gradient-to-br ${colors.gradient} to-transparent`}></div>
                                     </div>
                                 </div>
@@ -175,7 +175,7 @@ const colorMap = {
                     </div>
 
                     <div class="pt-8 relative z-10">
-                        <a href={withBase('contact', lang)} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black text-2xl rounded-[2rem] transition-all hover:scale-110 active:scale-95 shadow-2xl shadow-curumim-yellow/20">
+                        <a href={withBase('contact', lang)} class="inline-flex items-center gap-4 px-12 py-6 bg-curumim-yellow hover:bg-curumim-orange text-slate-900 font-black text-2xl rounded-[2rem] transition-[background-color,border-color,color,scale] duration-150 ease-out motion-safe:active:scale-96 shadow-2xl shadow-curumim-yellow/20">
                             {t({ key: 'classes.cta.button', message: 'Falar com a gente' })}
                             <ArrowRight class="w-8 h-8" />
                         </a>
