@@ -120,6 +120,7 @@
     "form": {
       "emailLabel": "Your best email",
       "emailPlaceholder": "example@email.com",
+      "error": "We couldn’t send your message. Try again or email",
       "messageLabel": "How can we help?",
       "messagePlaceholder": "Your message...",
       "nameLabel": "Full name",
@@ -130,7 +131,8 @@
       "successBody": "We’ll get back to you as soon as possible.",
       "successTitle": "Message sent!",
       "titleAccent": "message",
-      "titlePrefix": "Send a"
+      "titlePrefix": "Send a",
+      "unavailable": "For now, please contact us by email."
     },
     "hero": {
       "subtitle": "We’d love to hear from you, whether you have questions, partnership ideas, or want to register your Curumim.",
@@ -221,10 +223,12 @@
     },
     "newsletter": {
       "button": "Subscribe",
+      "emailLabel": "Email address",
       "emailPlaceholder": "Your best email",
+      "error": "We couldn’t accept your email address. Please try again.",
       "subject": "New newsletter signup - Oficina Curumim",
-      "successBody": "Keep an eye on your inbox.",
-      "successTitle": "Signed up!",
+      "successBody": "Thanks for your interest in news from Oficina Curumim.",
+      "successTitle": "Email received!",
       "title": "Stay up to date"
     },
     "social": {

@@ -33,3 +33,14 @@ bun run preview
 ## Deploy
 
 GitHub Actions builds and deploys the merge commit to GitHub Pages when `guicamillo` merges a pull request into `main`. The base path `/oficina-curumim` is set in `astro.config.mjs`.
+
+## Configure contact and newsletter forms
+
+Create a Web3Forms access key for the inbox that should receive both forms. Set these repository variables under **Settings → Secrets and variables → Actions → Variables**, or put them in `.env` for a local build.
+
+| Variable                      | Value                                                                  |
+| ----------------------------- | ---------------------------------------------------------------------- |
+| `PUBLIC_WEB3FORMS_ACCESS_KEY` | The public Web3Forms access key for the shared inbox.                  |
+| `PUBLIC_CONTACT_EMAIL`        | The address shown on the contact page and used for direct email links. |
+
+Both forms use the same key and send different email subjects. The contact form sends the visitor's name, email, and message. The newsletter form forwards the visitor's email to the inbox for collection. Without an access key, the contact page offers a direct email link and the footer hides the signup form. [Web3Forms setup guide](https://docs.web3forms.com/getting-started/installation).

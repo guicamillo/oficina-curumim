@@ -120,6 +120,7 @@
     "form": {
       "emailLabel": "Seu melhor e-mail",
       "emailPlaceholder": "exemplo@email.com",
+      "error": "Não foi possível enviar a mensagem. Tente novamente ou escreva para",
       "messageLabel": "Como podemos ajudar?",
       "messagePlaceholder": "Sua mensagem...",
       "nameLabel": "Nome completo",
@@ -130,7 +131,8 @@
       "successBody": "Retornaremos o quanto antes.",
       "successTitle": "Mensagem enviada!",
       "titleAccent": "mensagem",
-      "titlePrefix": "Mande uma"
+      "titlePrefix": "Mande uma",
+      "unavailable": "Por enquanto, entre em contato por e-mail."
     },
     "hero": {
       "subtitle": "Adoraríamos ouvir de você. Seja para tirar dúvidas, sugerir parcerias ou matricular seu curumim.",
@@ -221,10 +223,12 @@
     },
     "newsletter": {
       "button": "Inscrever",
+      "emailLabel": "Endereço de e-mail",
       "emailPlaceholder": "Seu melhor e-mail",
+      "error": "Não foi possível receber seu e-mail. Tente novamente.",
       "subject": "Nova inscrição na newsletter - Oficina Curumim",
-      "successBody": "Fique de olho no seu e-mail.",
-      "successTitle": "Inscrição feita!",
+      "successBody": "Obrigado pelo seu interesse nas novidades da Oficina Curumim.",
+      "successTitle": "E-mail recebido!",
       "title": "Fique por dentro das novidades"
     },
     "social": {
