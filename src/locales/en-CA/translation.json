@@ -56,21 +56,6 @@
       "titlePrefix": "Educational"
     }
   },
-  "blog": {
-    "index": {
-      "meta": {
-        "title": "Blog - Oficina Curumim"
-      },
-      "readMore": "Read more",
-      "subtitle": "Follow our news and articles.",
-      "title": "Blog"
-    },
-    "post": {
-      "meta": {
-        "title": "{{title}} - Oficina Curumim"
-      }
-    }
-  },
   "classes": {
     "cta": {
       "badge": "- Join Oficina -",

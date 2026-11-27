@@ -1,7 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations } from '../utils/i18n';
-import Instagram from '@lucide/astro/icons/instagram';
-import Facebook from '@lucide/astro/icons/facebook';
+import { siFacebook, siInstagram } from 'simple-icons';
 import Mail from '@lucide/astro/icons/mail';
 import { withBase } from '../utils/paths';
 
@@ -48,11 +47,11 @@ const designerName = t({
                     <div class="flex justify-center lg:justify-start gap-5">
                         <a href="https://www.instagram.com/oficinacurumim/" target="_blank" rel="noopener noreferrer" 
                            class="w-12 h-12 glass-card hover:bg-curumim-yellow/20 rounded-2xl flex items-center justify-center transition-all hover:scale-110 group shadow-sm" aria-label={t({ key: 'footer.social.instagramLabel', message: 'Instagram' })}>
-                            <Instagram class="w-6 h-6 text-slate-700 group-hover:text-curumim-yellow" />
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-slate-700 group-hover:text-curumim-yellow"><path d={siInstagram.path} /></svg>
                         </a>
                         <a href="https://www.facebook.com/oficinacurumim" target="_blank" rel="noopener noreferrer" 
                            class="w-12 h-12 glass-card hover:bg-curumim-cyan/20 rounded-2xl flex items-center justify-center transition-all hover:scale-110 group shadow-sm" aria-label={t({ key: 'footer.social.facebookLabel', message: 'Facebook' })}>
-                            <Facebook class="w-6 h-6 text-slate-700 group-hover:text-curumim-cyan" />
+                            <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-slate-700 group-hover:text-curumim-cyan"><path d={siFacebook.path} /></svg>
                         </a>
                     </div>
                 </div>

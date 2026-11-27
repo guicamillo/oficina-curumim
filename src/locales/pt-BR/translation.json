@@ -56,21 +56,6 @@
       "titlePrefix": "Proposta"
     }
   },
-  "blog": {
-    "index": {
-      "meta": {
-        "title": "Blog - Oficina Curumim"
-      },
-      "readMore": "Ler mais",
-      "subtitle": "Acompanhe nossas novidades e artigos.",
-      "title": "Blog"
-    },
-    "post": {
-      "meta": {
-        "title": "{{title}} - Oficina Curumim"
-      }
-    }
-  },
   "classes": {
     "cta": {
       "badge": "- Vem pra Oficina -",

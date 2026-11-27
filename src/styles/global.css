@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@plugin "@tailwindcss/typography";
 
 @theme {
   /* Brand Colors */
@@ -281,25 +280,6 @@ body::before {
   .text-slate-900.bg-curumim-cyan,
   .text-slate-900.bg-curumim-orange {
     color: #0f172a;
-  }
-
-  .prose-slate {
-    --tw-prose-body: #cbd5e1;
-    --tw-prose-headings: #f8fafc;
-    --tw-prose-lead: #cbd5e1;
-    --tw-prose-links: #67e8f9;
-    --tw-prose-bold: #f8fafc;
-    --tw-prose-counters: #94a3b8;
-    --tw-prose-bullets: #64748b;
-    --tw-prose-hr: rgba(148, 163, 184, 0.24);
-    --tw-prose-quotes: #e2e8f0;
-    --tw-prose-quote-borders: rgba(148, 163, 184, 0.34);
-    --tw-prose-captions: #94a3b8;
-    --tw-prose-code: #f8fafc;
-    --tw-prose-pre-code: #e2e8f0;
-    --tw-prose-pre-bg: #0f172a;
-    --tw-prose-th-borders: rgba(148, 163, 184, 0.34);
-    --tw-prose-td-borders: rgba(148, 163, 184, 0.2);
   }
 }
 
